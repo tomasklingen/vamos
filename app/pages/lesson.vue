@@ -24,6 +24,8 @@ async function recordReview(correct: boolean) {
 	revealed.value = false
 	await refresh()
 }
+
+const { speak } = useSpeech()
 </script>
 
 <template>
@@ -56,7 +58,17 @@ async function recordReview(correct: boolean) {
 				</template>
 
 				<div class="text-center py-10 space-y-6 min-h-48">
-					<p class="text-3xl font-bold">{{ card.front }}</p>
+					<div class="flex items-center justify-center gap-3">
+						<p class="text-3xl font-bold">{{ card.front }}</p>
+						<UButton
+							icon="i-lucide-volume-2"
+							color="neutral"
+							variant="ghost"
+							size="sm"
+							aria-label="Pronunciar"
+							@click="speak(card.front)"
+						/>
+					</div>
 
 					<Transition name="fade">
 						<div v-if="revealed" class="space-y-2">
