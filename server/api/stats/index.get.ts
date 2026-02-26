@@ -10,8 +10,10 @@ export default defineEventHandler(async () => {
 	`
 
 	const totalCards = (cardsResult.rows?.[0] as { total: number } | undefined)?.total ?? 0
-	const totalReviews = (reviewsResult.rows?.[0] as { total: number; correct: number } | undefined)?.total ?? 0
-	const totalCorrect = (reviewsResult.rows?.[0] as { total: number; correct: number } | undefined)?.correct ?? 0
+	const totalReviews =
+		(reviewsResult.rows?.[0] as { total: number; correct: number } | undefined)?.total ?? 0
+	const totalCorrect =
+		(reviewsResult.rows?.[0] as { total: number; correct: number } | undefined)?.correct ?? 0
 	const accuracy = totalReviews > 0 ? Math.round((totalCorrect / totalReviews) * 100) : 0
 
 	// Compute streak: consecutive days from today
@@ -25,8 +27,7 @@ export default defineEventHandler(async () => {
 		const expectedStr = expected.toISOString().slice(0, 10)
 		if (days[i]?.day === expectedStr) {
 			streak++
-		}
-		else {
+		} else {
 			break
 		}
 	}

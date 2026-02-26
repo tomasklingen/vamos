@@ -57,10 +57,37 @@ const goodbyes: Card[] = [
 	["Que te vaya bien", "Have a good one"],
 ]
 
-const ones = ["", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve",
-	"diez", "once", "doce", "trece", "catorce", "quince"]
+const ones = [
+	"",
+	"uno",
+	"dos",
+	"tres",
+	"cuatro",
+	"cinco",
+	"seis",
+	"siete",
+	"ocho",
+	"nueve",
+	"diez",
+	"once",
+	"doce",
+	"trece",
+	"catorce",
+	"quince",
+]
 const teens = ["dieciséis", "diecisiete", "dieciocho", "diecinueve"]
-const tens = ["", "", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"]
+const tens = [
+	"",
+	"",
+	"veinte",
+	"treinta",
+	"cuarenta",
+	"cincuenta",
+	"sesenta",
+	"setenta",
+	"ochenta",
+	"noventa",
+]
 
 function toSpanish(n: number): string {
 	if (n <= 15) return ones[n] ?? ""

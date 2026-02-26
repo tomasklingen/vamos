@@ -4,7 +4,8 @@ export default defineEventHandler(async (event) => {
 	const db = useDatabase()
 
 	if (category) {
-		const result = await db.sql`SELECT * FROM cards WHERE category = ${category} ORDER BY created_at DESC`
+		const result =
+			await db.sql`SELECT * FROM cards WHERE category = ${category} ORDER BY created_at DESC`
 		return result.rows
 	}
 
