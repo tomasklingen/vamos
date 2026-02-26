@@ -49,24 +49,29 @@ const columns: TableColumn<Card>[] = [
 <template>
 	<UContainer class="py-10 space-y-8">
 		<div class="flex items-center justify-between">
-			<h1 class="text-2xl font-bold">🗂️ Tarjetas</h1>
-			<UBadge :label="`${cards?.length ?? 0} tarjetas`" color="primary" variant="subtle" size="lg" />
+			<h1 class="text-2xl font-bold flex items-center gap-2">
+				<UIcon name="i-lucide-layers" /> Tarjetas
+			</h1>
+			<UBadge
+				:label="`${cards?.length ?? 0} tarjetas`"
+				color="primary"
+				variant="subtle"
+				size="lg"
+			/>
 		</div>
 
 		<!-- Add card form -->
 		<UCard>
 			<template #header>
-				<p class="font-bold text-lg">➕ Añadir tarjeta</p>
+				<p class="font-bold text-lg flex items-center gap-2">
+					<UIcon name="i-lucide-plus-circle" /> Añadir tarjeta
+				</p>
 			</template>
 
 			<div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
 				<UInput v-model="front" placeholder="Español (ej. Hola)" size="lg" />
 				<UInput v-model="back" placeholder="Traducción (ej. Hello)" size="lg" />
-				<USelect
-					v-model="category"
-					:items="categories"
-					size="lg"
-				/>
+				<USelect v-model="category" :items="categories" size="lg" />
 			</div>
 
 			<template #footer>
@@ -84,7 +89,9 @@ const columns: TableColumn<Card>[] = [
 		<!-- Cards table -->
 		<UCard>
 			<template #header>
-				<p class="font-bold text-lg">📋 Todas las tarjetas</p>
+				<p class="font-bold text-lg flex items-center gap-2">
+					<UIcon name="i-lucide-table" /> Todas las tarjetas
+				</p>
 			</template>
 
 			<div v-if="!cards?.length" class="text-center py-10 text-muted">
