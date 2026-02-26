@@ -14,9 +14,11 @@
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
 		"format": "oxfmt",
-		"typecheck": "nuxi typecheck"
+		"typecheck": "nuxi typecheck",
+		"db:seed": "node --experimental-strip-types scripts/seed.ts"
 	},
 	"dependencies": {
+		"better-sqlite3": "^11.10.0",
 		"@nuxt/hints": "^1.0.0-alpha.9",
 		"@nuxt/test-utils": "^4.0.0",
 		"@nuxt/ui": "^4.5.0",

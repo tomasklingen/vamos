@@ -1,88 +1,110 @@
 <script setup lang="ts">
 definePageMeta({ title: "Lección" })
 
-const question = {
-	prompt: "How do you say 'apple' in Spanish?",
-	choices: ["manzana", "naranja", "pera", "uva"],
-	correct: "manzana",
+interface Card {
+	id: number
+	front: string
+	back: string
+	category: string
 }
 
-const selected = ref<string | null>(null)
-const submitted = ref(false)
-const streak = ref(5)
+const { data: card, refresh } = await useFetch<Card | null>("/api/cards/next")
+const revealed = ref(false)
+const sessionCorrect = ref(0)
+const sessionTotal = ref(0)
 
-const isCorrect = computed(() => selected.value === question.correct)
-const alertDescription = computed(() =>
-	isCorrect.value ? "¡Sigue así!" : `The correct answer is "${question.correct}".`,
-)
-
-function submit() {
-	if (!selected.value) return
-	submitted.value = true
-	if (isCorrect.value) streak.value++
-}
-
-function next() {
-	selected.value = null
-	submitted.value = false
+async function recordReview(correct: boolean) {
+	if (!card.value) return
+	await $fetch("/api/reviews", {
+		method: "POST",
+		body: { cardId: card.value.id, correct },
+	})
+	sessionTotal.value++
+	if (correct) sessionCorrect.value++
+	revealed.value = false
+	await refresh()
 }
 </script>
 
 <template>
 	<UContainer class="py-10 max-w-xl space-y-6">
 		<div class="flex items-center justify-between">
-			<h1 class="text-2xl font-bold">📖 Lección</h1>
-			<div class="flex items-center gap-1.5">
-				<span class="text-xl">🔥</span>
-				<UBadge :label="`${streak} días`" color="warning" variant="subtle" size="lg" />
+			<h1 class="text-2xl font-bold">📖 Práctica</h1>
+			<div class="flex items-center gap-2 text-sm text-muted">
+				<span>✅ {{ sessionCorrect }} / {{ sessionTotal }}</span>
 			</div>
 		</div>
 
-		<UCard>
-			<template #header>
-				<p class="text-sm text-muted font-semibold uppercase tracking-widest">🇪🇸 Traduce</p>
-			</template>
-
-			<p class="text-2xl font-bold text-center py-6">{{ question.prompt }}</p>
-
-			<div class="grid grid-cols-2 gap-3">
-				<UButton
-					v-for="choice in question.choices"
-					:key="choice"
-					:label="choice"
-					size="lg"
-					:color="
-						submitted
-							? choice === question.correct
-								? 'success'
-								: choice === selected
-									? 'error'
-									: 'neutral'
-							: selected === choice
-								? 'primary'
-								: 'neutral'
-					"
-					:variant="selected === choice || submitted ? 'solid' : 'outline'"
-					:disabled="submitted"
-					block
-					@click="selected = choice"
-				/>
+		<!-- Empty state -->
+		<UCard v-if="!card">
+			<div class="text-center py-10 space-y-4">
+				<p class="text-5xl">🎉</p>
+				<p class="text-xl font-bold">¡Todo repasado!</p>
+				<p class="text-muted">No hay más tarjetas por ahora.</p>
+				<UButton to="/cards" label="Añadir más tarjetas" icon="i-lucide-plus" />
 			</div>
-
-			<template #footer>
-				<div v-if="!submitted">
-					<UButton label="Comprobar ✔" size="lg" :disabled="!selected" block @click="submit" />
-				</div>
-				<div v-else class="space-y-3">
-					<UAlert
-						:color="isCorrect ? 'success' : 'error'"
-						:icon="isCorrect ? 'i-lucide-check-circle' : 'i-lucide-x-circle'"
-						:title="isCorrect ? '¡Correcto! 🎉' : '¡Casi! 😅'"
-						:description="alertDescription"
-					/>
-					<UButton label="Siguiente pregunta →" size="lg" block @click="next" />
-				</div>
-			</template>
 		</UCard>
+
+		<!-- Flashcard -->
+		<template v-else>
+			<UCard>
+				<template #header>
+					<div class="flex items-center justify-between">
+						<p class="text-sm text-muted font-semibold uppercase tracking-widest">🇪🇸 Español</p>
+						<UBadge :label="card.category" color="primary" variant="subtle" size="sm" />
+					</div>
+				</template>
+
+				<div class="text-center py-10 space-y-6 min-h-48">
+					<p class="text-3xl font-bold">{{ card.front }}</p>
+
+					<Transition name="fade">
+						<div v-if="revealed" class="space-y-2">
+							<p class="text-muted text-sm uppercase tracking-widest">Traducción</p>
+							<p class="text-2xl font-semibold text-secondary">{{ card.back }}</p>
+						</div>
+					</Transition>
+				</div>
+
+				<template #footer>
+					<div v-if="!revealed">
+						<UButton
+							label="Mostrar respuesta 👁"
+							size="lg"
+							variant="outline"
+							block
+							@click="revealed = true"
+						/>
+					</div>
+					<div v-else class="grid grid-cols-2 gap-3">
+						<UButton
+							label="✅ Lo sabía"
+							size="lg"
+							color="success"
+							block
+							@click="recordReview(true)"
+						/>
+						<UButton
+							label="❌ No lo sabía"
+							size="lg"
+							color="error"
+							block
+							@click="recordReview(false)"
+						/>
+					</div>
+				</template>
+			</UCard>
+		</template>
 	</UContainer>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.2s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+	opacity: 0;
+}
+</style>

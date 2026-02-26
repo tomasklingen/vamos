@@ -4,4 +4,14 @@ export default defineNuxtConfig({
 	devtools: { enabled: true },
 	modules: ["@nuxt/ui", "@nuxt/eslint", "@nuxt/test-utils", "@nuxt/hints"],
 	css: ["~/assets/css/main.css"],
+	nitro: {
+		experimental: {
+			database: true,
+		},
+		database: {
+			default: {
+				connector: "sqlite",
+			},
+		},
+	},
 })

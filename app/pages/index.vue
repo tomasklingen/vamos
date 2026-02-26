@@ -1,94 +1,63 @@
 <script setup lang="ts">
 definePageMeta({ title: "Inicio" })
 
-const players = [
-	{
-		name: "Player 1",
-		emoji: "🦁",
-		level: 4,
-		xp: 340,
-		xpMax: 500,
-		streak: 7,
-		color: "primary" as const,
-	},
-	{
-		name: "Player 2",
-		emoji: "🐯",
-		level: 3,
-		xp: 210,
-		xpMax: 500,
-		streak: 3,
-		color: "secondary" as const,
-	},
-]
-
-const todayChallenge = {
-	phrase: "¿Cómo te llamas?",
-	translation: "What is your name?",
-}
+const { data: stats } = await useFetch("/api/stats")
+const { data: nextCard } = await useFetch("/api/cards/next")
 </script>
 
 <template>
 	<UContainer class="py-10 space-y-10">
 		<div class="text-center space-y-2">
-			<p class="text-5xl">🌮</p>
-			<h1 class="text-4xl font-bold tracking-tight">¡Bienvenidos!</h1>
-			<p class="text-muted text-lg">Aprende español juntos 🇪🇸</p>
+			<p class="text-5xl">🇪🇸</p>
+			<h1 class="text-4xl font-bold tracking-tight">¡Vamos!</h1>
+			<p class="text-muted text-lg">Tu entrenador de español personal</p>
 		</div>
 
-		<!-- Player Cards -->
-		<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-			<UCard v-for="player in players" :key="player.name">
-				<template #header>
-					<div class="flex items-center gap-3">
-						<span class="text-4xl">{{ player.emoji }}</span>
-						<div>
-							<p class="font-bold text-lg">{{ player.name }}</p>
-							<UBadge
-								:label="`Nivel ${player.level}`"
-								:color="player.color"
-								variant="subtle"
-								size="sm"
-							/>
-						</div>
-					</div>
-				</template>
-
-				<div class="space-y-4">
-					<div>
-						<div class="flex justify-between text-sm mb-1.5">
-							<span class="text-muted">XP</span>
-							<span class="font-semibold">{{ player.xp }} / {{ player.xpMax }}</span>
-						</div>
-						<UProgress v-model="player.xp" :max="player.xpMax" :color="player.color" />
-					</div>
-
-					<div class="flex items-center gap-2 text-sm font-medium">
-						<span class="text-xl">🔥</span>
-						<span>{{ player.streak }}-day streak</span>
-					</div>
-				</div>
-
-				<template #footer>
-					<UButton to="/lesson" label="¡Empezar lección! 🚀" :color="player.color" block />
-				</template>
+		<!-- Stats -->
+		<div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+			<UCard class="text-center">
+				<p class="text-3xl font-bold text-primary">{{ stats?.totalCards ?? 0 }}</p>
+				<p class="text-sm text-muted mt-1">Tarjetas</p>
+			</UCard>
+			<UCard class="text-center">
+				<p class="text-3xl font-bold text-secondary">{{ stats?.totalReviews ?? 0 }}</p>
+				<p class="text-sm text-muted mt-1">Repasos</p>
+			</UCard>
+			<UCard class="text-center">
+				<p class="text-3xl font-bold text-success">{{ stats?.accuracy ?? 0 }}%</p>
+				<p class="text-sm text-muted mt-1">Precisión</p>
+			</UCard>
+			<UCard class="text-center">
+				<p class="text-3xl font-bold text-warning">🔥 {{ stats?.streak ?? 0 }}</p>
+				<p class="text-sm text-muted mt-1">Racha días</p>
 			</UCard>
 		</div>
 
-		<!-- Today's Challenge -->
-		<UCard class="border-2 border-dashed border-primary/40">
+		<!-- Start practice -->
+		<UButton to="/lesson" label="¡Empezar a practicar! 🚀" size="xl" block />
+
+		<!-- Next card preview -->
+		<UCard v-if="nextCard" class="border-2 border-dashed border-primary/40">
 			<template #header>
-				<div class="flex items-center gap-2 font-bold text-lg"><span>✨</span> Frase del día</div>
+				<div class="flex items-center gap-2 font-bold text-lg">
+					<span>✨</span> Próxima tarjeta
+				</div>
 			</template>
-
 			<div class="text-center py-6 space-y-3">
-				<p class="text-3xl font-bold tracking-wide">{{ todayChallenge.phrase }}</p>
-				<p class="text-muted italic text-lg">{{ todayChallenge.translation }}</p>
+				<p class="text-3xl font-bold">{{ nextCard.front }}</p>
+				<UBadge :label="String(nextCard.category)" color="primary" variant="subtle" />
 			</div>
-
 			<template #footer>
-				<UButton to="/lesson" label="Intentarlo 👉" variant="outline" block />
+				<UButton to="/lesson" label="Practicar ahora 👉" variant="outline" block />
 			</template>
+		</UCard>
+
+		<UCard v-else>
+			<div class="text-center py-6 space-y-3">
+				<p class="text-4xl">📭</p>
+				<p class="text-muted">No hay tarjetas todavía.</p>
+				<UButton to="/cards" label="Añadir tarjetas" variant="outline" />
+			</div>
 		</UCard>
 	</UContainer>
 </template>

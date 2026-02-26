@@ -4,7 +4,7 @@ import type { NavigationMenuItem } from "@nuxt/ui"
 const navItems: NavigationMenuItem[] = [
 	{ label: "Inicio", to: "/", icon: "i-lucide-house" },
 	{ label: "Lección", to: "/lesson", icon: "i-lucide-book-open" },
-	{ label: "Marcador", to: "/leaderboard", icon: "i-lucide-trophy" },
+	{ label: "Tarjetas", to: "/cards", icon: "i-lucide-layers" },
 ]
 </script>
 
