@@ -1,15 +1,15 @@
-import Database from "better-sqlite3"
 import { mkdirSync } from "node:fs"
-import { resolve, dirname } from "node:path"
+import { dirname, resolve } from "node:path"
+import { DatabaseSync } from "node:sqlite"
 import { fileURLToPath } from "node:url"
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const dataDir = resolve(__dirname, "../.data")
 mkdirSync(dataDir, { recursive: true })
 
-const db = new Database(resolve(dataDir, "db.sqlite"))
-db.pragma("journal_mode = WAL")
-db.pragma("foreign_keys = ON")
+const db = new DatabaseSync(resolve(dataDir, "db.sqlite"))
+db.exec("PRAGMA journal_mode = WAL")
+db.exec("PRAGMA foreign_keys = ON")
 
 db.exec(`CREATE TABLE IF NOT EXISTS cards (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -115,17 +115,24 @@ const numbers: Card[] = Array.from({ length: 100 }, (_, i) => {
 	return [toSpanish(n), String(n)] as Card
 })
 
-const insertMany = db.transaction((cards: Card[], category: string) => {
+const insertMany = (cards: Card[], category: string) => {
 	for (const [front, back] of cards) {
 		insert.run(front, back, category)
 	}
-})
+}
 
-insertMany(greetings, "greeting")
-insertMany(goodbyes, "goodbye")
-insertMany(numbers, "number")
-
-db.close()
+db.exec("BEGIN")
+try {
+	insertMany(greetings, "greeting")
+	insertMany(goodbyes, "goodbye")
+	insertMany(numbers, "number")
+	db.exec("COMMIT")
+} catch (error) {
+	db.exec("ROLLBACK")
+	throw error
+} finally {
+	db.close()
+}
 
 const total = greetings.length + goodbyes.length + numbers.length
 console.log(`✅ Seed complete — ${total} cards inserted (duplicates skipped)`)
