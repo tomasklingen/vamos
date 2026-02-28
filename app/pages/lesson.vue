@@ -21,6 +21,22 @@ const revealed = ref(false)
 const sessionCorrect = ref(0)
 const sessionTotal = ref(0)
 
+const { speak, spanishVoices } = useSpeech()
+const { autoPlay, voiceURI, rate, setAutoPlay, setVoiceURI, setRate } = useAudioSettings()
+
+const audioSettingsOpen = ref(false)
+
+const voiceOptions = computed(() =>
+	spanishVoices.value.map((v) => ({
+		label: `${v.name} (${v.lang})`,
+		value: v.uri,
+	})),
+)
+
+function speakCard(text: string) {
+	speak(text, "es-ES", voiceURI.value, rate.value)
+}
+
 async function recordReview(rating: number) {
 	if (!card.value) return
 	await $fetch("/api/reviews", {
@@ -33,10 +49,19 @@ async function recordReview(rating: number) {
 	await refresh()
 }
 
-const { speak } = useSpeech()
+watch(card, (c) => {
+	if (c && autoPlay.value) {
+		speakCard(c.front)
+	}
+})
 
 function onKeydown(e: KeyboardEvent) {
 	if (!card.value) return
+
+	if (e.key === "p" || e.key === "P") {
+		speakCard(card.value.front)
+		return
+	}
 
 	if (e.code === "Space" && !revealed.value) {
 		e.preventDefault()
@@ -71,8 +96,69 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 					<UIcon name="i-lucide-check-circle" class="text-success" />
 					<span>{{ sessionCorrect }} / {{ sessionTotal }}</span>
 				</div>
+				<UButton
+					icon="i-lucide-settings"
+					color="neutral"
+					variant="ghost"
+					size="sm"
+					:aria-label="t('lesson.audioSettings')"
+					@click="audioSettingsOpen = true"
+				/>
 			</div>
 		</div>
+
+		<!-- Audio settings slideover -->
+		<USlideover v-model:open="audioSettingsOpen" :title="t('lesson.audioSettings')">
+			<template #body>
+				<div class="space-y-6 p-4">
+					<div class="flex items-center justify-between">
+						<div>
+							<p class="font-medium">{{ t("lesson.autoPlay") }}</p>
+							<p class="text-sm text-muted">{{ t("lesson.autoPlayDescription") }}</p>
+						</div>
+						<USwitch :model-value="autoPlay" @update:model-value="setAutoPlay($event)" />
+					</div>
+
+					<div class="space-y-2">
+						<p class="font-medium">{{ t("lesson.voice") }}</p>
+						<p class="text-sm text-muted">{{ t("lesson.voiceDescription") }}</p>
+						<USelect
+							:model-value="voiceURI ?? undefined"
+							:items="voiceOptions"
+							:placeholder="t('lesson.voiceDefault')"
+							class="w-full"
+							@update:model-value="setVoiceURI($event ?? null)"
+						/>
+					</div>
+
+					<div class="space-y-3">
+						<div class="flex items-center justify-between">
+							<p class="font-medium">{{ t("lesson.speechRate") }}</p>
+							<span class="text-sm text-muted tabular-nums">{{ rate.toFixed(2) }}×</span>
+						</div>
+						<USlider
+							:model-value="rate"
+							:min="0.2"
+							:max="1"
+							:step="0.05"
+							@update:model-value="setRate($event)"
+						/>
+						<div class="flex justify-between text-xs text-muted">
+							<span>{{ t("lesson.speechRateSlow") }}</span>
+							<span>{{ t("lesson.speechRateNormal") }}</span>
+							<span>{{ t("lesson.speechRateFast") }}</span>
+						</div>
+					</div>
+
+					<UButton
+						icon="i-lucide-volume-2"
+						variant="outline"
+						:label="t('lesson.testVoice')"
+						@click="speakCard('Hola, ¿cómo estás?')"
+					/>
+				</div>
+			</template>
+		</USlideover>
 
 		<!-- Empty state -->
 		<UCard v-if="!card">
@@ -107,14 +193,16 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 				<div class="text-center py-10 space-y-6 min-h-48">
 					<div class="flex items-center justify-center gap-3">
 						<p class="text-3xl font-bold">{{ card.front }}</p>
-						<UButton
-							icon="i-lucide-volume-2"
-							color="neutral"
-							variant="ghost"
-							size="sm"
-							:aria-label="t('lesson.pronounce')"
-							@click="speak(card.front)"
-						/>
+						<UTooltip :text="t('lesson.pronounce')" :kbds="['P']">
+							<UButton
+								icon="i-lucide-volume-2"
+								color="neutral"
+								variant="ghost"
+								size="sm"
+								:aria-label="t('lesson.pronounce')"
+								@click="speakCard(card.front)"
+							/>
+						</UTooltip>
 					</div>
 
 					<Transition name="fade">
