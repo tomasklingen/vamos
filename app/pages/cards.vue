@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import type { TableColumn } from "@nuxt/ui"
 
-definePageMeta({ title: "Tarjetas" })
+const { t } = useI18n()
+
+useHead(() => ({ title: t("nav.cards") }))
 
 interface Card {
 	id: number
@@ -38,22 +40,22 @@ async function deleteCard(id: number) {
 	await refresh()
 }
 
-const columns: TableColumn<Card>[] = [
-	{ accessorKey: "front", header: "Español" },
-	{ accessorKey: "back", header: "Traducción" },
-	{ accessorKey: "category", header: "Categoría" },
+const columns = computed<TableColumn<Card>[]>(() => [
+	{ accessorKey: "front", header: t("cards.colFront") },
+	{ accessorKey: "back", header: t("cards.colBack") },
+	{ accessorKey: "category", header: t("cards.colCategory") },
 	{ id: "actions", header: "" },
-]
+])
 </script>
 
 <template>
 	<UContainer class="py-10 space-y-8">
 		<div class="flex items-center justify-between">
 			<h1 class="text-2xl font-bold flex items-center gap-2">
-				<UIcon name="i-lucide-layers" /> Tarjetas
+				<UIcon name="i-lucide-layers" /> {{ t("cards.heading") }}
 			</h1>
 			<UBadge
-				:label="`${cards?.length ?? 0} tarjetas`"
+				:label="t('cards.count', { n: cards?.length ?? 0 })"
 				color="primary"
 				variant="subtle"
 				size="lg"
@@ -64,19 +66,19 @@ const columns: TableColumn<Card>[] = [
 		<UCard>
 			<template #header>
 				<p class="font-bold text-lg flex items-center gap-2">
-					<UIcon name="i-lucide-plus-circle" /> Añadir tarjeta
+					<UIcon name="i-lucide-plus-circle" /> {{ t("cards.addCard") }}
 				</p>
 			</template>
 
 			<div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-				<UInput v-model="front" placeholder="Español (ej. Hola)" size="lg" />
-				<UInput v-model="back" placeholder="Traducción (ej. Hello)" size="lg" />
+				<UInput v-model="front" :placeholder="t('cards.frontPlaceholder')" size="lg" />
+				<UInput v-model="back" :placeholder="t('cards.backPlaceholder')" size="lg" />
 				<USelect v-model="category" :items="categories" size="lg" />
 			</div>
 
 			<template #footer>
 				<UButton
-					label="Añadir"
+					:label="t('cards.add')"
 					icon="i-lucide-plus"
 					size="lg"
 					:loading="adding"
@@ -90,12 +92,12 @@ const columns: TableColumn<Card>[] = [
 		<UCard>
 			<template #header>
 				<p class="font-bold text-lg flex items-center gap-2">
-					<UIcon name="i-lucide-table" /> Todas las tarjetas
+					<UIcon name="i-lucide-table" /> {{ t("cards.allCards") }}
 				</p>
 			</template>
 
 			<div v-if="!cards?.length" class="text-center py-10 text-muted">
-				No hay tarjetas todavía. ¡Añade algunas arriba!
+				{{ t("cards.empty") }}
 			</div>
 
 			<UTable v-else :columns="columns" :data="cards">

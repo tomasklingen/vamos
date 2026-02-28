@@ -1,0 +1,50 @@
+{
+	"nav": {
+		"home": "Home",
+		"lesson": "Les",
+		"cards": "Kaarten"
+	},
+	"footer": {
+		"tagline": "🇪🇸 Vamos — jij kan het!"
+	},
+	"home": {
+		"heading": "Vamos!",
+		"subheading": "Jouw persoonlijke Spaans-trainer",
+		"stats": {
+			"cards": "Kaarten",
+			"reviews": "Herhalingen",
+			"accuracy": "Nauwkeurigheid",
+			"streak": "Dagen reeks"
+		},
+		"startPractice": "Begin met oefenen!",
+		"nextCard": "Volgende kaart",
+		"practiceNow": "Nu oefenen",
+		"noCards": "Nog geen kaarten.",
+		"addCards": "Kaarten toevoegen"
+	},
+	"lesson": {
+		"heading": "Oefenen",
+		"spanish": "Spaans",
+		"translation": "Vertaling",
+		"showAnswer": "Toon antwoord",
+		"knew": "Ik wist het",
+		"didntKnow": "Ik wist het niet",
+		"pronounce": "Uitspreken",
+		"allDone": "Alles herhaald!",
+		"noMoreCards": "Geen kaarten meer voor nu.",
+		"addMoreCards": "Meer kaarten toevoegen"
+	},
+	"cards": {
+		"heading": "Kaarten",
+		"count": "{n} kaarten",
+		"addCard": "Kaart toevoegen",
+		"frontPlaceholder": "Spaans (bijv. Hola)",
+		"backPlaceholder": "Vertaling (bijv. Hallo)",
+		"add": "Toevoegen",
+		"allCards": "Alle kaarten",
+		"colFront": "Spaans",
+		"colBack": "Vertaling",
+		"colCategory": "Categorie",
+		"empty": "Nog geen kaarten. Voeg er hierboven een toe!"
+	}
+}

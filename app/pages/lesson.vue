@@ -1,5 +1,7 @@
 <script setup lang="ts">
-definePageMeta({ title: "Lección" })
+const { t } = useI18n()
+
+useHead(() => ({ title: t("nav.lesson") }))
 
 interface Card {
 	id: number
@@ -32,7 +34,7 @@ const { speak } = useSpeech()
 	<UContainer class="py-10 max-w-xl space-y-6">
 		<div class="flex items-center justify-between">
 			<h1 class="text-2xl font-bold flex items-center gap-2">
-				<UIcon name="i-lucide-book-open" /> Práctica
+				<UIcon name="i-lucide-book-open" /> {{ t("lesson.heading") }}
 			</h1>
 			<div class="flex items-center gap-2 text-sm text-muted">
 				<UIcon name="i-lucide-check-circle" class="text-success" />
@@ -44,9 +46,9 @@ const { speak } = useSpeech()
 		<UCard v-if="!card">
 			<div class="text-center py-10 space-y-4">
 				<UIcon name="i-lucide-party-popper" class="text-5xl text-success mx-auto" />
-				<p class="text-xl font-bold">¡Todo repasado!</p>
-				<p class="text-muted">No hay más tarjetas por ahora.</p>
-				<UButton to="/cards" label="Añadir más tarjetas" icon="i-lucide-plus" />
+				<p class="text-xl font-bold">{{ t("lesson.allDone") }}</p>
+				<p class="text-muted">{{ t("lesson.noMoreCards") }}</p>
+				<UButton to="/cards" :label="t('lesson.addMoreCards')" icon="i-lucide-plus" />
 			</div>
 		</UCard>
 
@@ -55,7 +57,9 @@ const { speak } = useSpeech()
 			<UCard>
 				<template #header>
 					<div class="flex items-center justify-between">
-						<p class="text-sm text-muted font-semibold uppercase tracking-widest">Español</p>
+						<p class="text-sm text-muted font-semibold uppercase tracking-widest">
+							{{ t("lesson.spanish") }}
+						</p>
 						<UBadge :label="card.category" color="primary" variant="subtle" size="sm" />
 					</div>
 				</template>
@@ -68,14 +72,16 @@ const { speak } = useSpeech()
 							color="neutral"
 							variant="ghost"
 							size="sm"
-							aria-label="Pronunciar"
+							:aria-label="t('lesson.pronounce')"
 							@click="speak(card.front)"
 						/>
 					</div>
 
 					<Transition name="fade">
 						<div v-if="revealed" class="space-y-2">
-							<p class="text-muted text-sm uppercase tracking-widest">Traducción</p>
+							<p class="text-muted text-sm uppercase tracking-widest">
+								{{ t("lesson.translation") }}
+							</p>
 							<p class="text-2xl font-semibold text-secondary">{{ card.back }}</p>
 						</div>
 					</Transition>
@@ -84,7 +90,7 @@ const { speak } = useSpeech()
 				<template #footer>
 					<div v-if="!revealed">
 						<UButton
-							label="Mostrar respuesta"
+							:label="t('lesson.showAnswer')"
 							icon="i-lucide-eye"
 							size="lg"
 							variant="outline"
@@ -94,7 +100,7 @@ const { speak } = useSpeech()
 					</div>
 					<div v-else class="grid grid-cols-2 gap-3">
 						<UButton
-							label="Lo sabía"
+							:label="t('lesson.knew')"
 							icon="i-lucide-check"
 							size="lg"
 							color="success"
@@ -102,7 +108,7 @@ const { speak } = useSpeech()
 							@click="recordReview(true)"
 						/>
 						<UButton
-							label="No lo sabía"
+							:label="t('lesson.didntKnow')"
 							icon="i-lucide-x"
 							size="lg"
 							color="error"

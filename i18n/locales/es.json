@@ -1,0 +1,50 @@
+{
+	"nav": {
+		"home": "Inicio",
+		"lesson": "Lección",
+		"cards": "Tarjetas"
+	},
+	"footer": {
+		"tagline": "🇪🇸 Vamos — ¡tú puedes!"
+	},
+	"home": {
+		"heading": "¡Vamos!",
+		"subheading": "Tu entrenador de español personal",
+		"stats": {
+			"cards": "Tarjetas",
+			"reviews": "Repasos",
+			"accuracy": "Precisión",
+			"streak": "Racha días"
+		},
+		"startPractice": "¡Empezar a practicar!",
+		"nextCard": "Próxima tarjeta",
+		"practiceNow": "Practicar ahora",
+		"noCards": "No hay tarjetas todavía.",
+		"addCards": "Añadir tarjetas"
+	},
+	"lesson": {
+		"heading": "Práctica",
+		"spanish": "Español",
+		"translation": "Traducción",
+		"showAnswer": "Mostrar respuesta",
+		"knew": "Lo sabía",
+		"didntKnow": "No lo sabía",
+		"pronounce": "Pronunciar",
+		"allDone": "¡Todo repasado!",
+		"noMoreCards": "No hay más tarjetas por ahora.",
+		"addMoreCards": "Añadir más tarjetas"
+	},
+	"cards": {
+		"heading": "Tarjetas",
+		"count": "{n} tarjetas",
+		"addCard": "Añadir tarjeta",
+		"frontPlaceholder": "Español (ej. Hola)",
+		"backPlaceholder": "Traducción (ej. Hello)",
+		"add": "Añadir",
+		"allCards": "Todas las tarjetas",
+		"colFront": "Español",
+		"colBack": "Traducción",
+		"colCategory": "Categoría",
+		"empty": "No hay tarjetas todavía. ¡Añade algunas arriba!"
+	}
+}
