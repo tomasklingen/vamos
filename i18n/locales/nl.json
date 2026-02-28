@@ -62,6 +62,7 @@
 		"colFront": "Spaans",
 		"colBack": "Vertaling",
 		"colCategory": "Categorie",
-		"empty": "Nog geen kaarten. Voeg er hierboven een toe!"
+		"empty": "Nog geen kaarten. Voeg er hierboven een toe!",
+		"deleteCard": "Kaart verwijderen"
 	}
 }

@@ -2,6 +2,8 @@
 import type { TableColumn } from "@nuxt/ui"
 
 const { t } = useI18n()
+const { speak } = useSpeech()
+const { voiceURI, rate } = useAudioSettings()
 
 useHead(() => ({ title: t("nav.cards") }))
 
@@ -40,8 +42,13 @@ async function deleteCard(id: number) {
 	await refresh()
 }
 
+function speakCard(text: string) {
+	speak(text, "es-ES", voiceURI.value, rate.value)
+}
+
 const columns = computed<TableColumn<Card>[]>(() => [
 	{ accessorKey: "front", header: t("cards.colFront") },
+	{ id: "speak", header: "" },
 	{ accessorKey: "back", header: t("cards.colBack") },
 	{ accessorKey: "category", header: t("cards.colCategory") },
 	{ id: "actions", header: "" },
@@ -101,6 +108,18 @@ const columns = computed<TableColumn<Card>[]>(() => [
 			</div>
 
 			<UTable v-else :columns="columns" :data="cards">
+				<template #speak-cell="{ row }">
+					<UTooltip :text="t('lesson.pronounce')">
+						<UButton
+							icon="i-lucide-volume-2"
+							color="neutral"
+							variant="ghost"
+							size="sm"
+							:aria-label="t('lesson.pronounce')"
+							@click="speakCard(row.original.front)"
+						/>
+					</UTooltip>
+				</template>
 				<template #category-cell="{ row }">
 					<UBadge :label="row.original.category" color="neutral" variant="subtle" size="sm" />
 				</template>
@@ -110,6 +129,7 @@ const columns = computed<TableColumn<Card>[]>(() => [
 						color="error"
 						variant="ghost"
 						size="sm"
+						:aria-label="t('cards.deleteCard')"
 						@click="deleteCard(row.original.id)"
 					/>
 				</template>

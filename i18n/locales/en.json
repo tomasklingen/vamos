@@ -62,6 +62,7 @@
 		"colFront": "Spanish",
 		"colBack": "Translation",
 		"colCategory": "Category",
+		"deleteCard": "Delete card",
 		"empty": "No cards yet. Add some above!"
 	}
 }

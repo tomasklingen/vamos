@@ -62,6 +62,7 @@
 		"colFront": "Español",
 		"colBack": "Traducción",
 		"colCategory": "Categoría",
-		"empty": "No hay tarjetas todavía. ¡Añade algunas arriba!"
+		"empty": "No hay tarjetas todavía. ¡Añade algunas arriba!",
+		"deleteCard": "Eliminar tarjeta"
 	}
 }
