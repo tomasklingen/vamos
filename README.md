@@ -1,8 +1,8 @@
-# 🇪🇸 Vamos
+# Vamos
 
-A two-player Spanish learning app. Track XP, streaks, and compete on the leaderboard.
+A Spanish vocabulary learning app with spaced repetition. Review flashcards using the FSRS algorithm — cards are scheduled based on your performance (Again / Hard / Good / Easy).
 
-Built with Nuxt 4 + Nuxt UI.
+Built with Nuxt 4 + Nuxt UI. Supports EN, ES, and NL UI languages.
 
 ## Run
 
@@ -12,4 +12,10 @@ npm run dev      # http://localhost:3000
 npm run build
 npm run typecheck
 npm test
+```
+
+## Seed
+
+```bash
+npm run db:seed
 ```
