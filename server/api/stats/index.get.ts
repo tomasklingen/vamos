@@ -2,7 +2,8 @@ export default defineEventHandler(async () => {
 	const db = useDatabase()
 
 	const cardsResult = await db.sql`SELECT COUNT(*) AS total FROM cards`
-	const reviewsResult = await db.sql`SELECT COUNT(*) AS total, SUM(correct) AS correct FROM reviews`
+	const reviewsResult =
+		await db.sql`SELECT COUNT(*) AS total, SUM(CASE WHEN rating >= 3 THEN 1 ELSE 0 END) AS correct FROM reviews`
 	const datesResult = await db.sql`
 		SELECT DISTINCT date(reviewed_at) AS day
 		FROM reviews
