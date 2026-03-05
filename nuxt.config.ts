@@ -21,12 +21,14 @@ export default defineNuxtConfig({
 	},
 	css: ["~/assets/css/main.css"],
 	nitro: {
+		preset: "cloudflare-pages",
 		experimental: {
 			database: true,
 		},
 		database: {
 			default: {
-				connector: "sqlite",
+				connector: "cloudflare-d1",
+				options: { bindingName: "DB" },
 			},
 		},
 	},

@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "vamos",
+  "compatibility_date": "2025-07-15",
+  "pages_build_output_dir": ".output/public",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "vamos",
+      "database_id": "06aa6032-2116-45ea-a397-48a1646e0e24",
+    },
+  ],
+}

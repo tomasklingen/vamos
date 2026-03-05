@@ -17,7 +17,7 @@
 		"typecheck": "nuxi typecheck",
 		"db:seed": "node scripts/seed.ts",
 		"db:seed:remote": "node scripts/seed.ts --remote",
-		"deploy": "nuxt build && wrangler pages deploy",
+		"deploy": "nuxt build && npx wrangler pages deploy dist",
 		"prepare": "husky"
 	},
 	"dependencies": {
