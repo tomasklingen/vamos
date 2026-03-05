@@ -11,36 +11,21 @@ interface Card {
 	id: number
 	front: string
 	back: string
-	category: string
 	created_at: string
+	labels: string[]
 }
 
-const { data: cards, refresh } = await useFetch<Card[]>("/api/cards")
+const { data: allLabels } = await useFetch<string[]>("/api/labels")
+const selectedLabel = ref<string | undefined>(undefined)
 
-const front = ref("")
-const back = ref("")
-const category = ref("custom")
-const adding = ref(false)
+const { data: cards } = await useFetch<Card[]>("/api/cards", {
+	query: computed(() => (selectedLabel.value ? { label: selectedLabel.value } : {})),
+})
 
-const categories = ["custom", "greeting", "goodbye", "number"]
-
-async function addCard() {
-	if (!front.value.trim() || !back.value.trim()) return
-	adding.value = true
-	await $fetch("/api/cards", {
-		method: "POST",
-		body: { front: front.value, back: back.value, category: category.value },
-	})
-	front.value = ""
-	back.value = ""
-	adding.value = false
-	await refresh()
-}
-
-async function deleteCard(id: number) {
-	await $fetch(`/api/cards/${id}`, { method: "DELETE" })
-	await refresh()
-}
+const labelItems = computed(() => [
+	{ label: t("cards.allLabels"), value: undefined },
+	...(allLabels.value ?? []).map((l) => ({ label: l, value: l })),
+])
 
 function speakCard(text: string) {
 	speak(text, "es-ES", voiceURI.value, rate.value)
@@ -50,8 +35,7 @@ const columns = computed<TableColumn<Card>[]>(() => [
 	{ accessorKey: "front", header: t("cards.colFront") },
 	{ id: "speak", header: "" },
 	{ accessorKey: "back", header: t("cards.colBack") },
-	{ accessorKey: "category", header: t("cards.colCategory") },
-	{ id: "actions", header: "" },
+	{ id: "labels", header: t("cards.colLabels") },
 ])
 </script>
 
@@ -69,31 +53,8 @@ const columns = computed<TableColumn<Card>[]>(() => [
 			/>
 		</div>
 
-		<!-- Add card form -->
-		<UCard>
-			<template #header>
-				<p class="font-bold text-lg flex items-center gap-2">
-					<UIcon name="i-lucide-plus-circle" /> {{ t("cards.addCard") }}
-				</p>
-			</template>
-
-			<div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-				<UInput v-model="front" :placeholder="t('cards.frontPlaceholder')" size="lg" />
-				<UInput v-model="back" :placeholder="t('cards.backPlaceholder')" size="lg" />
-				<USelect v-model="category" :items="categories" size="lg" />
-			</div>
-
-			<template #footer>
-				<UButton
-					:label="t('cards.add')"
-					icon="i-lucide-plus"
-					size="lg"
-					:loading="adding"
-					:disabled="!front.trim() || !back.trim()"
-					@click="addCard"
-				/>
-			</template>
-		</UCard>
+		<!-- Label filter -->
+		<USelect v-model="selectedLabel" :items="labelItems" value-key="value" class="w-48" />
 
 		<!-- Cards table -->
 		<UCard>
@@ -120,18 +81,17 @@ const columns = computed<TableColumn<Card>[]>(() => [
 						/>
 					</UTooltip>
 				</template>
-				<template #category-cell="{ row }">
-					<UBadge :label="row.original.category" color="neutral" variant="subtle" size="sm" />
-				</template>
-				<template #actions-cell="{ row }">
-					<UButton
-						icon="i-lucide-trash-2"
-						color="error"
-						variant="ghost"
-						size="sm"
-						:aria-label="t('cards.deleteCard')"
-						@click="deleteCard(row.original.id)"
-					/>
+				<template #labels-cell="{ row }">
+					<div class="flex gap-1 flex-wrap">
+						<UBadge
+							v-for="label in row.original.labels"
+							:key="label"
+							:label="label"
+							color="neutral"
+							variant="subtle"
+							size="sm"
+						/>
+					</div>
 				</template>
 			</UTable>
 		</UCard>

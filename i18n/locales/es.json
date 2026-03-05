@@ -19,8 +19,8 @@
 		"startPractice": "¡Empezar a practicar!",
 		"nextCard": "Próxima tarjeta",
 		"practiceNow": "Practicar ahora",
-		"noCards": "No hay tarjetas todavía.",
-		"addCards": "Añadir tarjetas"
+		"noCards": "No hay tarjetas pendientes ahora.",
+		"cardsDue": "tarjetas pendientes"
 	},
 	"lesson": {
 		"heading": "Práctica",
@@ -48,21 +48,16 @@
 		"stateReview": "Repaso",
 		"stateRelearning": "Reaprendiendo",
 		"allDone": "¡Todo repasado!",
-		"noMoreCards": "No hay más tarjetas por ahora.",
-		"addMoreCards": "Añadir más tarjetas"
+		"noMoreCards": "No hay más tarjetas por ahora. ¡Vuelve más tarde!"
 	},
 	"cards": {
 		"heading": "Tarjetas",
 		"count": "{n} tarjetas",
-		"addCard": "Añadir tarjeta",
-		"frontPlaceholder": "Español (ej. Hola)",
-		"backPlaceholder": "Traducción (ej. Hello)",
-		"add": "Añadir",
 		"allCards": "Todas las tarjetas",
 		"colFront": "Español",
 		"colBack": "Traducción",
-		"colCategory": "Categoría",
-		"empty": "No hay tarjetas todavía. ¡Añade algunas arriba!",
-		"deleteCard": "Eliminar tarjeta"
+		"colLabels": "Etiquetas",
+		"allLabels": "Todas las etiquetas",
+		"empty": "No se encontraron tarjetas."
 	}
 }

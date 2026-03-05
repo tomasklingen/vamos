@@ -1,43 +1,9 @@
-import { mkdirSync } from "node:fs"
+import { execSync } from "node:child_process"
+import { mkdirSync, writeFileSync } from "node:fs"
 import { dirname, resolve } from "node:path"
-import { DatabaseSync } from "node:sqlite"
 import { fileURLToPath } from "node:url"
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const dataDir = resolve(__dirname, "../.data")
-mkdirSync(dataDir, { recursive: true })
-
-const db = new DatabaseSync(resolve(dataDir, "db.sqlite"))
-db.exec("PRAGMA journal_mode = WAL")
-db.exec("PRAGMA foreign_keys = ON")
-
-db.exec(`CREATE TABLE IF NOT EXISTS cards (
-	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	front TEXT NOT NULL,
-	back TEXT NOT NULL,
-	category TEXT NOT NULL DEFAULT 'custom',
-	created_at TEXT NOT NULL DEFAULT (datetime('now')),
-	due TEXT NOT NULL DEFAULT (datetime('now')),
-	stability REAL NOT NULL DEFAULT 0,
-	difficulty REAL NOT NULL DEFAULT 0,
-	elapsed_days INTEGER NOT NULL DEFAULT 0,
-	scheduled_days INTEGER NOT NULL DEFAULT 0,
-	learning_steps INTEGER NOT NULL DEFAULT 0,
-	reps INTEGER NOT NULL DEFAULT 0,
-	lapses INTEGER NOT NULL DEFAULT 0,
-	state INTEGER NOT NULL DEFAULT 0,
-	last_review TEXT,
-	UNIQUE(front, category)
-)`)
-
-db.exec(`CREATE TABLE IF NOT EXISTS reviews (
-	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	card_id INTEGER NOT NULL REFERENCES cards(id) ON DELETE CASCADE,
-	rating INTEGER NOT NULL,
-	reviewed_at TEXT NOT NULL DEFAULT (datetime('now'))
-)`)
-
-const insert = db.prepare("INSERT OR IGNORE INTO cards (front, back, category) VALUES (?, ?, ?)")
 
 type Card = [string, string]
 
@@ -115,24 +81,60 @@ const numbers: Card[] = Array.from({ length: 100 }, (_, i) => {
 	return [toSpanish(n), String(n)] as Card
 })
 
-const insertMany = (cards: Card[], category: string) => {
-	for (const [front, back] of cards) {
-		insert.run(front, back, category)
-	}
+function esc(s: string): string {
+	return s.replace(/'/g, "''")
 }
 
-db.exec("BEGIN")
-try {
-	insertMany(greetings, "greeting")
-	insertMany(goodbyes, "goodbye")
-	insertMany(numbers, "number")
-	db.exec("COMMIT")
-} catch (error) {
-	db.exec("ROLLBACK")
-	throw error
-} finally {
-	db.close()
+function cardInserts(cards: Card[], label: string): string {
+	return cards
+		.map(
+			([
+				front,
+				back,
+			]) => `INSERT OR IGNORE INTO cards (front, back) VALUES ('${esc(front)}', '${esc(back)}');
+INSERT OR IGNORE INTO card_labels (card_id, label_id)
+  SELECT c.id, l.id FROM cards c, labels l
+  WHERE c.front = '${esc(front)}' AND c.back = '${esc(back)}' AND l.name = '${label}';`,
+		)
+		.join("\n")
 }
+
+const sql = `-- Auto-generated seed file — do not edit manually
+CREATE TABLE IF NOT EXISTS cards (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  front TEXT NOT NULL,
+  back TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  UNIQUE(front, back)
+);
+
+CREATE TABLE IF NOT EXISTS labels (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT UNIQUE NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS card_labels (
+  card_id INTEGER NOT NULL REFERENCES cards(id) ON DELETE CASCADE,
+  label_id INTEGER NOT NULL REFERENCES labels(id) ON DELETE CASCADE,
+  PRIMARY KEY(card_id, label_id)
+);
+
+INSERT OR IGNORE INTO labels (name) VALUES ('greeting'), ('goodbye'), ('number');
+
+${cardInserts(greetings, "greeting")}
+
+${cardInserts(goodbyes, "goodbye")}
+
+${cardInserts(numbers, "number")}
+`
+
+const sqlPath = resolve(__dirname, "seed.sql")
+mkdirSync(dirname(sqlPath), { recursive: true })
+writeFileSync(sqlPath, sql)
+
+const isRemote = process.argv.includes("--remote")
+const flag = isRemote ? "--remote" : "--local"
+execSync(`wrangler d1 execute vamos ${flag} --file="${sqlPath}"`, { stdio: "inherit" })
 
 const total = greetings.length + goodbyes.length + numbers.length
-console.log(`✅ Seed complete — ${total} cards inserted (duplicates skipped)`)
+console.log(`✅ Seed complete — ${total} cards seeded (${isRemote ? "remote" : "local"})`)

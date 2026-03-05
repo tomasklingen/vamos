@@ -19,8 +19,8 @@
 		"startPractice": "Start practising!",
 		"nextCard": "Next card",
 		"practiceNow": "Practise now",
-		"noCards": "No cards yet.",
-		"addCards": "Add cards"
+		"noCards": "No cards due right now.",
+		"cardsDue": "cards due"
 	},
 	"lesson": {
 		"heading": "Practice",
@@ -48,21 +48,16 @@
 		"stateReview": "Review",
 		"stateRelearning": "Relearning",
 		"allDone": "All done!",
-		"noMoreCards": "No more cards for now.",
-		"addMoreCards": "Add more cards"
+		"noMoreCards": "No more cards for now. Check back later!"
 	},
 	"cards": {
 		"heading": "Cards",
 		"count": "{n} cards",
-		"addCard": "Add card",
-		"frontPlaceholder": "Spanish (e.g. Hola)",
-		"backPlaceholder": "Translation (e.g. Hello)",
-		"add": "Add",
 		"allCards": "All cards",
 		"colFront": "Spanish",
 		"colBack": "Translation",
-		"colCategory": "Category",
-		"deleteCard": "Delete card",
-		"empty": "No cards yet. Add some above!"
+		"colLabels": "Labels",
+		"allLabels": "All labels",
+		"empty": "No cards found."
 	}
 }

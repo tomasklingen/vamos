@@ -3,7 +3,7 @@ import { mountSuspended } from "@nuxt/test-utils/runtime"
 import { defineComponent, h } from "vue"
 import { useI18n } from "#i18n"
 
-function makeNavComponent(targetLocale?: string) {
+function makeNavComponent(targetLocale?: "es" | "en" | "nl") {
 	return defineComponent({
 		async setup() {
 			const { locale, setLocale, t } = useI18n()

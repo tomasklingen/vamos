@@ -1,31 +1,17 @@
-export async function ensureTables() {
+export async function getLabelsForCards(): Promise<Map<number, string[]>> {
 	const db = useDatabase()
-
-	await db.sql`CREATE TABLE IF NOT EXISTS cards (
-		id INTEGER PRIMARY KEY AUTOINCREMENT,
-		front TEXT NOT NULL,
-		back TEXT NOT NULL,
-		category TEXT NOT NULL DEFAULT 'custom',
-		created_at TEXT NOT NULL DEFAULT (datetime('now')),
-		due TEXT NOT NULL DEFAULT (datetime('now')),
-		stability REAL NOT NULL DEFAULT 0,
-		difficulty REAL NOT NULL DEFAULT 0,
-		elapsed_days INTEGER NOT NULL DEFAULT 0,
-		scheduled_days INTEGER NOT NULL DEFAULT 0,
-		learning_steps INTEGER NOT NULL DEFAULT 0,
-		reps INTEGER NOT NULL DEFAULT 0,
-		lapses INTEGER NOT NULL DEFAULT 0,
-		state INTEGER NOT NULL DEFAULT 0,
-		last_review TEXT,
-		UNIQUE(front, category)
-	)`
-
-	await db.sql`CREATE TABLE IF NOT EXISTS reviews (
-		id INTEGER PRIMARY KEY AUTOINCREMENT,
-		card_id INTEGER NOT NULL REFERENCES cards(id) ON DELETE CASCADE,
-		rating INTEGER NOT NULL,
-		reviewed_at TEXT NOT NULL DEFAULT (datetime('now'))
-	)`
-
-	return db
+	const result = await db.sql`
+		SELECT cl.card_id, l.name
+		FROM card_labels cl
+		JOIN labels l ON l.id = cl.label_id
+		ORDER BY cl.card_id, l.name
+	`
+	const map = new Map<number, string[]>()
+	for (const row of result.rows ?? []) {
+		const r = row as { card_id: number; name: string }
+		const labels = map.get(r.card_id) ?? []
+		labels.push(r.name)
+		map.set(r.card_id, labels)
+	}
+	return map
 }

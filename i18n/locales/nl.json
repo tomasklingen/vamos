@@ -19,8 +19,8 @@
 		"startPractice": "Begin met oefenen!",
 		"nextCard": "Volgende kaart",
 		"practiceNow": "Nu oefenen",
-		"noCards": "Nog geen kaarten.",
-		"addCards": "Kaarten toevoegen"
+		"noCards": "Geen kaarten nu beschikbaar.",
+		"cardsDue": "kaarten beschikbaar"
 	},
 	"lesson": {
 		"heading": "Oefenen",
@@ -48,21 +48,16 @@
 		"stateReview": "Herhaling",
 		"stateRelearning": "Herleren",
 		"allDone": "Alles herhaald!",
-		"noMoreCards": "Geen kaarten meer voor nu.",
-		"addMoreCards": "Meer kaarten toevoegen"
+		"noMoreCards": "Geen kaarten meer voor nu. Kom later terug!"
 	},
 	"cards": {
 		"heading": "Kaarten",
 		"count": "{n} kaarten",
-		"addCard": "Kaart toevoegen",
-		"frontPlaceholder": "Spaans (bijv. Hola)",
-		"backPlaceholder": "Vertaling (bijv. Hallo)",
-		"add": "Toevoegen",
 		"allCards": "Alle kaarten",
 		"colFront": "Spaans",
 		"colBack": "Vertaling",
-		"colCategory": "Categorie",
-		"empty": "Nog geen kaarten. Voeg er hierboven een toe!",
-		"deleteCard": "Kaart verwijderen"
+		"colLabels": "Labels",
+		"allLabels": "Alle labels",
+		"empty": "Geen kaarten gevonden."
 	}
 }
