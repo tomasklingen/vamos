@@ -3,20 +3,10 @@ const { t } = useI18n()
 
 useHead(() => ({ title: t("nav.lesson") }))
 
-interface CardResponse {
-	id: number
-	front: string
-	back: string
-	category: string
-	state: number
-	intervals: { again: string; hard: string; good: string; easy: string }
-	dueCount: number
-}
-
 const stateLabels = ["stateNew", "stateLearning", "stateReview", "stateRelearning"] as const
 const stateColors = ["info", "warning", "success", "error"] as const
 
-const { data: card, refresh } = await useFetch<CardResponse | null>("/api/cards/next")
+const { nextCard, dueCount, status, submitReview } = useLesson()
 const revealed = ref(false)
 const sessionCorrect = ref(0)
 const sessionTotal = ref(0)
@@ -38,28 +28,24 @@ function speakCard(text: string) {
 }
 
 async function recordReview(rating: number) {
-	if (!card.value) return
-	await $fetch("/api/reviews", {
-		method: "POST",
-		body: { cardId: card.value.id, rating },
-	})
+	if (!nextCard.value) return
+	await submitReview(nextCard.value.id, rating)
 	sessionTotal.value++
 	if (rating >= 3) sessionCorrect.value++
 	revealed.value = false
-	await refresh()
 }
 
-watch(card, (c) => {
+watch(nextCard, (c) => {
 	if (c && autoPlay.value) {
 		speakCard(c.front)
 	}
 })
 
 function onKeydown(e: KeyboardEvent) {
-	if (!card.value) return
+	if (!nextCard.value) return
 
 	if (e.key === "p" || e.key === "P") {
-		speakCard(card.value.front)
+		speakCard(nextCard.value.front)
 		return
 	}
 
@@ -88,9 +74,9 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 				<UIcon name="i-lucide-book-open" /> {{ t("lesson.heading") }}
 			</h1>
 			<div class="flex items-center gap-4 text-sm text-muted">
-				<div v-if="card" class="flex items-center gap-1">
+				<div v-if="nextCard" class="flex items-center gap-1">
 					<UIcon name="i-lucide-layers" />
-					<span>{{ card.dueCount }}</span>
+					<span>{{ dueCount }}</span>
 				</div>
 				<div class="flex items-center gap-1">
 					<UIcon name="i-lucide-check-circle" class="text-success" />
@@ -141,7 +127,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 							:min="0.2"
 							:max="1"
 							:step="0.05"
-							@update:model-value="setRate($event)"
+							@update:model-value="setRate($event ?? rate)"
 						/>
 						<div class="flex justify-between text-xs text-muted">
 							<span>{{ t("lesson.speechRateSlow") }}</span>
@@ -160,13 +146,20 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 			</template>
 		</USlideover>
 
+		<!-- Loading state -->
+		<UCard v-if="status === 'pending'">
+			<div class="text-center py-10">
+				<UIcon name="i-lucide-loader-2" class="text-4xl text-muted mx-auto animate-spin" />
+			</div>
+		</UCard>
+
 		<!-- Empty state -->
-		<UCard v-if="!card">
+		<UCard v-else-if="!nextCard">
 			<div class="text-center py-10 space-y-4">
 				<UIcon name="i-lucide-party-popper" class="text-5xl text-success mx-auto" />
 				<p class="text-xl font-bold">{{ t("lesson.allDone") }}</p>
 				<p class="text-muted">{{ t("lesson.noMoreCards") }}</p>
-				<UButton to="/cards" :label="t('lesson.addMoreCards')" icon="i-lucide-plus" />
+				<UButton to="/" :label="t('nav.home')" icon="i-lucide-home" variant="outline" />
 			</div>
 		</UCard>
 
@@ -178,21 +171,28 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 						<p class="text-sm text-muted font-semibold uppercase tracking-widest">
 							{{ t("lesson.spanish") }}
 						</p>
-						<div class="flex items-center gap-2">
+						<div class="flex items-center gap-2 flex-wrap justify-end">
 							<UBadge
-								:label="t(`lesson.${stateLabels[card.state]}`)"
-								:color="stateColors[card.state]"
+								:label="t(`lesson.${stateLabels[nextCard.state] ?? 'stateNew'}`)"
+								:color="stateColors[nextCard.state] ?? 'info'"
 								variant="subtle"
 								size="sm"
 							/>
-							<UBadge :label="card.category" color="primary" variant="subtle" size="sm" />
+							<UBadge
+								v-for="label in nextCard.labels"
+								:key="label"
+								:label="label"
+								color="primary"
+								variant="subtle"
+								size="sm"
+							/>
 						</div>
 					</div>
 				</template>
 
 				<div class="text-center py-10 space-y-6 min-h-48">
 					<div class="flex items-center justify-center gap-3">
-						<p class="text-3xl font-bold">{{ card.front }}</p>
+						<p class="text-3xl font-bold">{{ nextCard.front }}</p>
 						<UTooltip :text="t('lesson.pronounce')" :kbds="['P']">
 							<UButton
 								icon="i-lucide-volume-2"
@@ -200,7 +200,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 								variant="ghost"
 								size="sm"
 								:aria-label="t('lesson.pronounce')"
-								@click="speakCard(card.front)"
+								@click="speakCard(nextCard.front)"
 							/>
 						</UTooltip>
 					</div>
@@ -210,7 +210,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 							<p class="text-muted text-sm uppercase tracking-widest">
 								{{ t("lesson.translation") }}
 							</p>
-							<p class="text-2xl font-semibold text-secondary">{{ card.back }}</p>
+							<p class="text-2xl font-semibold text-secondary">{{ nextCard.back }}</p>
 						</div>
 					</Transition>
 				</div>
@@ -224,10 +224,10 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 					</div>
 					<div v-else class="space-y-1">
 						<div class="grid grid-cols-4 gap-2 text-center text-xs text-muted">
-							<span>{{ card.intervals.again }}</span>
-							<span>{{ card.intervals.hard }}</span>
-							<span>{{ card.intervals.good }}</span>
-							<span>{{ card.intervals.easy }}</span>
+							<span>{{ nextCard.intervals.again }}</span>
+							<span>{{ nextCard.intervals.hard }}</span>
+							<span>{{ nextCard.intervals.good }}</span>
+							<span>{{ nextCard.intervals.easy }}</span>
 						</div>
 						<div class="grid grid-cols-4 gap-2">
 							<UButton size="lg" color="error" block @click="recordReview(1)">

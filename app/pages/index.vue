@@ -3,8 +3,8 @@ const { t } = useI18n()
 
 useHead(() => ({ title: t("nav.home") }))
 
-const { data: stats } = await useFetch("/api/stats")
-const { data: nextCard } = await useFetch("/api/cards/next")
+const { totalCards, totalReviews, accuracy, streak } = useStats()
+const { nextCard, dueCount } = useLesson()
 </script>
 
 <template>
@@ -17,28 +17,33 @@ const { data: nextCard } = await useFetch("/api/cards/next")
 		<!-- Stats -->
 		<div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
 			<UCard class="text-center">
-				<p class="text-3xl font-bold text-primary">{{ stats?.totalCards ?? 0 }}</p>
+				<p class="text-3xl font-bold text-primary">{{ totalCards }}</p>
 				<p class="text-sm text-muted mt-1">{{ t("home.stats.cards") }}</p>
 			</UCard>
 			<UCard class="text-center">
-				<p class="text-3xl font-bold text-secondary">{{ stats?.totalReviews ?? 0 }}</p>
+				<p class="text-3xl font-bold text-secondary">{{ totalReviews }}</p>
 				<p class="text-sm text-muted mt-1">{{ t("home.stats.reviews") }}</p>
 			</UCard>
 			<UCard class="text-center">
-				<p class="text-3xl font-bold text-success">{{ stats?.accuracy ?? 0 }}%</p>
+				<p class="text-3xl font-bold text-success">{{ accuracy }}%</p>
 				<p class="text-sm text-muted mt-1">{{ t("home.stats.accuracy") }}</p>
 			</UCard>
 			<UCard class="text-center">
 				<div class="flex items-center justify-center gap-1">
 					<UIcon name="i-lucide-flame" class="text-warning text-2xl" />
-					<p class="text-3xl font-bold text-warning">{{ stats?.streak ?? 0 }}</p>
+					<p class="text-3xl font-bold text-warning">{{ streak }}</p>
 				</div>
 				<p class="text-sm text-muted mt-1">{{ t("home.stats.streak") }}</p>
 			</UCard>
 		</div>
 
 		<!-- Start practice -->
-		<UButton to="/lesson" :label="t('home.startPractice')" icon="i-lucide-play" size="xl" block />
+		<div class="space-y-2">
+			<UButton to="/lesson" :label="t('home.startPractice')" icon="i-lucide-play" size="xl" block />
+			<p v-if="dueCount > 0" class="text-center text-sm text-muted">
+				{{ dueCount }} {{ t("home.cardsDue") }}
+			</p>
+		</div>
 
 		<!-- Next card preview -->
 		<UCard v-if="nextCard" class="border-2 border-dashed border-primary/40">
@@ -49,7 +54,15 @@ const { data: nextCard } = await useFetch("/api/cards/next")
 			</template>
 			<div class="text-center py-6 space-y-3">
 				<p class="text-3xl font-bold">{{ nextCard.front }}</p>
-				<UBadge :label="String(nextCard.category)" color="primary" variant="subtle" />
+				<div class="flex gap-1 justify-center flex-wrap">
+					<UBadge
+						v-for="label in nextCard.labels"
+						:key="label"
+						:label="label"
+						color="primary"
+						variant="subtle"
+					/>
+				</div>
 			</div>
 			<template #footer>
 				<UButton
@@ -67,7 +80,6 @@ const { data: nextCard } = await useFetch("/api/cards/next")
 			<div class="text-center py-6 space-y-3">
 				<UIcon name="i-lucide-inbox" class="text-4xl text-muted mx-auto" />
 				<p class="text-muted">{{ t("home.noCards") }}</p>
-				<UButton to="/cards" :label="t('home.addCards')" variant="outline" />
 			</div>
 		</UCard>
 	</UContainer>

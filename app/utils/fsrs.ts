@@ -6,21 +6,6 @@ export const scheduler = fsrs({
 	enable_fuzz: true,
 })
 
-export function dbRowToCard(row: Record<string, unknown>): Card {
-	return {
-		due: new Date(row.due as string),
-		stability: row.stability as number,
-		difficulty: row.difficulty as number,
-		elapsed_days: row.elapsed_days as number,
-		scheduled_days: row.scheduled_days as number,
-		learning_steps: row.learning_steps as number,
-		reps: row.reps as number,
-		lapses: row.lapses as number,
-		state: row.state as number,
-		last_review: row.last_review ? new Date(row.last_review as string) : undefined,
-	}
-}
-
 export function formatInterval(scheduledCard: Card, now: Date): string {
 	const diffMs = scheduledCard.due.getTime() - now.getTime()
 	const diffMins = Math.round(diffMs / 60_000)

@@ -15,7 +15,9 @@
 		"lint:fix": "eslint . --fix",
 		"format": "oxfmt",
 		"typecheck": "nuxi typecheck",
-		"db:seed": "node --experimental-strip-types scripts/seed.ts",
+		"db:seed": "node scripts/seed.ts",
+		"db:seed:remote": "node scripts/seed.ts --remote",
+		"deploy": "nuxt build && wrangler pages deploy",
 		"prepare": "husky"
 	},
 	"dependencies": {
@@ -23,12 +25,14 @@
 		"@nuxt/test-utils": "^4.0.0",
 		"@nuxt/ui": "^4.5.0",
 		"@nuxtjs/i18n": "^10.2.3",
+		"dexie": "^4.3.0",
 		"nuxt": "^4.3.1",
 		"ts-fsrs": "^5.2.3",
 		"vue": "^3.5.28",
 		"vue-router": "^4.6.4"
 	},
 	"devDependencies": {
+		"@iconify-json/lucide": "^1.2.95",
 		"@nuxt/eslint": "^1.15.2",
 		"@types/node": "^25.3.2",
 		"@vitest/browser-playwright": "^4.0.18",
@@ -38,7 +42,8 @@
 		"lint-staged": "^16.2.7",
 		"oxfmt": "^0.35.0",
 		"typescript": "^5.9.3",
-		"vitest": "^4.0.18"
+		"vitest": "^4.0.18",
+		"wrangler": "^4.71.0"
 	},
 	"lint-staged": {
 		"*.{js,ts,vue,json}": "oxfmt --write",
