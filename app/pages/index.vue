@@ -18,22 +18,22 @@ const { nextCard, dueCount } = useLesson()
 		<div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
 			<UCard class="text-center">
 				<p class="text-3xl font-bold text-primary">{{ totalCards }}</p>
-				<p class="text-sm text-muted mt-1">{{ t("home.stats.cards") }}</p>
+				<p class="text-sm text-muted mt-1 break-words">{{ t("home.stats.cards") }}</p>
 			</UCard>
 			<UCard class="text-center">
 				<p class="text-3xl font-bold text-secondary">{{ totalReviews }}</p>
-				<p class="text-sm text-muted mt-1">{{ t("home.stats.reviews") }}</p>
+				<p class="text-sm text-muted mt-1 break-words">{{ t("home.stats.reviews") }}</p>
 			</UCard>
 			<UCard class="text-center">
 				<p class="text-3xl font-bold text-success">{{ accuracy }}%</p>
-				<p class="text-sm text-muted mt-1">{{ t("home.stats.accuracy") }}</p>
+				<p class="text-sm text-muted mt-1 break-words">{{ t("home.stats.accuracy") }}</p>
 			</UCard>
 			<UCard class="text-center">
 				<div class="flex items-center justify-center gap-1">
 					<UIcon name="i-lucide-flame" class="text-warning text-2xl" />
 					<p class="text-3xl font-bold text-warning">{{ streak }}</p>
 				</div>
-				<p class="text-sm text-muted mt-1">{{ t("home.stats.streak") }}</p>
+				<p class="text-sm text-muted mt-1 break-words">{{ t("home.stats.streak") }}</p>
 			</UCard>
 		</div>
 

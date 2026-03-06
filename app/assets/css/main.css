@@ -5,3 +5,8 @@
 	--font-sans: "Public Sans", system-ui, sans-serif;
 	--font-mono: "JetBrains Mono", monospace;
 }
+
+/* Override Nuxt UI's --ui-bg to a warm orange-tinted background in light mode */
+.light {
+	--ui-bg: oklch(0.96 0.018 60);
+}
