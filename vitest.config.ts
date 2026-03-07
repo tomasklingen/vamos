@@ -1,5 +1,5 @@
 import { fileURLToPath } from "node:url"
-import { defineConfig } from "vitest/config"
+import { defineConfig, defineProject } from "vitest/config"
 import { defineVitestProject } from "@nuxt/test-utils/config"
 import { playwright } from "@vitest/browser-playwright"
 
@@ -21,6 +21,14 @@ export default defineConfig({
 						provider: playwright(),
 						instances: [{ browser: "chromium" }],
 					},
+				},
+			}),
+			defineProject({
+				test: {
+					name: "e2e",
+					include: ["test/e2e/*.{test,spec}.ts"],
+					environment: "node",
+					testTimeout: 120_000,
 				},
 			}),
 		],

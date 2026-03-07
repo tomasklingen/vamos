@@ -10,6 +10,7 @@
 		"test": "vitest",
 		"test:watch": "vitest --watch",
 		"test:nuxt": "vitest --project nuxt",
+		"test:e2e": "vitest --project e2e",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
 		"format": "oxfmt",
@@ -32,6 +33,7 @@
 	"devDependencies": {
 		"@iconify-json/lucide": "^1.2.95",
 		"@nuxt/eslint": "^1.15.2",
+		"@playwright/test": "^1.58.2",
 		"@types/node": "^25.3.2",
 		"@vitest/browser-playwright": "^4.0.18",
 		"@vue/test-utils": "^2.4.6",
