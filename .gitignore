@@ -25,3 +25,5 @@ logs
 
 .zed
 
+# Test output
+test-results
