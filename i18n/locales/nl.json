@@ -60,6 +60,9 @@
 		"stateLearning": "Leren",
 		"stateReview": "Herhaling",
 		"stateRelearning": "Herleren",
+		"counterNew": "Nieuwe kaarten vandaag",
+		"counterLearning": "Nu aan het leren",
+		"counterReview": "Klaar voor herhaling",
 		"allDone": "Alles herhaald!",
 		"noMoreCards": "Geen kaarten meer voor nu. Kom later terug!"
 	},

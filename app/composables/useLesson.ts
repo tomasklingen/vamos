@@ -1,4 +1,4 @@
-import { createEmptyCard, type Card as FsrsCard, type Grade } from "ts-fsrs"
+import { createEmptyCard, State, type Card as FsrsCard, type Grade } from "ts-fsrs"
 import type { MaybeRef } from "vue"
 import type { CardScheduling, ExerciseMode } from "~/utils/db"
 import { db } from "~/utils/db"
@@ -35,13 +35,17 @@ function schedulingToFsrsCard(s: CardScheduling): FsrsCard {
 export function useLesson(label?: MaybeRef<string | undefined>, mode?: MaybeRef<ExerciseMode>) {
 	const { data: apiCards, status } = useCards(label)
 	const nextCard = ref<LessonCard | null>(null)
-	const dueCount = ref(0)
+	const newCount = ref(0)
+	const learningCount = ref(0)
+	const reviewCount = ref(0)
 
 	async function computeNextCard() {
 		const cards = apiCards.value ?? []
 		if (cards.length === 0) {
 			nextCard.value = null
-			dueCount.value = 0
+			newCount.value = 0
+			learningCount.value = 0
+			reviewCount.value = 0
 			return
 		}
 
@@ -86,9 +90,18 @@ export function useLesson(label?: MaybeRef<string | undefined>, mode?: MaybeRef<
 		}
 
 		const availableNewCount = Math.max(0, DAILY_NEW_LIMIT - introducedTodayCount)
-		dueCount.value = reviewDueCards.length + Math.min(newCards.length, availableNewCount)
 
-		if (dueCount.value === 0) {
+		let learning = 0
+		let review = 0
+		for (const { fsrsCard } of reviewDueCards) {
+			if (fsrsCard.state === State.Review) review++
+			else learning++
+		}
+		newCount.value = Math.min(newCards.length, availableNewCount)
+		learningCount.value = learning
+		reviewCount.value = review
+
+		if (newCount.value + learningCount.value + reviewCount.value === 0) {
 			nextCard.value = null
 			return
 		}
@@ -150,5 +163,5 @@ export function useLesson(label?: MaybeRef<string | undefined>, mode?: MaybeRef<
 		await computeNextCard()
 	})
 
-	return { nextCard, dueCount, status, loading, submitReview, refresh }
+	return { nextCard, newCount, learningCount, reviewCount, status, loading, submitReview, refresh }
 }

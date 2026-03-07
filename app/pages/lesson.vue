@@ -13,10 +13,11 @@ const label = computed(() => route.query.label as string | undefined)
 const mode = computed(() => (route.query.mode as ExerciseMode | undefined) ?? "forward")
 const isBackward = computed(() => mode.value === "backward")
 
-const { nextCard, dueCount, loading, submitReview } = useLesson(label, mode)
+const { nextCard, newCount, learningCount, reviewCount, loading, submitReview } = useLesson(
+	label,
+	mode,
+)
 const revealed = ref(false)
-const sessionCorrect = ref(0)
-const sessionTotal = ref(0)
 
 const { speak } = useSpeech()
 const { autoPlay, voiceURI, rate } = useAudioSettings()
@@ -31,11 +32,8 @@ function speakSpanish() {
 async function recordReview(rating: number) {
 	if (!nextCard.value) return
 	const { cardKey } = nextCard.value
-	const isGood = rating >= 3
 	revealed.value = false
 	await submitReview(cardKey, rating)
-	sessionTotal.value++
-	if (isGood) sessionCorrect.value++
 }
 
 watch(nextCard, (c) => {
@@ -77,15 +75,16 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 				<UIcon name="i-lucide-book-open" /> {{ t("lesson.heading")
 				}}<template v-if="label"> · {{ label }}</template>
 			</h1>
-			<div class="flex items-center gap-4 text-sm text-muted">
-				<div v-if="nextCard" class="flex items-center gap-1">
-					<UIcon name="i-lucide-layers" />
-					<span>{{ dueCount }}</span>
-				</div>
-				<div class="flex items-center gap-1">
-					<UIcon name="i-lucide-check-circle" class="text-success" />
-					<span>{{ sessionCorrect }} / {{ sessionTotal }}</span>
-				</div>
+			<div v-if="nextCard" class="flex items-center gap-3 text-sm font-medium">
+				<UTooltip :text="t('lesson.counterNew')">
+					<span class="text-info">{{ newCount }}</span>
+				</UTooltip>
+				<UTooltip :text="t('lesson.counterLearning')">
+					<span class="text-warning">{{ learningCount }}</span>
+				</UTooltip>
+				<UTooltip :text="t('lesson.counterReview')">
+					<span class="text-success">{{ reviewCount }}</span>
+				</UTooltip>
 			</div>
 		</div>
 

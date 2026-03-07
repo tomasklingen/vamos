@@ -60,6 +60,9 @@
 		"stateLearning": "Learning",
 		"stateReview": "Review",
 		"stateRelearning": "Relearning",
+		"counterNew": "New cards today",
+		"counterLearning": "Currently learning",
+		"counterReview": "Due for review",
 		"allDone": "All done!",
 		"noMoreCards": "No more cards for now. Check back later!"
 	},

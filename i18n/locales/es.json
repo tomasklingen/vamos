@@ -60,6 +60,9 @@
 		"stateLearning": "Aprendiendo",
 		"stateReview": "Repaso",
 		"stateRelearning": "Reaprendiendo",
+		"counterNew": "Tarjetas nuevas hoy",
+		"counterLearning": "Aprendiendo ahora",
+		"counterReview": "Pendientes de repaso",
 		"allDone": "¡Todo repasado!",
 		"noMoreCards": "No hay más tarjetas por ahora. ¡Vuelve más tarde!"
 	},
