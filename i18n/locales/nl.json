@@ -20,7 +20,20 @@
 		"nextCard": "Volgende kaart",
 		"practiceNow": "Nu oefenen",
 		"noCards": "Geen kaarten nu beschikbaar.",
-		"cardsDue": "kaarten beschikbaar"
+		"cardsDue": "kaarten beschikbaar",
+		"mix": "Mix",
+		"progress": "Voortgang",
+		"recognition": "Herkenning",
+		"recognitionDesc": "Zie Spaans, herinner vertaling",
+		"activeRecall": "Actief herinneren",
+		"activeRecallDesc": "Zie vertaling, herinner Spaans",
+		"production": "Productie",
+		"productionDesc": "Zie vertaling, typ Spaans",
+		"dictation": "Dictee",
+		"dictationDesc": "Hoor Spaans, schrijf het op",
+		"comingSoon": "Binnenkort",
+		"cardsDueMode": "{n} kaarten beschikbaar",
+		"practiceMode": "Oefenen"
 	},
 	"lesson": {
 		"heading": "Oefenen",

@@ -20,7 +20,20 @@
 		"nextCard": "Próxima tarjeta",
 		"practiceNow": "Practicar ahora",
 		"noCards": "No hay tarjetas pendientes ahora.",
-		"cardsDue": "tarjetas pendientes"
+		"cardsDue": "tarjetas pendientes",
+		"mix": "Mezcla",
+		"progress": "Tu progreso",
+		"recognition": "Reconocimiento",
+		"recognitionDesc": "Ver español, recordar traducción",
+		"activeRecall": "Recuerdo activo",
+		"activeRecallDesc": "Ver traducción, recordar español",
+		"production": "Producción",
+		"productionDesc": "Ver traducción, escribir en español",
+		"dictation": "Dictado",
+		"dictationDesc": "Escuchar español, escribirlo",
+		"comingSoon": "Próximamente",
+		"cardsDueMode": "{n} tarjetas pendientes",
+		"practiceMode": "Practicar"
 	},
 	"lesson": {
 		"heading": "Práctica",

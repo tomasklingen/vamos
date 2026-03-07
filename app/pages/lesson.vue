@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { ExerciseMode } from "~/utils/db"
+
 const { t } = useI18n()
 
 useHead(() => ({ title: t("nav.lesson") }))
@@ -8,7 +10,10 @@ const stateColors = ["info", "warning", "success", "error"] as const
 
 const route = useRoute()
 const label = computed(() => route.query.label as string | undefined)
-const { nextCard, dueCount, status, submitReview } = useLesson(label)
+const mode = computed(() => (route.query.mode as ExerciseMode | undefined) ?? "forward")
+const isBackward = computed(() => mode.value === "backward")
+
+const { nextCard, dueCount, loading, submitReview } = useLesson(label, mode)
 const revealed = ref(false)
 const sessionCorrect = ref(0)
 const sessionTotal = ref(0)
@@ -16,21 +21,26 @@ const sessionTotal = ref(0)
 const { speak } = useSpeech()
 const { autoPlay, voiceURI, rate } = useAudioSettings()
 
-function speakCard(text: string) {
-	speak(text, "es-ES", voiceURI.value, rate.value)
+function speakSpanish() {
+	if (!nextCard.value) return
+	// In forward mode, front is Spanish. In backward mode, back (answer) is Spanish.
+	const spanishText = isBackward.value ? nextCard.value.back : nextCard.value.front
+	speak(spanishText, "es-ES", voiceURI.value, rate.value)
 }
 
 async function recordReview(rating: number) {
 	if (!nextCard.value) return
-	await submitReview(nextCard.value.cardKey, rating)
-	sessionTotal.value++
-	if (rating >= 3) sessionCorrect.value++
+	const { cardKey } = nextCard.value
+	const isGood = rating >= 3
 	revealed.value = false
+	await submitReview(cardKey, rating)
+	sessionTotal.value++
+	if (isGood) sessionCorrect.value++
 }
 
 watch(nextCard, (c) => {
-	if (c && autoPlay.value) {
-		speakCard(c.front)
+	if (c && autoPlay.value && !isBackward.value) {
+		speakSpanish()
 	}
 })
 
@@ -38,7 +48,7 @@ function onKeydown(e: KeyboardEvent) {
 	if (!nextCard.value) return
 
 	if (e.key === "p" || e.key === "P") {
-		speakCard(nextCard.value.front)
+		speakSpanish()
 		return
 	}
 
@@ -80,7 +90,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 		</div>
 
 		<!-- Loading state -->
-		<UCard v-if="status === 'pending'">
+		<UCard v-if="loading">
 			<div class="text-center py-10">
 				<UIcon name="i-lucide-loader-2" class="text-4xl text-muted mx-auto animate-spin" />
 			</div>
@@ -102,7 +112,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 				<template #header>
 					<div class="flex items-center justify-between">
 						<p class="text-sm text-muted font-semibold uppercase tracking-widest">
-							{{ t("lesson.spanish") }}
+							{{ isBackward ? t("lesson.translation") : t("lesson.spanish") }}
 						</p>
 						<div class="flex items-center gap-2 flex-wrap justify-end">
 							<UBadge
@@ -126,14 +136,14 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 				<div class="text-center py-10 space-y-6 min-h-48">
 					<div class="flex items-center justify-center gap-3">
 						<p class="text-3xl font-bold">{{ nextCard.front }}</p>
-						<UTooltip :text="t('lesson.pronounce')" :kbds="['P']">
+						<UTooltip v-if="!isBackward" :text="t('lesson.pronounce')" :kbds="['P']">
 							<UButton
 								icon="i-lucide-volume-2"
 								color="neutral"
 								variant="ghost"
 								size="sm"
 								:aria-label="t('lesson.pronounce')"
-								@click="speakCard(nextCard.front)"
+								@click="speakSpanish()"
 							/>
 						</UTooltip>
 					</div>
@@ -141,9 +151,21 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 					<Transition name="fade">
 						<div v-if="revealed" class="space-y-2">
 							<p class="text-muted text-sm uppercase tracking-widest">
-								{{ t("lesson.translation") }}
+								{{ isBackward ? t("lesson.spanish") : t("lesson.translation") }}
 							</p>
-							<p class="text-2xl font-semibold text-secondary">{{ nextCard.back }}</p>
+							<div class="flex items-center justify-center gap-3">
+								<p class="text-2xl font-semibold text-secondary">{{ nextCard.back }}</p>
+								<UTooltip v-if="isBackward" :text="t('lesson.pronounce')" :kbds="['P']">
+									<UButton
+										icon="i-lucide-volume-2"
+										color="neutral"
+										variant="ghost"
+										size="sm"
+										:aria-label="t('lesson.pronounce')"
+										@click="speakSpanish()"
+									/>
+								</UTooltip>
+							</div>
 						</div>
 					</Transition>
 				</div>

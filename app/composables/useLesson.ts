@@ -1,6 +1,6 @@
 import { createEmptyCard, type Card as FsrsCard, type Grade } from "ts-fsrs"
 import type { MaybeRef } from "vue"
-import type { CardScheduling } from "~/utils/db"
+import type { CardScheduling, ExerciseMode } from "~/utils/db"
 import { db } from "~/utils/db"
 import { scheduler, computeIntervals, cardToDbFields } from "~/utils/fsrs"
 import { useCards, type CardData } from "~/composables/useCards"
@@ -11,6 +11,7 @@ export interface LessonCard {
 	back: string
 	labels: string[]
 	state: number
+	mode: ExerciseMode
 	intervals: { again: string; hard: string; good: string; easy: string }
 }
 
@@ -29,7 +30,7 @@ function schedulingToFsrsCard(s: CardScheduling): FsrsCard {
 	}
 }
 
-export function useLesson(label?: MaybeRef<string | undefined>) {
+export function useLesson(label?: MaybeRef<string | undefined>, mode?: MaybeRef<ExerciseMode>) {
 	const { data: apiCards, status } = useCards(label)
 	const nextCard = ref<LessonCard | null>(null)
 	const dueCount = ref(0)
@@ -42,8 +43,9 @@ export function useLesson(label?: MaybeRef<string | undefined>) {
 			return
 		}
 
+		const activeMode = toValue(mode) ?? "forward"
 		const cardKeys = cards.map(
-			(c) => [`${c.front}|${c.back}`, "forward" as const] as [string, "forward"],
+			(c) => [`${c.front}|${c.back}`, activeMode] as [string, ExerciseMode],
 		)
 		const schedulingRows = await db.cardScheduling.bulkGet(cardKeys)
 
@@ -70,46 +72,49 @@ export function useLesson(label?: MaybeRef<string | undefined>) {
 		const { apiCard, fsrsCard } = dueCards[0]!
 		const intervals = computeIntervals(fsrsCard, now)
 		const cardKey = `${apiCard.front}|${apiCard.back}`
+		const isBackward = activeMode === "backward"
 
 		nextCard.value = {
 			cardKey,
-			front: apiCard.front,
-			back: apiCard.back,
+			front: isBackward ? apiCard.back : apiCard.front,
+			back: isBackward ? apiCard.front : apiCard.back,
 			labels: apiCard.labels,
 			state: fsrsCard.state,
+			mode: activeMode,
 			intervals,
 		}
 	}
 
 	async function submitReview(cardKey: string, rating: number) {
-		const mode = "forward" as const
-		const existing = await db.cardScheduling.get([cardKey, mode])
+		const activeMode = toValue(mode) ?? "forward"
+		const existing = await db.cardScheduling.get([cardKey, activeMode])
 		const fsrsCard = existing ? schedulingToFsrsCard(existing) : createEmptyCard(new Date())
 
 		const now = new Date()
 		const result = scheduler.next(fsrsCard, now, rating as Grade)
 		const updated = cardToDbFields(result.card)
 
-		const scheduling: CardScheduling = { cardKey, mode, ...updated }
+		const scheduling: CardScheduling = { cardKey, mode: activeMode, ...updated }
 		await db.cardScheduling.put(scheduling)
-		await db.reviews.add({ cardKey, mode, rating, reviewed_at: now.toISOString() })
+		await db.reviews.add({ cardKey, mode: activeMode, rating, reviewed_at: now.toISOString() })
 
 		await computeNextCard()
 	}
+
+	const loading = ref(true)
 
 	async function refresh() {
-		if (!import.meta.client) return
 		await computeNextCard()
 	}
 
-	watch(
-		apiCards,
-		async () => {
-			if (!import.meta.client) return
-			await computeNextCard()
-		},
-		{ immediate: true },
-	)
+	onMounted(async () => {
+		await computeNextCard()
+		loading.value = false
+	})
 
-	return { nextCard, dueCount, status, submitReview, refresh }
+	watch(apiCards, async () => {
+		await computeNextCard()
+	})
+
+	return { nextCard, dueCount, status, loading, submitReview, refresh }
 }

@@ -20,7 +20,20 @@
 		"nextCard": "Next card",
 		"practiceNow": "Practise now",
 		"noCards": "No cards due right now.",
-		"cardsDue": "cards due"
+		"cardsDue": "cards due",
+		"mix": "Mix",
+		"progress": "Your Progress",
+		"recognition": "Recognition",
+		"recognitionDesc": "See Spanish, recall translation",
+		"activeRecall": "Active Recall",
+		"activeRecallDesc": "See translation, recall Spanish",
+		"production": "Production",
+		"productionDesc": "See translation, type Spanish",
+		"dictation": "Dictation",
+		"dictationDesc": "Hear Spanish, write it down",
+		"comingSoon": "Coming soon",
+		"cardsDueMode": "{n} cards due",
+		"practiceMode": "Practice"
 	},
 	"lesson": {
 		"heading": "Practice",

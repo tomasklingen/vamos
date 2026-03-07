@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { ExerciseMode } from "~/utils/db"
+
 const { t } = useI18n()
 
 useHead(() => ({ title: t("nav.home") }))
@@ -8,15 +10,55 @@ const { totalCards, totalReviews, accuracy, streak } = useStats()
 const { data: allLabels } = useLabels()
 const selectedLabel = ref<string | undefined>(undefined)
 
-const recentLabels = computed(() => (allLabels.value ?? []).slice(0, 3))
+const { progress } = useModeProgress(selectedLabel)
 
-const { nextCard, dueCount } = useLesson(selectedLabel)
+interface ModeRow {
+	mode: ExerciseMode
+	nameKey: string
+	descKey: string
+	icon: string
+	enabled: boolean
+}
 
-const lessonTo = computed(() =>
-	selectedLabel.value ? `/lesson?label=${encodeURIComponent(selectedLabel.value)}` : "/lesson",
-)
+const modeRows: ModeRow[] = [
+	{
+		mode: "forward",
+		nameKey: "home.recognition",
+		descKey: "home.recognitionDesc",
+		icon: "i-lucide-eye",
+		enabled: true,
+	},
+	{
+		mode: "backward",
+		nameKey: "home.activeRecall",
+		descKey: "home.activeRecallDesc",
+		icon: "i-lucide-brain",
+		enabled: true,
+	},
+	{
+		mode: "production",
+		nameKey: "home.production",
+		descKey: "home.productionDesc",
+		icon: "i-lucide-pencil",
+		enabled: false,
+	},
+	{
+		mode: "dictation",
+		nameKey: "home.dictation",
+		descKey: "home.dictationDesc",
+		icon: "i-lucide-headphones",
+		enabled: false,
+	},
+]
 
-function toggleLabel(name: string) {
+function lessonUrl(mode: ExerciseMode) {
+	const params = new URLSearchParams()
+	params.set("mode", mode)
+	if (selectedLabel.value) params.set("label", selectedLabel.value)
+	return `/lesson?${params.toString()}`
+}
+
+function selectLabel(name: string | undefined) {
 	selectedLabel.value = selectedLabel.value === name ? undefined : name
 }
 </script>
@@ -51,66 +93,77 @@ function toggleLabel(name: string) {
 			</UCard>
 		</div>
 
-		<!-- Start practice -->
-		<div class="space-y-2">
-			<div v-if="recentLabels.length" class="flex flex-wrap gap-2">
-				<UButton
-					v-for="l in recentLabels"
-					:key="l.name"
-					:variant="selectedLabel === l.name ? 'solid' : 'outline'"
-					color="primary"
-					size="sm"
-					@click="toggleLabel(l.name)"
-					>{{ l.name }}</UButton
-				>
-			</div>
+		<!-- Content Set Selector -->
+		<div class="flex flex-wrap gap-2">
 			<UButton
-				:to="lessonTo"
-				:label="t('home.startPractice')"
-				icon="i-lucide-play"
-				size="xl"
-				block
-			/>
-			<p v-if="dueCount > 0" class="text-center text-sm text-muted">
-				{{ dueCount }} {{ t("home.cardsDue") }}
-			</p>
+				:variant="selectedLabel === undefined ? 'solid' : 'outline'"
+				color="primary"
+				size="sm"
+				@click="selectLabel(undefined)"
+			>
+				{{ t("home.mix") }}
+			</UButton>
+			<UButton
+				v-for="l in allLabels"
+				:key="l.name"
+				:variant="selectedLabel === l.name ? 'solid' : 'outline'"
+				color="primary"
+				size="sm"
+				@click="selectLabel(l.name)"
+			>
+				{{ l.name }}
+			</UButton>
 		</div>
 
-		<!-- Next card preview -->
-		<UCard v-if="nextCard" class="border-2 border-dashed border-primary/40">
+		<!-- Skill Rings / Progress -->
+		<UCard>
 			<template #header>
-				<div class="flex items-center gap-2 font-bold text-lg">
-					<UIcon name="i-lucide-sparkles" /> {{ t("home.nextCard") }}
-				</div>
+				<h2 class="text-lg font-bold">{{ t("home.progress") }}</h2>
 			</template>
-			<div class="text-center py-6 space-y-3">
-				<p class="text-3xl font-bold">{{ nextCard.front }}</p>
-				<div class="flex gap-1 justify-center flex-wrap">
-					<UBadge
-						v-for="label in nextCard.labels"
-						:key="label"
-						:label="label"
-						color="primary"
-						variant="subtle"
-					/>
-				</div>
-			</div>
-			<template #footer>
-				<UButton
-					:to="lessonTo"
-					:label="t('home.practiceNow')"
-					icon="i-lucide-arrow-right"
-					trailing-icon="i-lucide-arrow-right"
-					variant="outline"
-					block
-				/>
-			</template>
-		</UCard>
 
-		<UCard v-else>
-			<div class="text-center py-6 space-y-3">
-				<UIcon name="i-lucide-inbox" class="text-4xl text-muted mx-auto" />
-				<p class="text-muted">{{ t("home.noCards") }}</p>
+			<div class="divide-y divide-default">
+				<template v-for="row in modeRows" :key="row.mode">
+					<NuxtLink
+						v-if="row.enabled"
+						:to="lessonUrl(row.mode)"
+						class="flex items-center gap-4 py-3 px-1 -mx-1 rounded-lg hover:bg-elevated transition-colors cursor-pointer"
+					>
+						<UIcon :name="row.icon" class="text-xl text-primary shrink-0" />
+						<div class="flex-1 min-w-0">
+							<p class="font-semibold text-sm">{{ t(row.nameKey) }}</p>
+							<p class="text-xs text-muted truncate">{{ t(row.descKey) }}</p>
+						</div>
+						<div class="flex items-center gap-3 shrink-0">
+							<UBadge
+								v-if="progress[row.mode].dueCount > 0"
+								:label="t('home.cardsDueMode', { n: progress[row.mode].dueCount })"
+								color="primary"
+								variant="subtle"
+								size="sm"
+							/>
+							<div class="w-24 flex items-center gap-2">
+								<div class="flex-1 h-1.5 bg-muted rounded-full overflow-hidden">
+									<div
+										class="h-full bg-primary rounded-full"
+										:style="{ width: `${progress[row.mode].percentage}%` }"
+									/>
+								</div>
+								<span class="text-xs font-mono text-muted w-8 text-right"
+									>{{ progress[row.mode].percentage }}%</span
+								>
+							</div>
+						</div>
+					</NuxtLink>
+
+					<div v-else class="flex items-center gap-4 py-3 px-1 opacity-50 cursor-not-allowed">
+						<UIcon :name="row.icon" class="text-xl text-muted shrink-0" />
+						<div class="flex-1 min-w-0">
+							<p class="font-semibold text-sm text-muted">{{ t(row.nameKey) }}</p>
+							<p class="text-xs text-muted truncate">{{ t(row.descKey) }}</p>
+						</div>
+						<UBadge :label="t('home.comingSoon')" color="neutral" variant="subtle" size="sm" />
+					</div>
+				</template>
 			</div>
 		</UCard>
 	</UContainer>
