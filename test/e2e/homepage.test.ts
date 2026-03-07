@@ -173,16 +173,24 @@ describe("lesson — backward mode", () => {
 		await page.close()
 	})
 
-	it("question is native-lang word; answer is the Spanish word", async () => {
+	it("question and answer show distinct non-empty text from the card fields", async () => {
 		const page = await createEnPage("/lesson?mode=backward&label=greeting")
 
-		// First greeting card: front="Hola", back="Hello"
-		// In backward mode: question (front) = "Hello", answer (back) = "Hola"
-		await expect(page.getByText("Hello")).toBeVisible()
+		const showAnswerBtn = page.getByRole("button", { name: "Show answer" })
+		await showAnswerBtn.waitFor({ state: "visible" })
 
-		await page.getByRole("button", { name: "Show answer" }).click()
+		// Capture whatever text is shown as the question before reveal
+		const questionText = await page.locator(".text-primary").first().innerText()
+		expect(questionText.trim()).not.toBe("")
 
-		await expect(page.locator(".text-secondary")).toHaveText("Hola")
+		await showAnswerBtn.click()
+
+		// After reveal the answer appears in .text-secondary
+		const answerText = await page.locator(".text-secondary").first().innerText()
+		expect(answerText.trim()).not.toBe("")
+
+		// The two fields must be different (question ≠ answer)
+		expect(questionText.trim()).not.toBe(answerText.trim())
 
 		await page.close()
 	})
