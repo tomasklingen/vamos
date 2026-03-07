@@ -86,22 +86,21 @@ interface CardData {
 	labels: string[]
 }
 
-interface LabelData {
-	name: string
+const datasets: Record<string, CardData[]> = {
+	"greetings.json": greetings.map(([front, back]) => ({ front, back, labels: ["greeting"] })),
+	"goodbyes.json": goodbyes.map(([front, back]) => ({ front, back, labels: ["goodbye"] })),
+	"numbers.json": numbers.map(([front, back]) => ({ front, back, labels: ["number"] })),
 }
-
-const cards: CardData[] = [
-	...greetings.map(([front, back]) => ({ front, back, labels: ["greeting"] })),
-	...goodbyes.map(([front, back]) => ({ front, back, labels: ["goodbye"] })),
-	...numbers.map(([front, back]) => ({ front, back, labels: ["number"] })),
-]
-
-const labels: LabelData[] = [{ name: "greeting" }, { name: "goodbye" }, { name: "number" }]
 
 const outDir = resolve(__dirname, "../public/data")
 mkdirSync(outDir, { recursive: true })
 
-writeFileSync(resolve(outDir, "cards.json"), JSON.stringify(cards, null, 2))
-writeFileSync(resolve(outDir, "labels.json"), JSON.stringify(labels, null, 2))
+let totalCards = 0
+for (const [filename, cards] of Object.entries(datasets)) {
+	writeFileSync(resolve(outDir, filename), JSON.stringify(cards, null, 2))
+	totalCards += cards.length
+}
 
-console.log(`Generated ${cards.length} cards and ${labels.length} labels in public/data/`)
+console.log(
+	`Generated ${totalCards} cards across ${Object.keys(datasets).length} files in public/data/`,
+)

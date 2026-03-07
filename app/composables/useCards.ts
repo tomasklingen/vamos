@@ -1,6 +1,4 @@
 import { isRef, type MaybeRef } from "vue"
-import cardsJson from "~~/public/data/cards.json"
-import labelsJson from "~~/public/data/labels.json"
 
 export interface CardData {
 	front: string
@@ -8,22 +6,27 @@ export interface CardData {
 	labels: string[]
 }
 
-export function useCards(label?: MaybeRef<string | undefined>) {
-	const allCards = ref<CardData[]>(cardsJson)
-	const status = ref<"success" | "pending" | "error">("success" as const)
+const modules = import.meta.glob<CardData[]>("../../public/data/*.json", {
+	eager: true,
+	import: "default",
+})
 
+export const allCards: CardData[] = Object.values(modules).flat()
+
+export function useCards(label?: MaybeRef<string | undefined>) {
 	const data = computed(() => {
 		const l = isRef(label) ? label.value : label
-		if (!l) return allCards.value ?? []
-		return (allCards.value ?? []).filter((c) => c.labels.includes(l))
+		if (!l) return allCards
+		return allCards.filter((c) => c.labels.includes(l))
 	})
 
-	return { data, status }
+	return { data, status: ref<"success" | "pending" | "error">("success") }
 }
 
 export function useLabels() {
+	const labels = [...new Set(allCards.flatMap((c) => c.labels))].map((name) => ({ name }))
 	return {
-		data: ref(labelsJson),
-		status: ref<"success" | "pending" | "error">("success" as const),
+		data: ref(labels),
+		status: ref<"success" | "pending" | "error">("success"),
 	}
 }

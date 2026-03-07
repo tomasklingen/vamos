@@ -1,8 +1,8 @@
-import cardsJson from "~~/public/data/cards.json"
+import { allCards } from "~/composables/useCards"
 import { db } from "~/utils/db"
 
 export function useStats() {
-	const totalCards = ref(cardsJson.length)
+	const totalCards = ref(allCards.length)
 	const totalReviews = ref(0)
 	const accuracy = ref(0)
 	const streak = ref(0)

@@ -14,8 +14,8 @@ npm run typecheck
 npm test
 ```
 
-## Seed
+## Data
 
 ```bash
-npm run db:seed
+npm run data:generate   # Regenerate static JSON card data in public/data/
 ```
