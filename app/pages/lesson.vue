@@ -6,7 +6,9 @@ useHead(() => ({ title: t("nav.lesson") }))
 const stateLabels = ["stateNew", "stateLearning", "stateReview", "stateRelearning"] as const
 const stateColors = ["info", "warning", "success", "error"] as const
 
-const { nextCard, dueCount, status, submitReview } = useLesson()
+const route = useRoute()
+const label = computed(() => route.query.label as string | undefined)
+const { nextCard, dueCount, status, submitReview } = useLesson(label)
 const revealed = ref(false)
 const sessionCorrect = ref(0)
 const sessionTotal = ref(0)
@@ -62,7 +64,8 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 	<UContainer class="py-10 max-w-xl space-y-6">
 		<div class="flex items-center justify-between">
 			<h1 class="text-2xl font-bold flex items-center gap-2">
-				<UIcon name="i-lucide-book-open" /> {{ t("lesson.heading") }}
+				<UIcon name="i-lucide-book-open" /> {{ t("lesson.heading")
+				}}<template v-if="label"> · {{ label }}</template>
 			</h1>
 			<div class="flex items-center gap-4 text-sm text-muted">
 				<div v-if="nextCard" class="flex items-center gap-1">

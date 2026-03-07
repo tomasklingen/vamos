@@ -1,4 +1,3 @@
-import { execSync } from "node:child_process"
 import { mkdirSync, writeFileSync } from "node:fs"
 import { dirname, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
@@ -81,60 +80,31 @@ const numbers: Card[] = Array.from({ length: 100 }, (_, i) => {
 	return [toSpanish(n), String(n)] as Card
 })
 
-function esc(s: string): string {
-	return s.replace(/'/g, "''")
+interface CardData {
+	id: number
+	front: string
+	back: string
+	labels: string[]
 }
 
-function cardInserts(cards: Card[], label: string): string {
-	return cards
-		.map(
-			([
-				front,
-				back,
-			]) => `INSERT OR IGNORE INTO cards (front, back) VALUES ('${esc(front)}', '${esc(back)}');
-INSERT OR IGNORE INTO card_labels (card_id, label_id)
-  SELECT c.id, l.id FROM cards c, labels l
-  WHERE c.front = '${esc(front)}' AND c.back = '${esc(back)}' AND l.name = '${label}';`,
-		)
-		.join("\n")
+interface LabelData {
+	name: string
 }
 
-const sql = `-- Auto-generated seed file — do not edit manually
-CREATE TABLE IF NOT EXISTS cards (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  front TEXT NOT NULL,
-  back TEXT NOT NULL,
-  created_at TEXT NOT NULL DEFAULT (datetime('now')),
-  UNIQUE(front, back)
-);
+let id = 1
 
-CREATE TABLE IF NOT EXISTS labels (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT UNIQUE NOT NULL
-);
+const cards: CardData[] = [
+	...greetings.map(([front, back]) => ({ id: id++, front, back, labels: ["greeting"] })),
+	...goodbyes.map(([front, back]) => ({ id: id++, front, back, labels: ["goodbye"] })),
+	...numbers.map(([front, back]) => ({ id: id++, front, back, labels: ["number"] })),
+]
 
-CREATE TABLE IF NOT EXISTS card_labels (
-  card_id INTEGER NOT NULL REFERENCES cards(id) ON DELETE CASCADE,
-  label_id INTEGER NOT NULL REFERENCES labels(id) ON DELETE CASCADE,
-  PRIMARY KEY(card_id, label_id)
-);
+const labels: LabelData[] = [{ name: "greeting" }, { name: "goodbye" }, { name: "number" }]
 
-INSERT OR IGNORE INTO labels (name) VALUES ('greeting'), ('goodbye'), ('number');
+const outDir = resolve(__dirname, "../public/data")
+mkdirSync(outDir, { recursive: true })
 
-${cardInserts(greetings, "greeting")}
+writeFileSync(resolve(outDir, "cards.json"), JSON.stringify(cards, null, 2))
+writeFileSync(resolve(outDir, "labels.json"), JSON.stringify(labels, null, 2))
 
-${cardInserts(goodbyes, "goodbye")}
-
-${cardInserts(numbers, "number")}
-`
-
-const sqlPath = resolve(__dirname, "seed.sql")
-mkdirSync(dirname(sqlPath), { recursive: true })
-writeFileSync(sqlPath, sql)
-
-const isRemote = process.argv.includes("--remote")
-const flag = isRemote ? "--remote" : "--local"
-execSync(`wrangler d1 execute vamos ${flag} --file="${sqlPath}"`, { stdio: "inherit" })
-
-const total = greetings.length + goodbyes.length + numbers.length
-console.log(`✅ Seed complete — ${total} cards seeded (${isRemote ? "remote" : "local"})`)
+console.log(`Generated ${cards.length} cards and ${labels.length} labels in public/data/`)

@@ -6,9 +6,6 @@
 .cache
 dist
 
-# Wrangler local state
-.wrangler
-
 # Node dependencies
 node_modules
 
@@ -28,5 +25,3 @@ logs
 
 .zed
 
-# Generated seed SQL
-scripts/seed.sql

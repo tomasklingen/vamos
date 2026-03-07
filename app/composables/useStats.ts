@@ -1,18 +1,14 @@
+import cardsJson from "~~/public/data/cards.json"
 import { db } from "~/utils/db"
 
 export function useStats() {
-	const totalCards = ref(0)
+	const totalCards = ref(cardsJson.length)
 	const totalReviews = ref(0)
 	const accuracy = ref(0)
 	const streak = ref(0)
 
 	onMounted(async () => {
-		const [cards, allReviews] = await Promise.all([
-			$fetch<{ id: number }[]>("/api/cards"),
-			db.reviews.toArray(),
-		])
-
-		totalCards.value = cards.length
+		const allReviews = await db.reviews.toArray()
 		totalReviews.value = allReviews.length
 
 		const correct = allReviews.filter((r) => r.rating >= 3).length

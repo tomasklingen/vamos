@@ -4,7 +4,21 @@ const { t } = useI18n()
 useHead(() => ({ title: t("nav.home") }))
 
 const { totalCards, totalReviews, accuracy, streak } = useStats()
-const { nextCard, dueCount } = useLesson()
+
+const { data: allLabels } = useLabels()
+const selectedLabel = ref<string | undefined>(undefined)
+
+const recentLabels = computed(() => (allLabels.value ?? []).slice(0, 3))
+
+const { nextCard, dueCount } = useLesson(selectedLabel)
+
+const lessonTo = computed(() =>
+	selectedLabel.value ? `/lesson?label=${encodeURIComponent(selectedLabel.value)}` : "/lesson",
+)
+
+function toggleLabel(name: string) {
+	selectedLabel.value = selectedLabel.value === name ? undefined : name
+}
 </script>
 
 <template>
@@ -39,7 +53,24 @@ const { nextCard, dueCount } = useLesson()
 
 		<!-- Start practice -->
 		<div class="space-y-2">
-			<UButton to="/lesson" :label="t('home.startPractice')" icon="i-lucide-play" size="xl" block />
+			<div v-if="recentLabels.length" class="flex flex-wrap gap-2">
+				<UButton
+					v-for="l in recentLabels"
+					:key="l.name"
+					:variant="selectedLabel === l.name ? 'solid' : 'outline'"
+					color="primary"
+					size="sm"
+					@click="toggleLabel(l.name)"
+					>{{ l.name }}</UButton
+				>
+			</div>
+			<UButton
+				:to="lessonTo"
+				:label="t('home.startPractice')"
+				icon="i-lucide-play"
+				size="xl"
+				block
+			/>
 			<p v-if="dueCount > 0" class="text-center text-sm text-muted">
 				{{ dueCount }} {{ t("home.cardsDue") }}
 			</p>
@@ -66,7 +97,7 @@ const { nextCard, dueCount } = useLesson()
 			</div>
 			<template #footer>
 				<UButton
-					to="/lesson"
+					:to="lessonTo"
 					:label="t('home.practiceNow')"
 					icon="i-lucide-arrow-right"
 					trailing-icon="i-lucide-arrow-right"

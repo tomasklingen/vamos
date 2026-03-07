@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { TableColumn } from "@nuxt/ui"
+import type { CardData } from "~/composables/useCards"
 
 const { t } = useI18n()
 const { speak } = useSpeech()
@@ -7,31 +8,21 @@ const { voiceURI, rate } = useAudioSettings()
 
 useHead(() => ({ title: t("nav.cards") }))
 
-interface Card {
-	id: number
-	front: string
-	back: string
-	created_at: string
-	labels: string[]
-}
-
-const { data: allLabels } = await useFetch<string[]>("/api/labels")
+const { data: allLabels } = await useLabels()
 const selectedLabel = ref<string | undefined>(undefined)
 
-const { data: cards } = await useFetch<Card[]>("/api/cards", {
-	query: computed(() => (selectedLabel.value ? { label: selectedLabel.value } : {})),
-})
+const { data: cards } = useCards(selectedLabel)
 
 const labelItems = computed(() => [
 	{ label: t("cards.allLabels"), value: undefined },
-	...(allLabels.value ?? []).map((l) => ({ label: l, value: l })),
+	...(allLabels.value ?? []).map((l) => ({ label: l.name, value: l.name })),
 ])
 
 function speakCard(text: string) {
 	speak(text, "es-ES", voiceURI.value, rate.value)
 }
 
-const columns = computed<TableColumn<Card>[]>(() => [
+const columns = computed<TableColumn<CardData>[]>(() => [
 	{ accessorKey: "front", header: t("cards.colFront") },
 	{ id: "speak", header: "" },
 	{ accessorKey: "back", header: t("cards.colBack") },
@@ -46,7 +37,7 @@ const columns = computed<TableColumn<Card>[]>(() => [
 				<UIcon name="i-lucide-layers" /> {{ t("cards.heading") }}
 			</h1>
 			<UBadge
-				:label="t('cards.count', { n: cards?.length ?? 0 })"
+				:label="t('cards.count', { n: cards.length })"
 				color="primary"
 				variant="subtle"
 				size="lg"
@@ -64,7 +55,7 @@ const columns = computed<TableColumn<Card>[]>(() => [
 				</p>
 			</template>
 
-			<div v-if="!cards?.length" class="text-center py-10 text-muted">
+			<div v-if="!cards.length" class="text-center py-10 text-muted">
 				{{ t("cards.empty") }}
 			</div>
 

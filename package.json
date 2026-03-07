@@ -3,9 +3,8 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "nuxt build",
+		"build": "nuxt generate",
 		"dev": "nuxt dev",
-		"generate": "nuxt generate",
 		"preview": "nuxt preview",
 		"postinstall": "nuxt prepare",
 		"test": "vitest",
@@ -15,9 +14,8 @@
 		"lint:fix": "eslint . --fix",
 		"format": "oxfmt",
 		"typecheck": "nuxi typecheck",
-		"db:seed": "node scripts/seed.ts",
-		"db:seed:remote": "node scripts/seed.ts --remote",
-		"deploy": "nuxt build && npx wrangler pages deploy dist",
+		"data:generate": "node scripts/generate-data.ts",
+		"deploy": "nuxt build",
 		"prepare": "husky"
 	},
 	"dependencies": {
@@ -42,8 +40,7 @@
 		"lint-staged": "^16.2.7",
 		"oxfmt": "^0.35.0",
 		"typescript": "^5.9.3",
-		"vitest": "^4.0.18",
-		"wrangler": "^4.71.0"
+		"vitest": "^4.0.18"
 	},
 	"lint-staged": {
 		"*.{js,ts,vue,json}": "oxfmt --write",

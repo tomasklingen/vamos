@@ -1,15 +1,9 @@
 import { createEmptyCard, type Card as FsrsCard, type Grade } from "ts-fsrs"
+import type { MaybeRef } from "vue"
 import type { CardScheduling } from "~/utils/db"
 import { db } from "~/utils/db"
 import { scheduler, computeIntervals, cardToDbFields } from "~/utils/fsrs"
-
-interface ApiCard {
-	id: number
-	front: string
-	back: string
-	created_at: string
-	labels: string[]
-}
+import { useCards, type CardData } from "~/composables/useCards"
 
 export interface LessonCard {
 	id: number
@@ -35,8 +29,8 @@ function schedulingToFsrsCard(s: CardScheduling): FsrsCard {
 	}
 }
 
-export function useLesson() {
-	const { data: apiCards, status } = useFetch<ApiCard[]>("/api/cards", { server: false })
+export function useLesson(label?: MaybeRef<string | undefined>) {
+	const { data: apiCards, status } = useCards(label)
 	const nextCard = ref<LessonCard | null>(null)
 	const dueCount = ref(0)
 
@@ -52,7 +46,7 @@ export function useLesson() {
 		const schedulingRows = await db.cardScheduling.bulkGet(cardIds)
 
 		const now = new Date()
-		const dueCards: Array<{ apiCard: ApiCard; fsrsCard: FsrsCard }> = []
+		const dueCards: Array<{ apiCard: CardData; fsrsCard: FsrsCard }> = []
 
 		for (let i = 0; i < cards.length; i++) {
 			const apiCard = cards[i]!
