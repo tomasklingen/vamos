@@ -3,7 +3,6 @@ import cardsJson from "~~/public/data/cards.json"
 import labelsJson from "~~/public/data/labels.json"
 
 export interface CardData {
-	id: number
 	front: string
 	back: string
 	labels: string[]

@@ -22,7 +22,7 @@ function speakCard(text: string) {
 
 async function recordReview(rating: number) {
 	if (!nextCard.value) return
-	await submitReview(nextCard.value.id, rating)
+	await submitReview(nextCard.value.cardKey, rating)
 	sessionTotal.value++
 	if (rating >= 3) sessionCorrect.value++
 	revealed.value = false

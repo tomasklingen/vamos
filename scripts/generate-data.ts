@@ -81,7 +81,6 @@ const numbers: Card[] = Array.from({ length: 100 }, (_, i) => {
 })
 
 interface CardData {
-	id: number
 	front: string
 	back: string
 	labels: string[]
@@ -91,12 +90,10 @@ interface LabelData {
 	name: string
 }
 
-let id = 1
-
 const cards: CardData[] = [
-	...greetings.map(([front, back]) => ({ id: id++, front, back, labels: ["greeting"] })),
-	...goodbyes.map(([front, back]) => ({ id: id++, front, back, labels: ["goodbye"] })),
-	...numbers.map(([front, back]) => ({ id: id++, front, back, labels: ["number"] })),
+	...greetings.map(([front, back]) => ({ front, back, labels: ["greeting"] })),
+	...goodbyes.map(([front, back]) => ({ front, back, labels: ["goodbye"] })),
+	...numbers.map(([front, back]) => ({ front, back, labels: ["number"] })),
 ]
 
 const labels: LabelData[] = [{ name: "greeting" }, { name: "goodbye" }, { name: "number" }]

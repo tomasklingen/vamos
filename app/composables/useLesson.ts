@@ -6,7 +6,7 @@ import { scheduler, computeIntervals, cardToDbFields } from "~/utils/fsrs"
 import { useCards, type CardData } from "~/composables/useCards"
 
 export interface LessonCard {
-	id: number
+	cardKey: string
 	front: string
 	back: string
 	labels: string[]
@@ -42,8 +42,10 @@ export function useLesson(label?: MaybeRef<string | undefined>) {
 			return
 		}
 
-		const cardIds = cards.map((c) => c.id)
-		const schedulingRows = await db.cardScheduling.bulkGet(cardIds)
+		const cardKeys = cards.map(
+			(c) => [`${c.front}|${c.back}`, "forward" as const] as [string, "forward"],
+		)
+		const schedulingRows = await db.cardScheduling.bulkGet(cardKeys)
 
 		const now = new Date()
 		const dueCards: Array<{ apiCard: CardData; fsrsCard: FsrsCard }> = []
@@ -67,9 +69,10 @@ export function useLesson(label?: MaybeRef<string | undefined>) {
 		dueCards.sort((a, b) => a.fsrsCard.due.getTime() - b.fsrsCard.due.getTime())
 		const { apiCard, fsrsCard } = dueCards[0]!
 		const intervals = computeIntervals(fsrsCard, now)
+		const cardKey = `${apiCard.front}|${apiCard.back}`
 
 		nextCard.value = {
-			id: apiCard.id,
+			cardKey,
 			front: apiCard.front,
 			back: apiCard.back,
 			labels: apiCard.labels,
@@ -78,21 +81,18 @@ export function useLesson(label?: MaybeRef<string | undefined>) {
 		}
 	}
 
-	async function submitReview(cardId: number, rating: number) {
-		const cards = apiCards.value ?? []
-		const apiCard = cards.find((c) => c.id === cardId)
-		if (!apiCard) return
-
-		const existing = await db.cardScheduling.get(cardId)
+	async function submitReview(cardKey: string, rating: number) {
+		const mode = "forward" as const
+		const existing = await db.cardScheduling.get([cardKey, mode])
 		const fsrsCard = existing ? schedulingToFsrsCard(existing) : createEmptyCard(new Date())
 
 		const now = new Date()
 		const result = scheduler.next(fsrsCard, now, rating as Grade)
 		const updated = cardToDbFields(result.card)
 
-		const scheduling: CardScheduling = { cardId, ...updated }
+		const scheduling: CardScheduling = { cardKey, mode, ...updated }
 		await db.cardScheduling.put(scheduling)
-		await db.reviews.add({ cardId, rating, reviewed_at: now.toISOString() })
+		await db.reviews.add({ cardKey, mode, rating, reviewed_at: now.toISOString() })
 
 		await computeNextCard()
 	}

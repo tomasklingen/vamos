@@ -1,720 +1,600 @@
 [
 	{
-		"id": 1,
 		"front": "Hola",
 		"back": "Hello",
 		"labels": ["greeting"]
 	},
 	{
-		"id": 2,
 		"front": "Buenos días",
 		"back": "Good morning",
 		"labels": ["greeting"]
 	},
 	{
-		"id": 3,
 		"front": "Buenas tardes",
 		"back": "Good afternoon",
 		"labels": ["greeting"]
 	},
 	{
-		"id": 4,
 		"front": "Buenas noches",
 		"back": "Good evening / Good night",
 		"labels": ["greeting"]
 	},
 	{
-		"id": 5,
 		"front": "¿Cómo estás?",
 		"back": "How are you?",
 		"labels": ["greeting"]
 	},
 	{
-		"id": 6,
 		"front": "¿Qué tal?",
 		"back": "What's up? / How's it going?",
 		"labels": ["greeting"]
 	},
 	{
-		"id": 7,
 		"front": "Mucho gusto",
 		"back": "Nice to meet you",
 		"labels": ["greeting"]
 	},
 	{
-		"id": 8,
 		"front": "Bienvenido",
 		"back": "Welcome",
 		"labels": ["greeting"]
 	},
 	{
-		"id": 9,
 		"front": "¿Cómo te llamas?",
 		"back": "What is your name?",
 		"labels": ["greeting"]
 	},
 	{
-		"id": 10,
 		"front": "Me llamo...",
 		"back": "My name is...",
 		"labels": ["greeting"]
 	},
 	{
-		"id": 11,
 		"front": "Encantado",
 		"back": "Pleased to meet you",
 		"labels": ["greeting"]
 	},
 	{
-		"id": 12,
 		"front": "¿De dónde eres?",
 		"back": "Where are you from?",
 		"labels": ["greeting"]
 	},
 	{
-		"id": 13,
 		"front": "Adiós",
 		"back": "Goodbye",
 		"labels": ["goodbye"]
 	},
 	{
-		"id": 14,
 		"front": "Hasta luego",
 		"back": "See you later",
 		"labels": ["goodbye"]
 	},
 	{
-		"id": 15,
 		"front": "Hasta mañana",
 		"back": "See you tomorrow",
 		"labels": ["goodbye"]
 	},
 	{
-		"id": 16,
 		"front": "Nos vemos",
 		"back": "See you",
 		"labels": ["goodbye"]
 	},
 	{
-		"id": 17,
 		"front": "Chao",
 		"back": "Bye",
 		"labels": ["goodbye"]
 	},
 	{
-		"id": 18,
 		"front": "Hasta pronto",
 		"back": "See you soon",
 		"labels": ["goodbye"]
 	},
 	{
-		"id": 19,
 		"front": "Cuídate",
 		"back": "Take care",
 		"labels": ["goodbye"]
 	},
 	{
-		"id": 20,
 		"front": "Que te vaya bien",
 		"back": "Have a good one",
 		"labels": ["goodbye"]
 	},
 	{
-		"id": 21,
 		"front": "uno",
 		"back": "1",
 		"labels": ["number"]
 	},
 	{
-		"id": 22,
 		"front": "dos",
 		"back": "2",
 		"labels": ["number"]
 	},
 	{
-		"id": 23,
 		"front": "tres",
 		"back": "3",
 		"labels": ["number"]
 	},
 	{
-		"id": 24,
 		"front": "cuatro",
 		"back": "4",
 		"labels": ["number"]
 	},
 	{
-		"id": 25,
 		"front": "cinco",
 		"back": "5",
 		"labels": ["number"]
 	},
 	{
-		"id": 26,
 		"front": "seis",
 		"back": "6",
 		"labels": ["number"]
 	},
 	{
-		"id": 27,
 		"front": "siete",
 		"back": "7",
 		"labels": ["number"]
 	},
 	{
-		"id": 28,
 		"front": "ocho",
 		"back": "8",
 		"labels": ["number"]
 	},
 	{
-		"id": 29,
 		"front": "nueve",
 		"back": "9",
 		"labels": ["number"]
 	},
 	{
-		"id": 30,
 		"front": "diez",
 		"back": "10",
 		"labels": ["number"]
 	},
 	{
-		"id": 31,
 		"front": "once",
 		"back": "11",
 		"labels": ["number"]
 	},
 	{
-		"id": 32,
 		"front": "doce",
 		"back": "12",
 		"labels": ["number"]
 	},
 	{
-		"id": 33,
 		"front": "trece",
 		"back": "13",
 		"labels": ["number"]
 	},
 	{
-		"id": 34,
 		"front": "catorce",
 		"back": "14",
 		"labels": ["number"]
 	},
 	{
-		"id": 35,
 		"front": "quince",
 		"back": "15",
 		"labels": ["number"]
 	},
 	{
-		"id": 36,
 		"front": "dieciséis",
 		"back": "16",
 		"labels": ["number"]
 	},
 	{
-		"id": 37,
 		"front": "diecisiete",
 		"back": "17",
 		"labels": ["number"]
 	},
 	{
-		"id": 38,
 		"front": "dieciocho",
 		"back": "18",
 		"labels": ["number"]
 	},
 	{
-		"id": 39,
 		"front": "diecinueve",
 		"back": "19",
 		"labels": ["number"]
 	},
 	{
-		"id": 40,
 		"front": "veinte",
 		"back": "20",
 		"labels": ["number"]
 	},
 	{
-		"id": 41,
 		"front": "veintiuno",
 		"back": "21",
 		"labels": ["number"]
 	},
 	{
-		"id": 42,
 		"front": "veintidos",
 		"back": "22",
 		"labels": ["number"]
 	},
 	{
-		"id": 43,
 		"front": "veintitres",
 		"back": "23",
 		"labels": ["number"]
 	},
 	{
-		"id": 44,
 		"front": "veinticuatro",
 		"back": "24",
 		"labels": ["number"]
 	},
 	{
-		"id": 45,
 		"front": "veinticinco",
 		"back": "25",
 		"labels": ["number"]
 	},
 	{
-		"id": 46,
 		"front": "veintiseis",
 		"back": "26",
 		"labels": ["number"]
 	},
 	{
-		"id": 47,
 		"front": "veintisiete",
 		"back": "27",
 		"labels": ["number"]
 	},
 	{
-		"id": 48,
 		"front": "veintiocho",
 		"back": "28",
 		"labels": ["number"]
 	},
 	{
-		"id": 49,
 		"front": "veintinueve",
 		"back": "29",
 		"labels": ["number"]
 	},
 	{
-		"id": 50,
 		"front": "treinta",
 		"back": "30",
 		"labels": ["number"]
 	},
 	{
-		"id": 51,
 		"front": "treinta y uno",
 		"back": "31",
 		"labels": ["number"]
 	},
 	{
-		"id": 52,
 		"front": "treinta y dos",
 		"back": "32",
 		"labels": ["number"]
 	},
 	{
-		"id": 53,
 		"front": "treinta y tres",
 		"back": "33",
 		"labels": ["number"]
 	},
 	{
-		"id": 54,
 		"front": "treinta y cuatro",
 		"back": "34",
 		"labels": ["number"]
 	},
 	{
-		"id": 55,
 		"front": "treinta y cinco",
 		"back": "35",
 		"labels": ["number"]
 	},
 	{
-		"id": 56,
 		"front": "treinta y seis",
 		"back": "36",
 		"labels": ["number"]
 	},
 	{
-		"id": 57,
 		"front": "treinta y siete",
 		"back": "37",
 		"labels": ["number"]
 	},
 	{
-		"id": 58,
 		"front": "treinta y ocho",
 		"back": "38",
 		"labels": ["number"]
 	},
 	{
-		"id": 59,
 		"front": "treinta y nueve",
 		"back": "39",
 		"labels": ["number"]
 	},
 	{
-		"id": 60,
 		"front": "cuarenta",
 		"back": "40",
 		"labels": ["number"]
 	},
 	{
-		"id": 61,
 		"front": "cuarenta y uno",
 		"back": "41",
 		"labels": ["number"]
 	},
 	{
-		"id": 62,
 		"front": "cuarenta y dos",
 		"back": "42",
 		"labels": ["number"]
 	},
 	{
-		"id": 63,
 		"front": "cuarenta y tres",
 		"back": "43",
 		"labels": ["number"]
 	},
 	{
-		"id": 64,
 		"front": "cuarenta y cuatro",
 		"back": "44",
 		"labels": ["number"]
 	},
 	{
-		"id": 65,
 		"front": "cuarenta y cinco",
 		"back": "45",
 		"labels": ["number"]
 	},
 	{
-		"id": 66,
 		"front": "cuarenta y seis",
 		"back": "46",
 		"labels": ["number"]
 	},
 	{
-		"id": 67,
 		"front": "cuarenta y siete",
 		"back": "47",
 		"labels": ["number"]
 	},
 	{
-		"id": 68,
 		"front": "cuarenta y ocho",
 		"back": "48",
 		"labels": ["number"]
 	},
 	{
-		"id": 69,
 		"front": "cuarenta y nueve",
 		"back": "49",
 		"labels": ["number"]
 	},
 	{
-		"id": 70,
 		"front": "cincuenta",
 		"back": "50",
 		"labels": ["number"]
 	},
 	{
-		"id": 71,
 		"front": "cincuenta y uno",
 		"back": "51",
 		"labels": ["number"]
 	},
 	{
-		"id": 72,
 		"front": "cincuenta y dos",
 		"back": "52",
 		"labels": ["number"]
 	},
 	{
-		"id": 73,
 		"front": "cincuenta y tres",
 		"back": "53",
 		"labels": ["number"]
 	},
 	{
-		"id": 74,
 		"front": "cincuenta y cuatro",
 		"back": "54",
 		"labels": ["number"]
 	},
 	{
-		"id": 75,
 		"front": "cincuenta y cinco",
 		"back": "55",
 		"labels": ["number"]
 	},
 	{
-		"id": 76,
 		"front": "cincuenta y seis",
 		"back": "56",
 		"labels": ["number"]
 	},
 	{
-		"id": 77,
 		"front": "cincuenta y siete",
 		"back": "57",
 		"labels": ["number"]
 	},
 	{
-		"id": 78,
 		"front": "cincuenta y ocho",
 		"back": "58",
 		"labels": ["number"]
 	},
 	{
-		"id": 79,
 		"front": "cincuenta y nueve",
 		"back": "59",
 		"labels": ["number"]
 	},
 	{
-		"id": 80,
 		"front": "sesenta",
 		"back": "60",
 		"labels": ["number"]
 	},
 	{
-		"id": 81,
 		"front": "sesenta y uno",
 		"back": "61",
 		"labels": ["number"]
 	},
 	{
-		"id": 82,
 		"front": "sesenta y dos",
 		"back": "62",
 		"labels": ["number"]
 	},
 	{
-		"id": 83,
 		"front": "sesenta y tres",
 		"back": "63",
 		"labels": ["number"]
 	},
 	{
-		"id": 84,
 		"front": "sesenta y cuatro",
 		"back": "64",
 		"labels": ["number"]
 	},
 	{
-		"id": 85,
 		"front": "sesenta y cinco",
 		"back": "65",
 		"labels": ["number"]
 	},
 	{
-		"id": 86,
 		"front": "sesenta y seis",
 		"back": "66",
 		"labels": ["number"]
 	},
 	{
-		"id": 87,
 		"front": "sesenta y siete",
 		"back": "67",
 		"labels": ["number"]
 	},
 	{
-		"id": 88,
 		"front": "sesenta y ocho",
 		"back": "68",
 		"labels": ["number"]
 	},
 	{
-		"id": 89,
 		"front": "sesenta y nueve",
 		"back": "69",
 		"labels": ["number"]
 	},
 	{
-		"id": 90,
 		"front": "setenta",
 		"back": "70",
 		"labels": ["number"]
 	},
 	{
-		"id": 91,
 		"front": "setenta y uno",
 		"back": "71",
 		"labels": ["number"]
 	},
 	{
-		"id": 92,
 		"front": "setenta y dos",
 		"back": "72",
 		"labels": ["number"]
 	},
 	{
-		"id": 93,
 		"front": "setenta y tres",
 		"back": "73",
 		"labels": ["number"]
 	},
 	{
-		"id": 94,
 		"front": "setenta y cuatro",
 		"back": "74",
 		"labels": ["number"]
 	},
 	{
-		"id": 95,
 		"front": "setenta y cinco",
 		"back": "75",
 		"labels": ["number"]
 	},
 	{
-		"id": 96,
 		"front": "setenta y seis",
 		"back": "76",
 		"labels": ["number"]
 	},
 	{
-		"id": 97,
 		"front": "setenta y siete",
 		"back": "77",
 		"labels": ["number"]
 	},
 	{
-		"id": 98,
 		"front": "setenta y ocho",
 		"back": "78",
 		"labels": ["number"]
 	},
 	{
-		"id": 99,
 		"front": "setenta y nueve",
 		"back": "79",
 		"labels": ["number"]
 	},
 	{
-		"id": 100,
 		"front": "ochenta",
 		"back": "80",
 		"labels": ["number"]
 	},
 	{
-		"id": 101,
 		"front": "ochenta y uno",
 		"back": "81",
 		"labels": ["number"]
 	},
 	{
-		"id": 102,
 		"front": "ochenta y dos",
 		"back": "82",
 		"labels": ["number"]
 	},
 	{
-		"id": 103,
 		"front": "ochenta y tres",
 		"back": "83",
 		"labels": ["number"]
 	},
 	{
-		"id": 104,
 		"front": "ochenta y cuatro",
 		"back": "84",
 		"labels": ["number"]
 	},
 	{
-		"id": 105,
 		"front": "ochenta y cinco",
 		"back": "85",
 		"labels": ["number"]
 	},
 	{
-		"id": 106,
 		"front": "ochenta y seis",
 		"back": "86",
 		"labels": ["number"]
 	},
 	{
-		"id": 107,
 		"front": "ochenta y siete",
 		"back": "87",
 		"labels": ["number"]
 	},
 	{
-		"id": 108,
 		"front": "ochenta y ocho",
 		"back": "88",
 		"labels": ["number"]
 	},
 	{
-		"id": 109,
 		"front": "ochenta y nueve",
 		"back": "89",
 		"labels": ["number"]
 	},
 	{
-		"id": 110,
 		"front": "noventa",
 		"back": "90",
 		"labels": ["number"]
 	},
 	{
-		"id": 111,
 		"front": "noventa y uno",
 		"back": "91",
 		"labels": ["number"]
 	},
 	{
-		"id": 112,
 		"front": "noventa y dos",
 		"back": "92",
 		"labels": ["number"]
 	},
 	{
-		"id": 113,
 		"front": "noventa y tres",
 		"back": "93",
 		"labels": ["number"]
 	},
 	{
-		"id": 114,
 		"front": "noventa y cuatro",
 		"back": "94",
 		"labels": ["number"]
 	},
 	{
-		"id": 115,
 		"front": "noventa y cinco",
 		"back": "95",
 		"labels": ["number"]
 	},
 	{
-		"id": 116,
 		"front": "noventa y seis",
 		"back": "96",
 		"labels": ["number"]
 	},
 	{
-		"id": 117,
 		"front": "noventa y siete",
 		"back": "97",
 		"labels": ["number"]
 	},
 	{
-		"id": 118,
 		"front": "noventa y ocho",
 		"back": "98",
 		"labels": ["number"]
 	},
 	{
-		"id": 119,
 		"front": "noventa y nueve",
 		"back": "99",
 		"labels": ["number"]
 	},
 	{
-		"id": 120,
 		"front": "cien",
 		"back": "100",
 		"labels": ["number"]

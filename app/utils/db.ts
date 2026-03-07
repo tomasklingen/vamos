@@ -1,8 +1,11 @@
 import Dexie, { type Table } from "dexie"
 import type { State } from "ts-fsrs"
 
+export type ExerciseMode = "forward" | "backward" | "production" | "dictation"
+
 export interface CardScheduling {
-	cardId: number
+	cardKey: string
+	mode: ExerciseMode
 	due: string
 	stability: number
 	difficulty: number
@@ -17,20 +20,21 @@ export interface CardScheduling {
 
 export interface Review {
 	id?: number
-	cardId: number
+	cardKey: string
+	mode: ExerciseMode
 	rating: number
 	reviewed_at: string
 }
 
 class VamosDB extends Dexie {
-	cardScheduling!: Table<CardScheduling, number>
+	cardScheduling!: Table<CardScheduling, [string, ExerciseMode]>
 	reviews!: Table<Review, number>
 
 	constructor() {
 		super("vamos")
-		this.version(1).stores({
-			cardScheduling: "cardId",
-			reviews: "++id, cardId",
+		this.version(2).stores({
+			cardScheduling: "[cardKey+mode]",
+			reviews: "++id, [cardKey+mode]",
 		})
 	}
 }
