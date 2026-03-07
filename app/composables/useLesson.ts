@@ -5,6 +5,8 @@ import { db } from "~/utils/db"
 import { scheduler, computeIntervals, cardToDbFields } from "~/utils/fsrs"
 import { useCards, type CardData } from "~/composables/useCards"
 
+const DAILY_NEW_LIMIT = 50
+
 export interface LessonCard {
 	cardKey: string
 	front: string
@@ -50,26 +52,58 @@ export function useLesson(label?: MaybeRef<string | undefined>, mode?: MaybeRef<
 		const schedulingRows = await db.cardScheduling.bulkGet(cardKeys)
 
 		const now = new Date()
-		const dueCards: Array<{ apiCard: CardData; fsrsCard: FsrsCard }> = []
+		const todayStart = new Date()
+		todayStart.setHours(0, 0, 0, 0)
+		const todayStartStr = todayStart.toISOString()
+		const todayReviews = await db.reviews
+			.filter((r) => r.mode === activeMode && r.reviewed_at >= todayStartStr)
+			.toArray()
+		const todayCountByKey = new Map<string, number>()
+		for (const r of todayReviews) {
+			todayCountByKey.set(r.cardKey, (todayCountByKey.get(r.cardKey) ?? 0) + 1)
+		}
+
+		const reviewDueCards: Array<{ apiCard: CardData; fsrsCard: FsrsCard }> = []
+		const newCards: Array<{ apiCard: CardData; fsrsCard: FsrsCard }> = []
+		let introducedTodayCount = 0
 
 		for (let i = 0; i < cards.length; i++) {
 			const apiCard = cards[i]!
 			const scheduling = schedulingRows[i]
 			const fsrsCard = scheduling ? schedulingToFsrsCard(scheduling) : createEmptyCard(now)
-			if (fsrsCard.due <= now) {
-				dueCards.push({ apiCard, fsrsCard })
+
+			if (!scheduling) {
+				newCards.push({ apiCard, fsrsCard })
+			} else {
+				const todayCount = todayCountByKey.get(`${apiCard.front}|${apiCard.back}`) ?? 0
+				if (scheduling.reps > 0 && scheduling.reps === todayCount) {
+					introducedTodayCount++
+				}
+				if (fsrsCard.due <= now) {
+					reviewDueCards.push({ apiCard, fsrsCard })
+				}
 			}
 		}
 
-		dueCount.value = dueCards.length
+		const availableNewCount = Math.max(0, DAILY_NEW_LIMIT - introducedTodayCount)
+		dueCount.value = reviewDueCards.length + Math.min(newCards.length, availableNewCount)
 
-		if (dueCards.length === 0) {
+		if (dueCount.value === 0) {
 			nextCard.value = null
 			return
 		}
 
-		dueCards.sort((a, b) => a.fsrsCard.due.getTime() - b.fsrsCard.due.getTime())
-		const { apiCard, fsrsCard } = dueCards[0]!
+		let chosen: { apiCard: CardData; fsrsCard: FsrsCard }
+
+		if (reviewDueCards.length > 0) {
+			reviewDueCards.sort((a, b) => a.fsrsCard.due.getTime() - b.fsrsCard.due.getTime())
+			chosen = reviewDueCards[0]!
+		} else {
+			const idx = Math.floor(Math.random() * Math.min(newCards.length, availableNewCount))
+			chosen = newCards[idx]!
+		}
+
+		const { apiCard, fsrsCard } = chosen
 		const intervals = computeIntervals(fsrsCard, now)
 		const cardKey = `${apiCard.front}|${apiCard.back}`
 		const isBackward = activeMode === "backward"
