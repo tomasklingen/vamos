@@ -21,6 +21,7 @@ const voiceOptions = computed(() =>
 )
 
 const audioSettingsOpen = ref(false)
+const currentYear = new Date().getFullYear()
 
 function testVoice() {
 	speak("Hola, ¿cómo estás?", "es-ES", voiceURI.value, rate.value)
@@ -79,7 +80,7 @@ function testVoice() {
 
 		<UFooter>
 			<template #left>
-				<p class="text-sm text-muted">{{ t("footer.tagline") }}</p>
+				<p class="text-sm text-muted">Vamos · Tomas Klingen {{ currentYear }}</p>
 			</template>
 		</UFooter>
 
