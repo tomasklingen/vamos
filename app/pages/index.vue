@@ -67,7 +67,6 @@ function selectLabel(name: string | undefined) {
 	<UContainer class="max-w-xl py-10 space-y-10">
 		<div class="text-center space-y-2">
 			<h1 class="text-4xl font-bold tracking-tight">{{ t("home.heading") }}</h1>
-			<p class="text-muted text-lg">{{ t("home.subheading") }}</p>
 		</div>
 
 		<!-- Stats -->
