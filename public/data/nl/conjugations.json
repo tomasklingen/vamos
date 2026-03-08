@@ -56,7 +56,7 @@
 	},
 	{
 		"front": "ustedes alquilan",
-		"back": "u huren",
+		"back": "jullie huren",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -116,7 +116,7 @@
 	},
 	{
 		"front": "ustedes aprenden",
-		"back": "u leren",
+		"back": "jullie leren",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -176,7 +176,7 @@
 	},
 	{
 		"front": "ustedes ayudan",
-		"back": "u helpen",
+		"back": "jullie helpen",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -206,7 +206,7 @@
 	},
 	{
 		"front": "ustedes bailan",
-		"back": "u dansen",
+		"back": "jullie dansen",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -236,7 +236,7 @@
 	},
 	{
 		"front": "ustedes beben",
-		"back": "u drinken",
+		"back": "jullie drinken",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -326,7 +326,7 @@
 	},
 	{
 		"front": "ustedes caminan",
-		"back": "u lopen",
+		"back": "jullie lopen",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -446,7 +446,7 @@
 	},
 	{
 		"front": "ustedes comprenden",
-		"back": "u begrijpen",
+		"back": "jullie begrijpen",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -596,7 +596,7 @@
 	},
 	{
 		"front": "ustedes deciden",
-		"back": "u beslissen/besluiten",
+		"back": "jullie beslissen/besluiten",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -686,7 +686,7 @@
 	},
 	{
 		"front": "ustedes envían",
-		"back": "u sturen/(ver)zenden",
+		"back": "jullie sturen/(ver)zenden",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -836,7 +836,7 @@
 	},
 	{
 		"front": "ustedes estudian",
-		"back": "u studeren",
+		"back": "jullie studeren",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -926,7 +926,7 @@
 	},
 	{
 		"front": "ustedes invitan",
-		"back": "u nodigen uit",
+		"back": "jullie nodigen uit",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -1106,7 +1106,7 @@
 	},
 	{
 		"front": "ustedes llevan",
-		"back": "u nemen mee/dragen",
+		"back": "jullie nemen mee/dragen",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -1166,7 +1166,7 @@
 	},
 	{
 		"front": "ustedes miran",
-		"back": "u kijken",
+		"back": "jullie kijken",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -1196,7 +1196,7 @@
 	},
 	{
 		"front": "ustedes nadan",
-		"back": "u zwemmen",
+		"back": "jullie zwemmen",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -1286,7 +1286,7 @@
 	},
 	{
 		"front": "ustedes pagan",
-		"back": "u betalen",
+		"back": "jullie betalen",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -1436,7 +1436,7 @@
 	},
 	{
 		"front": "ustedes pronuncian",
-		"back": "u spreken uit",
+		"back": "jullie spreken uit",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -1496,7 +1496,7 @@
 	},
 	{
 		"front": "ustedes regresan",
-		"back": "u komen terug",
+		"back": "jullie komen terug",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -1616,7 +1616,7 @@
 	},
 	{
 		"front": "ustedes toman",
-		"back": "u nemen/drinken",
+		"back": "jullie nemen/drinken",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -1676,7 +1676,7 @@
 	},
 	{
 		"front": "ustedes tratan de",
-		"back": "u proberen",
+		"back": "jullie proberen",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
@@ -1766,7 +1766,7 @@
 	},
 	{
 		"front": "ustedes viajan",
-		"back": "u reizen",
+		"back": "jullie reizen",
 		"labels": ["vervoegingen", "les 2"]
 	},
 	{
