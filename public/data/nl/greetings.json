@@ -1,0 +1,62 @@
+[
+	{
+		"front": "Hola",
+		"back": "Hallo",
+		"labels": ["greeting"]
+	},
+	{
+		"front": "Buenos días",
+		"back": "Goedemorgen",
+		"labels": ["greeting"]
+	},
+	{
+		"front": "Buenas tardes",
+		"back": "Goedemiddag",
+		"labels": ["greeting"]
+	},
+	{
+		"front": "Buenas noches",
+		"back": "Goedenavond / Goedenacht",
+		"labels": ["greeting"]
+	},
+	{
+		"front": "¿Cómo estás?",
+		"back": "Hoe gaat het?",
+		"labels": ["greeting"]
+	},
+	{
+		"front": "¿Qué tal?",
+		"back": "Hoe is het?",
+		"labels": ["greeting"]
+	},
+	{
+		"front": "Mucho gusto",
+		"back": "Aangenaam kennis te maken",
+		"labels": ["greeting"]
+	},
+	{
+		"front": "Bienvenido",
+		"back": "Welkom",
+		"labels": ["greeting"]
+	},
+	{
+		"front": "¿Cómo te llamas?",
+		"back": "Hoe heet je?",
+		"labels": ["greeting"]
+	},
+	{
+		"front": "Me llamo...",
+		"back": "Mijn naam is...",
+		"labels": ["greeting"]
+	},
+	{
+		"front": "Encantado",
+		"back": "Aangenaam",
+		"labels": ["greeting"]
+	},
+	{
+		"front": "¿De dónde eres?",
+		"back": "Waar kom je vandaan?",
+		"labels": ["greeting"]
+	}
+]

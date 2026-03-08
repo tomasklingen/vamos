@@ -1,8 +1,8 @@
-import { allCards } from "~/composables/useCards"
 import { db } from "~/utils/db"
 
 export function useStats() {
-	const totalCards = ref(allCards.length)
+	const { data: cards } = useCards()
+	const totalCards = computed(() => cards.value.length)
 	const totalReviews = ref(0)
 	const accuracy = ref(0)
 	const streak = ref(0)

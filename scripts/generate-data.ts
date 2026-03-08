@@ -6,7 +6,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 type Card = [string, string]
 
-const greetings: Card[] = [
+const greetingsEn: Card[] = [
 	["Hola", "Hello"],
 	["Buenos días", "Good morning"],
 	["Buenas tardes", "Good afternoon"],
@@ -21,7 +21,22 @@ const greetings: Card[] = [
 	["¿De dónde eres?", "Where are you from?"],
 ]
 
-const goodbyes: Card[] = [
+const greetingsNl: Card[] = [
+	["Hola", "Hallo"],
+	["Buenos días", "Goedemorgen"],
+	["Buenas tardes", "Goedemiddag"],
+	["Buenas noches", "Goedenavond / Goedenacht"],
+	["¿Cómo estás?", "Hoe gaat het?"],
+	["¿Qué tal?", "Hoe is het?"],
+	["Mucho gusto", "Aangenaam kennis te maken"],
+	["Bienvenido", "Welkom"],
+	["¿Cómo te llamas?", "Hoe heet je?"],
+	["Me llamo...", "Mijn naam is..."],
+	["Encantado", "Aangenaam"],
+	["¿De dónde eres?", "Waar kom je vandaan?"],
+]
+
+const goodbyesEn: Card[] = [
 	["Adiós", "Goodbye"],
 	["Hasta luego", "See you later"],
 	["Hasta mañana", "See you tomorrow"],
@@ -30,6 +45,17 @@ const goodbyes: Card[] = [
 	["Hasta pronto", "See you soon"],
 	["Cuídate", "Take care"],
 	["Que te vaya bien", "Have a good one"],
+]
+
+const goodbyesNl: Card[] = [
+	["Adiós", "Tot ziens"],
+	["Hasta luego", "Tot later"],
+	["Hasta mañana", "Tot morgen"],
+	["Nos vemos", "Tot zo"],
+	["Chao", "Doei"],
+	["Hasta pronto", "Tot snel"],
+	["Cuídate", "Pas goed op jezelf"],
+	["Que te vaya bien", "Veel succes"],
 ]
 
 const ones = [
@@ -75,7 +101,7 @@ function toSpanish(n: number): string {
 	return one === 0 ? (tens[ten] ?? "") : `${tens[ten]} y ${ones[one]}`
 }
 
-const numbers: Card[] = Array.from({ length: 100 }, (_, i) => {
+const numbersCards: Card[] = Array.from({ length: 100 }, (_, i) => {
 	const n = i + 1
 	return [toSpanish(n), String(n)] as Card
 })
@@ -86,21 +112,32 @@ interface CardData {
 	labels: string[]
 }
 
-const datasets: Record<string, CardData[]> = {
-	"greetings.json": greetings.map(([front, back]) => ({ front, back, labels: ["greeting"] })),
-	"goodbyes.json": goodbyes.map(([front, back]) => ({ front, back, labels: ["goodbye"] })),
-	"numbers.json": numbers.map(([front, back]) => ({ front, back, labels: ["number"] })),
+const locales: Record<string, Record<string, CardData[]>> = {
+	en: {
+		"greetings.json": greetingsEn.map(([front, back]) => ({ front, back, labels: ["greeting"] })),
+		"goodbyes.json": goodbyesEn.map(([front, back]) => ({ front, back, labels: ["goodbye"] })),
+		"numbers.json": numbersCards.map(([front, back]) => ({ front, back, labels: ["number"] })),
+	},
+	nl: {
+		"greetings.json": greetingsNl.map(([front, back]) => ({ front, back, labels: ["greeting"] })),
+		"goodbyes.json": goodbyesNl.map(([front, back]) => ({ front, back, labels: ["goodbye"] })),
+		"numbers.json": numbersCards.map(([front, back]) => ({ front, back, labels: ["number"] })),
+	},
 }
 
-const outDir = resolve(__dirname, "../public/data")
-mkdirSync(outDir, { recursive: true })
-
 let totalCards = 0
-for (const [filename, cards] of Object.entries(datasets)) {
-	writeFileSync(resolve(outDir, filename), JSON.stringify(cards, null, 2))
-	totalCards += cards.length
+let totalFiles = 0
+
+for (const [locale, datasets] of Object.entries(locales)) {
+	const outDir = resolve(__dirname, `../public/data/${locale}`)
+	mkdirSync(outDir, { recursive: true })
+	for (const [filename, cards] of Object.entries(datasets)) {
+		writeFileSync(resolve(outDir, filename), JSON.stringify(cards, null, 2))
+		totalCards += cards.length
+		totalFiles++
+	}
 }
 
 console.log(
-	`Generated ${totalCards} cards across ${Object.keys(datasets).length} files in public/data/`,
+	`Generated ${totalCards} cards across ${totalFiles} files in public/data/{${Object.keys(locales).join(",")}}`,
 )

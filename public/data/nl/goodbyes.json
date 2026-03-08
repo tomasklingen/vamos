@@ -1,0 +1,42 @@
+[
+	{
+		"front": "Adiós",
+		"back": "Tot ziens",
+		"labels": ["goodbye"]
+	},
+	{
+		"front": "Hasta luego",
+		"back": "Tot later",
+		"labels": ["goodbye"]
+	},
+	{
+		"front": "Hasta mañana",
+		"back": "Tot morgen",
+		"labels": ["goodbye"]
+	},
+	{
+		"front": "Nos vemos",
+		"back": "Tot zo",
+		"labels": ["goodbye"]
+	},
+	{
+		"front": "Chao",
+		"back": "Doei",
+		"labels": ["goodbye"]
+	},
+	{
+		"front": "Hasta pronto",
+		"back": "Tot snel",
+		"labels": ["goodbye"]
+	},
+	{
+		"front": "Cuídate",
+		"back": "Pas goed op jezelf",
+		"labels": ["goodbye"]
+	},
+	{
+		"front": "Que te vaya bien",
+		"back": "Veel succes",
+		"labels": ["goodbye"]
+	}
+]

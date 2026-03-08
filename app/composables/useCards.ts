@@ -6,25 +6,33 @@ export interface CardData {
 	labels: string[]
 }
 
-const modules = import.meta.glob<CardData[]>("../../public/data/*.json", {
+const modules = import.meta.glob<CardData[]>("../../public/data/*/*.json", {
 	eager: true,
 	import: "default",
 })
 
-export const allCards: CardData[] = Object.values(modules).flat()
+const allCardsByLocale: Record<string, CardData[]> = {}
+for (const [path, cards] of Object.entries(modules)) {
+	const locale = path.split("/").at(-2)!
+	allCardsByLocale[locale] ??= []
+	allCardsByLocale[locale].push(...cards)
+}
 
 export function useCards(label?: MaybeRef<string | undefined>) {
+	const { locale } = useI18n()
 	const data = computed(() => {
+		const cards = allCardsByLocale[locale.value] ?? allCardsByLocale["en"] ?? []
 		const l = isRef(label) ? label.value : label
-		if (!l) return allCards
-		return allCards.filter((c) => c.labels.includes(l))
+		return l ? cards.filter((c) => c.labels.includes(l)) : cards
 	})
 
 	return { data, status: ref<"success" | "pending" | "error">("success") }
 }
 
 export function useLabels() {
-	const labels = [...new Set(allCards.flatMap((c) => c.labels))].map((name) => ({ name }))
+	const labels = [...new Set((allCardsByLocale["en"] ?? []).flatMap((c) => c.labels))].map(
+		(name) => ({ name }),
+	)
 	return {
 		data: ref(labels),
 		status: ref<"success" | "pending" | "error">("success"),

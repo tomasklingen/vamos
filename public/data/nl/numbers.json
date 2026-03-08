@@ -1,0 +1,502 @@
+[
+	{
+		"front": "uno",
+		"back": "1",
+		"labels": ["number"]
+	},
+	{
+		"front": "dos",
+		"back": "2",
+		"labels": ["number"]
+	},
+	{
+		"front": "tres",
+		"back": "3",
+		"labels": ["number"]
+	},
+	{
+		"front": "cuatro",
+		"back": "4",
+		"labels": ["number"]
+	},
+	{
+		"front": "cinco",
+		"back": "5",
+		"labels": ["number"]
+	},
+	{
+		"front": "seis",
+		"back": "6",
+		"labels": ["number"]
+	},
+	{
+		"front": "siete",
+		"back": "7",
+		"labels": ["number"]
+	},
+	{
+		"front": "ocho",
+		"back": "8",
+		"labels": ["number"]
+	},
+	{
+		"front": "nueve",
+		"back": "9",
+		"labels": ["number"]
+	},
+	{
+		"front": "diez",
+		"back": "10",
+		"labels": ["number"]
+	},
+	{
+		"front": "once",
+		"back": "11",
+		"labels": ["number"]
+	},
+	{
+		"front": "doce",
+		"back": "12",
+		"labels": ["number"]
+	},
+	{
+		"front": "trece",
+		"back": "13",
+		"labels": ["number"]
+	},
+	{
+		"front": "catorce",
+		"back": "14",
+		"labels": ["number"]
+	},
+	{
+		"front": "quince",
+		"back": "15",
+		"labels": ["number"]
+	},
+	{
+		"front": "dieciséis",
+		"back": "16",
+		"labels": ["number"]
+	},
+	{
+		"front": "diecisiete",
+		"back": "17",
+		"labels": ["number"]
+	},
+	{
+		"front": "dieciocho",
+		"back": "18",
+		"labels": ["number"]
+	},
+	{
+		"front": "diecinueve",
+		"back": "19",
+		"labels": ["number"]
+	},
+	{
+		"front": "veinte",
+		"back": "20",
+		"labels": ["number"]
+	},
+	{
+		"front": "veintiuno",
+		"back": "21",
+		"labels": ["number"]
+	},
+	{
+		"front": "veintidos",
+		"back": "22",
+		"labels": ["number"]
+	},
+	{
+		"front": "veintitres",
+		"back": "23",
+		"labels": ["number"]
+	},
+	{
+		"front": "veinticuatro",
+		"back": "24",
+		"labels": ["number"]
+	},
+	{
+		"front": "veinticinco",
+		"back": "25",
+		"labels": ["number"]
+	},
+	{
+		"front": "veintiseis",
+		"back": "26",
+		"labels": ["number"]
+	},
+	{
+		"front": "veintisiete",
+		"back": "27",
+		"labels": ["number"]
+	},
+	{
+		"front": "veintiocho",
+		"back": "28",
+		"labels": ["number"]
+	},
+	{
+		"front": "veintinueve",
+		"back": "29",
+		"labels": ["number"]
+	},
+	{
+		"front": "treinta",
+		"back": "30",
+		"labels": ["number"]
+	},
+	{
+		"front": "treinta y uno",
+		"back": "31",
+		"labels": ["number"]
+	},
+	{
+		"front": "treinta y dos",
+		"back": "32",
+		"labels": ["number"]
+	},
+	{
+		"front": "treinta y tres",
+		"back": "33",
+		"labels": ["number"]
+	},
+	{
+		"front": "treinta y cuatro",
+		"back": "34",
+		"labels": ["number"]
+	},
+	{
+		"front": "treinta y cinco",
+		"back": "35",
+		"labels": ["number"]
+	},
+	{
+		"front": "treinta y seis",
+		"back": "36",
+		"labels": ["number"]
+	},
+	{
+		"front": "treinta y siete",
+		"back": "37",
+		"labels": ["number"]
+	},
+	{
+		"front": "treinta y ocho",
+		"back": "38",
+		"labels": ["number"]
+	},
+	{
+		"front": "treinta y nueve",
+		"back": "39",
+		"labels": ["number"]
+	},
+	{
+		"front": "cuarenta",
+		"back": "40",
+		"labels": ["number"]
+	},
+	{
+		"front": "cuarenta y uno",
+		"back": "41",
+		"labels": ["number"]
+	},
+	{
+		"front": "cuarenta y dos",
+		"back": "42",
+		"labels": ["number"]
+	},
+	{
+		"front": "cuarenta y tres",
+		"back": "43",
+		"labels": ["number"]
+	},
+	{
+		"front": "cuarenta y cuatro",
+		"back": "44",
+		"labels": ["number"]
+	},
+	{
+		"front": "cuarenta y cinco",
+		"back": "45",
+		"labels": ["number"]
+	},
+	{
+		"front": "cuarenta y seis",
+		"back": "46",
+		"labels": ["number"]
+	},
+	{
+		"front": "cuarenta y siete",
+		"back": "47",
+		"labels": ["number"]
+	},
+	{
+		"front": "cuarenta y ocho",
+		"back": "48",
+		"labels": ["number"]
+	},
+	{
+		"front": "cuarenta y nueve",
+		"back": "49",
+		"labels": ["number"]
+	},
+	{
+		"front": "cincuenta",
+		"back": "50",
+		"labels": ["number"]
+	},
+	{
+		"front": "cincuenta y uno",
+		"back": "51",
+		"labels": ["number"]
+	},
+	{
+		"front": "cincuenta y dos",
+		"back": "52",
+		"labels": ["number"]
+	},
+	{
+		"front": "cincuenta y tres",
+		"back": "53",
+		"labels": ["number"]
+	},
+	{
+		"front": "cincuenta y cuatro",
+		"back": "54",
+		"labels": ["number"]
+	},
+	{
+		"front": "cincuenta y cinco",
+		"back": "55",
+		"labels": ["number"]
+	},
+	{
+		"front": "cincuenta y seis",
+		"back": "56",
+		"labels": ["number"]
+	},
+	{
+		"front": "cincuenta y siete",
+		"back": "57",
+		"labels": ["number"]
+	},
+	{
+		"front": "cincuenta y ocho",
+		"back": "58",
+		"labels": ["number"]
+	},
+	{
+		"front": "cincuenta y nueve",
+		"back": "59",
+		"labels": ["number"]
+	},
+	{
+		"front": "sesenta",
+		"back": "60",
+		"labels": ["number"]
+	},
+	{
+		"front": "sesenta y uno",
+		"back": "61",
+		"labels": ["number"]
+	},
+	{
+		"front": "sesenta y dos",
+		"back": "62",
+		"labels": ["number"]
+	},
+	{
+		"front": "sesenta y tres",
+		"back": "63",
+		"labels": ["number"]
+	},
+	{
+		"front": "sesenta y cuatro",
+		"back": "64",
+		"labels": ["number"]
+	},
+	{
+		"front": "sesenta y cinco",
+		"back": "65",
+		"labels": ["number"]
+	},
+	{
+		"front": "sesenta y seis",
+		"back": "66",
+		"labels": ["number"]
+	},
+	{
+		"front": "sesenta y siete",
+		"back": "67",
+		"labels": ["number"]
+	},
+	{
+		"front": "sesenta y ocho",
+		"back": "68",
+		"labels": ["number"]
+	},
+	{
+		"front": "sesenta y nueve",
+		"back": "69",
+		"labels": ["number"]
+	},
+	{
+		"front": "setenta",
+		"back": "70",
+		"labels": ["number"]
+	},
+	{
+		"front": "setenta y uno",
+		"back": "71",
+		"labels": ["number"]
+	},
+	{
+		"front": "setenta y dos",
+		"back": "72",
+		"labels": ["number"]
+	},
+	{
+		"front": "setenta y tres",
+		"back": "73",
+		"labels": ["number"]
+	},
+	{
+		"front": "setenta y cuatro",
+		"back": "74",
+		"labels": ["number"]
+	},
+	{
+		"front": "setenta y cinco",
+		"back": "75",
+		"labels": ["number"]
+	},
+	{
+		"front": "setenta y seis",
+		"back": "76",
+		"labels": ["number"]
+	},
+	{
+		"front": "setenta y siete",
+		"back": "77",
+		"labels": ["number"]
+	},
+	{
+		"front": "setenta y ocho",
+		"back": "78",
+		"labels": ["number"]
+	},
+	{
+		"front": "setenta y nueve",
+		"back": "79",
+		"labels": ["number"]
+	},
+	{
+		"front": "ochenta",
+		"back": "80",
+		"labels": ["number"]
+	},
+	{
+		"front": "ochenta y uno",
+		"back": "81",
+		"labels": ["number"]
+	},
+	{
+		"front": "ochenta y dos",
+		"back": "82",
+		"labels": ["number"]
+	},
+	{
+		"front": "ochenta y tres",
+		"back": "83",
+		"labels": ["number"]
+	},
+	{
+		"front": "ochenta y cuatro",
+		"back": "84",
+		"labels": ["number"]
+	},
+	{
+		"front": "ochenta y cinco",
+		"back": "85",
+		"labels": ["number"]
+	},
+	{
+		"front": "ochenta y seis",
+		"back": "86",
+		"labels": ["number"]
+	},
+	{
+		"front": "ochenta y siete",
+		"back": "87",
+		"labels": ["number"]
+	},
+	{
+		"front": "ochenta y ocho",
+		"back": "88",
+		"labels": ["number"]
+	},
+	{
+		"front": "ochenta y nueve",
+		"back": "89",
+		"labels": ["number"]
+	},
+	{
+		"front": "noventa",
+		"back": "90",
+		"labels": ["number"]
+	},
+	{
+		"front": "noventa y uno",
+		"back": "91",
+		"labels": ["number"]
+	},
+	{
+		"front": "noventa y dos",
+		"back": "92",
+		"labels": ["number"]
+	},
+	{
+		"front": "noventa y tres",
+		"back": "93",
+		"labels": ["number"]
+	},
+	{
+		"front": "noventa y cuatro",
+		"back": "94",
+		"labels": ["number"]
+	},
+	{
+		"front": "noventa y cinco",
+		"back": "95",
+		"labels": ["number"]
+	},
+	{
+		"front": "noventa y seis",
+		"back": "96",
+		"labels": ["number"]
+	},
+	{
+		"front": "noventa y siete",
+		"back": "97",
+		"labels": ["number"]
+	},
+	{
+		"front": "noventa y ocho",
+		"back": "98",
+		"labels": ["number"]
+	},
+	{
+		"front": "noventa y nueve",
+		"back": "99",
+		"labels": ["number"]
+	},
+	{
+		"front": "cien",
+		"back": "100",
+		"labels": ["number"]
+	}
+]
