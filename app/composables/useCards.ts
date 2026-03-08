@@ -30,11 +30,13 @@ export function useCards(label?: MaybeRef<string | undefined>) {
 }
 
 export function useLabels() {
-	const labels = [...new Set((allCardsByLocale["en"] ?? []).flatMap((c) => c.labels))].map(
-		(name) => ({ name }),
-	)
+	const { locale } = useI18n()
+	const data = computed(() => {
+		const cards = allCardsByLocale[locale.value] ?? allCardsByLocale["en"] ?? []
+		return [...new Set(cards.flatMap((c) => c.labels))].map((name) => ({ name }))
+	})
 	return {
-		data: ref(labels),
+		data,
 		status: ref<"success" | "pending" | "error">("success"),
 	}
 }

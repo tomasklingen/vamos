@@ -1,0 +1,302 @@
+[
+	{
+		"front": "Abrir",
+		"back": "Openen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Alquilar",
+		"back": "Huren",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Amar",
+		"back": "Houden van",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Aprender",
+		"back": "Leren",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Arreglar",
+		"back": "Regelen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Ayudar",
+		"back": "Helpen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Bailar",
+		"back": "Dansen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Beber",
+		"back": "Drinken",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Buscar",
+		"back": "Zoeken",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Cambiar",
+		"back": "Veranderen/Wisselen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Caminar",
+		"back": "Lopen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Cocinar",
+		"back": "Koken",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Comer",
+		"back": "Eten",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Comprar",
+		"back": "Kopen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Comprender",
+		"back": "Begrijpen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Correr",
+		"back": "Rennen/Hardlopen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Creer",
+		"back": "Geloven",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Desayunar",
+		"back": "Ontbijten",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Descansar",
+		"back": "Rusten",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Decidir",
+		"back": "Beslissen/Besluiten",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Disfrutar",
+		"back": "Genieten",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Enseñar",
+		"back": "Lesgeven",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Enviar",
+		"back": "Sturen/(Ver)zenden",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Entrar",
+		"back": "Binnenkomen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Escribir",
+		"back": "Schrijven",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Esperar",
+		"back": "Wachten/Hopen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Escuchar",
+		"back": "Luisteren",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Estudiar",
+		"back": "Studeren",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Explicar",
+		"back": "Uitleggen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Hablar",
+		"back": "Praten/Spreken",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Invitar",
+		"back": "Uitnodigen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Lavar",
+		"back": "Wassen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Leer",
+		"back": "Lezen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Limpiar",
+		"back": "Schoonmaken",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Llamar",
+		"back": "Bellen/Roepen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Llegar",
+		"back": "Aankomen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Llevar",
+		"back": "Meenemen/Dragen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Manejar",
+		"back": "Rijden",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Mirar",
+		"back": "Kijken",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Nadar",
+		"back": "Zwemmen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Necesitar",
+		"back": "Nodig hebben",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Olvidar",
+		"back": "Vergeten",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Pagar",
+		"back": "Betalen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Parar",
+		"back": "Stoppen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Practicar",
+		"back": "Oefenen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Preguntar",
+		"back": "Vragen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Preparar",
+		"back": "Bereiden",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Pronunciar",
+		"back": "Uitspreken",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Recibir",
+		"back": "Ontvangen/Krijgen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Regresar",
+		"back": "Terugkomen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Romper",
+		"back": "Breken",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Saludar",
+		"back": "Groeten",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Terminar",
+		"back": "Afmaken/Eindigen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Tomar",
+		"back": "Nemen/Drinken",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Trabajar",
+		"back": "Werken",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Tratar de",
+		"back": "Proberen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Usar",
+		"back": "Gebruiken",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Vender",
+		"back": "Verkopen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Viajar",
+		"back": "Reizen",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	},
+	{
+		"front": "Vivir",
+		"back": "Wonen/Leven",
+		"labels": ["regelmatige werkwoorden", "les 2"]
+	}
+]

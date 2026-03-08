@@ -2,61 +2,61 @@
 	{
 		"front": "Hola",
 		"back": "Hallo",
-		"labels": ["greeting"]
+		"labels": ["begroeting"]
 	},
 	{
 		"front": "Buenos días",
 		"back": "Goedemorgen",
-		"labels": ["greeting"]
+		"labels": ["begroeting"]
 	},
 	{
 		"front": "Buenas tardes",
 		"back": "Goedemiddag",
-		"labels": ["greeting"]
+		"labels": ["begroeting"]
 	},
 	{
 		"front": "Buenas noches",
 		"back": "Goedenavond / Goedenacht",
-		"labels": ["greeting"]
+		"labels": ["begroeting"]
 	},
 	{
 		"front": "¿Cómo estás?",
 		"back": "Hoe gaat het?",
-		"labels": ["greeting"]
+		"labels": ["begroeting"]
 	},
 	{
 		"front": "¿Qué tal?",
 		"back": "Hoe is het?",
-		"labels": ["greeting"]
+		"labels": ["begroeting"]
 	},
 	{
 		"front": "Mucho gusto",
 		"back": "Aangenaam kennis te maken",
-		"labels": ["greeting"]
+		"labels": ["begroeting"]
 	},
 	{
 		"front": "Bienvenido",
 		"back": "Welkom",
-		"labels": ["greeting"]
+		"labels": ["begroeting"]
 	},
 	{
 		"front": "¿Cómo te llamas?",
 		"back": "Hoe heet je?",
-		"labels": ["greeting"]
+		"labels": ["begroeting"]
 	},
 	{
 		"front": "Me llamo...",
 		"back": "Mijn naam is...",
-		"labels": ["greeting"]
+		"labels": ["begroeting"]
 	},
 	{
 		"front": "Encantado",
 		"back": "Aangenaam",
-		"labels": ["greeting"]
+		"labels": ["begroeting"]
 	},
 	{
 		"front": "¿De dónde eres?",
 		"back": "Waar kom je vandaan?",
-		"labels": ["greeting"]
+		"labels": ["begroeting"]
 	}
 ]

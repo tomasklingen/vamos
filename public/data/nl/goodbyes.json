@@ -2,41 +2,41 @@
 	{
 		"front": "Adiós",
 		"back": "Tot ziens",
-		"labels": ["goodbye"]
+		"labels": ["afscheid"]
 	},
 	{
 		"front": "Hasta luego",
 		"back": "Tot later",
-		"labels": ["goodbye"]
+		"labels": ["afscheid"]
 	},
 	{
 		"front": "Hasta mañana",
 		"back": "Tot morgen",
-		"labels": ["goodbye"]
+		"labels": ["afscheid"]
 	},
 	{
 		"front": "Nos vemos",
 		"back": "Tot zo",
-		"labels": ["goodbye"]
+		"labels": ["afscheid"]
 	},
 	{
 		"front": "Chao",
 		"back": "Doei",
-		"labels": ["goodbye"]
+		"labels": ["afscheid"]
 	},
 	{
 		"front": "Hasta pronto",
 		"back": "Tot snel",
-		"labels": ["goodbye"]
+		"labels": ["afscheid"]
 	},
 	{
 		"front": "Cuídate",
 		"back": "Pas goed op jezelf",
-		"labels": ["goodbye"]
+		"labels": ["afscheid"]
 	},
 	{
 		"front": "Que te vaya bien",
 		"back": "Veel succes",
-		"labels": ["goodbye"]
+		"labels": ["afscheid"]
 	}
 ]
