@@ -70,25 +70,25 @@ function selectLabel(name: string | undefined) {
 		</div>
 
 		<!-- Stats -->
-		<div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+		<div class="grid grid-cols-4 gap-2">
 			<UCard class="text-center">
-				<p class="text-3xl font-bold text-primary">{{ totalCards }}</p>
-				<p class="text-sm text-muted mt-1 break-words">{{ t("home.stats.cards") }}</p>
+				<p class="text-xl font-bold text-primary">{{ totalCards }}</p>
+				<p class="text-xs text-muted mt-0.5 break-words">{{ t("home.stats.cards") }}</p>
 			</UCard>
 			<UCard class="text-center">
-				<p class="text-3xl font-bold text-secondary">{{ totalReviews }}</p>
-				<p class="text-sm text-muted mt-1 break-words">{{ t("home.stats.reviews") }}</p>
+				<p class="text-xl font-bold text-secondary">{{ totalReviews }}</p>
+				<p class="text-xs text-muted mt-0.5 break-words">{{ t("home.stats.reviews") }}</p>
 			</UCard>
 			<UCard class="text-center">
-				<p class="text-3xl font-bold text-success">{{ accuracy }}%</p>
-				<p class="text-sm text-muted mt-1 break-words">{{ t("home.stats.accuracy") }}</p>
+				<p class="text-xl font-bold text-success">{{ accuracy }}%</p>
+				<p class="text-xs text-muted mt-0.5 break-words">{{ t("home.stats.accuracy") }}</p>
 			</UCard>
 			<UCard class="text-center">
 				<div class="flex items-center justify-center gap-1">
-					<UIcon name="i-lucide-flame" class="text-warning text-2xl" />
-					<p class="text-3xl font-bold text-warning">{{ streak }}</p>
+					<UIcon name="i-lucide-flame" class="text-warning text-lg" />
+					<p class="text-xl font-bold text-warning">{{ streak }}</p>
 				</div>
-				<p class="text-sm text-muted mt-1 break-words">{{ t("home.stats.streak") }}</p>
+				<p class="text-xs text-muted mt-0.5 break-words">{{ t("home.stats.streak") }}</p>
 			</UCard>
 		</div>
 
@@ -120,14 +120,16 @@ function selectLabel(name: string | undefined) {
 				<h2 class="text-lg font-bold">{{ t("home.progress") }}</h2>
 			</template>
 
-			<div class="divide-y divide-default">
+			<div class="space-y-2">
 				<template v-for="row in modeRows" :key="row.mode">
 					<NuxtLink
 						v-if="row.enabled"
 						:to="lessonUrl(row.mode)"
-						class="flex items-start gap-4 py-3 px-1 -mx-1 rounded-lg hover:bg-elevated transition-colors cursor-pointer"
+						class="flex items-center gap-4 p-3 rounded-lg border border-default hover:border-primary hover:bg-elevated transition-colors cursor-pointer group"
 					>
-						<UIcon :name="row.icon" class="text-xl text-primary shrink-0 mt-0.5" />
+						<div class="p-2 rounded-md bg-primary/10 shrink-0">
+							<UIcon :name="row.icon" class="text-lg text-primary block" />
+						</div>
 						<div class="flex-1 min-w-0 space-y-1.5">
 							<div class="flex items-center gap-2 flex-wrap">
 								<p class="font-semibold text-sm">{{ t(row.nameKey) }}</p>
@@ -139,7 +141,6 @@ function selectLabel(name: string | undefined) {
 									size="sm"
 								/>
 							</div>
-							<p class="text-xs text-muted">{{ t(row.descKey) }}</p>
 							<div class="flex items-center gap-2">
 								<div class="flex-1 h-1.5 bg-muted rounded-full overflow-hidden">
 									<div
@@ -152,10 +153,19 @@ function selectLabel(name: string | undefined) {
 								>
 							</div>
 						</div>
+						<UIcon
+							name="i-lucide-chevron-right"
+							class="text-muted group-hover:text-primary text-lg shrink-0 transition-colors"
+						/>
 					</NuxtLink>
 
-					<div v-else class="flex items-center gap-4 py-3 px-1 opacity-50 cursor-not-allowed">
-						<UIcon :name="row.icon" class="text-xl text-muted shrink-0" />
+					<div
+						v-else
+						class="flex items-center gap-4 p-3 rounded-lg border border-default opacity-50 cursor-not-allowed"
+					>
+						<div class="p-2 rounded-md bg-muted/20 shrink-0">
+							<UIcon :name="row.icon" class="text-lg text-muted block" />
+						</div>
 						<div class="flex-1 min-w-0">
 							<p class="font-semibold text-sm text-muted">{{ t(row.nameKey) }}</p>
 							<p class="text-xs text-muted truncate">{{ t(row.descKey) }}</p>
