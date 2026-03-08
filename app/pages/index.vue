@@ -125,22 +125,22 @@ function selectLabel(name: string | undefined) {
 					<NuxtLink
 						v-if="row.enabled"
 						:to="lessonUrl(row.mode)"
-						class="flex items-center gap-4 py-3 px-1 -mx-1 rounded-lg hover:bg-elevated transition-colors cursor-pointer"
+						class="flex items-start gap-4 py-3 px-1 -mx-1 rounded-lg hover:bg-elevated transition-colors cursor-pointer"
 					>
-						<UIcon :name="row.icon" class="text-xl text-primary shrink-0" />
-						<div class="flex-1 min-w-0">
-							<p class="font-semibold text-sm">{{ t(row.nameKey) }}</p>
-							<p class="text-xs text-muted truncate">{{ t(row.descKey) }}</p>
-						</div>
-						<div class="flex items-center gap-3 shrink-0">
-							<UBadge
-								v-if="progress[row.mode].dueCount > 0"
-								:label="t('home.cardsDueMode', { n: progress[row.mode].dueCount })"
-								color="primary"
-								variant="subtle"
-								size="sm"
-							/>
-							<div class="w-24 flex items-center gap-2">
+						<UIcon :name="row.icon" class="text-xl text-primary shrink-0 mt-0.5" />
+						<div class="flex-1 min-w-0 space-y-1.5">
+							<div class="flex items-center gap-2 flex-wrap">
+								<p class="font-semibold text-sm">{{ t(row.nameKey) }}</p>
+								<UBadge
+									v-if="progress[row.mode].dueCount > 0"
+									:label="t('home.cardsDueMode', { n: progress[row.mode].dueCount })"
+									color="primary"
+									variant="subtle"
+									size="sm"
+								/>
+							</div>
+							<p class="text-xs text-muted">{{ t(row.descKey) }}</p>
+							<div class="flex items-center gap-2">
 								<div class="flex-1 h-1.5 bg-muted rounded-full overflow-hidden">
 									<div
 										class="h-full bg-primary rounded-full"
