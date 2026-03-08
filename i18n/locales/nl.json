@@ -5,6 +5,7 @@
 		"cards": "Kaarten"
 	},
 	"home": {
+		"siteTitle": "Vamos – Leer Spaans",
 		"heading": "¡Vamos!",
 		"stats": {
 			"cards": "Kaarten",
@@ -60,7 +61,10 @@
 		"counterLearning": "Nu aan het leren",
 		"counterReview": "Klaar voor herhaling",
 		"allDone": "Alles herhaald!",
-		"noMoreCards": "Geen kaarten meer voor nu. Kom later terug!"
+		"noMoreCards": "Geen kaarten meer voor nu. Kom later terug!",
+		"rateHint": "Hoe goed wist je het nog?",
+		"forwardHint": "Wat is dit in het Nederlands?",
+		"backwardHint": "Wat is dit in het Spaans?"
 	},
 	"cards": {
 		"heading": "Kaarten",

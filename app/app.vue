@@ -2,6 +2,8 @@
 import type { NavigationMenuItem } from "@nuxt/ui"
 
 const { t, locale, locales, setLocale } = useI18n()
+
+useHead({ titleTemplate: (title) => (title ? `${title} · Vamos` : "Vamos") })
 const { speak, spanishVoices } = useSpeech()
 const { autoPlay, voiceURI, rate, setAutoPlay, setVoiceURI, setRate } = useAudioSettings()
 

@@ -5,6 +5,7 @@
 		"cards": "Tarjetas"
 	},
 	"home": {
+		"siteTitle": "Vamos – Aprende español",
 		"heading": "¡Vamos!",
 		"stats": {
 			"cards": "Tarjetas",
@@ -60,7 +61,10 @@
 		"counterLearning": "Aprendiendo ahora",
 		"counterReview": "Pendientes de repaso",
 		"allDone": "¡Todo repasado!",
-		"noMoreCards": "No hay más tarjetas por ahora. ¡Vuelve más tarde!"
+		"noMoreCards": "No hay más tarjetas por ahora. ¡Vuelve más tarde!",
+		"rateHint": "¿Qué tan bien lo recordaste?",
+		"forwardHint": "¿Cómo se dice esto en español?",
+		"backwardHint": "¿Cómo se dice esto en inglés?"
 	},
 	"cards": {
 		"heading": "Tarjetas",

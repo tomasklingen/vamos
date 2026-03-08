@@ -5,6 +5,7 @@
 		"cards": "Cards"
 	},
 	"home": {
+		"siteTitle": "Vamos – Spanish flashcards",
 		"heading": "¡Vamos!",
 		"stats": {
 			"cards": "Cards",
@@ -60,7 +61,10 @@
 		"counterLearning": "Currently learning",
 		"counterReview": "Due for review",
 		"allDone": "All done!",
-		"noMoreCards": "No more cards for now. Check back later!"
+		"noMoreCards": "No more cards for now. Check back later!",
+		"rateHint": "How well did you remember?",
+		"forwardHint": "What is this in English?",
+		"backwardHint": "What is this in Spanish?"
 	},
 	"cards": {
 		"heading": "Cards",

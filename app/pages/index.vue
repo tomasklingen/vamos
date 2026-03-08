@@ -3,7 +3,7 @@ import type { ExerciseMode } from "~/utils/db"
 
 const { t } = useI18n()
 
-useHead(() => ({ title: t("nav.home") }))
+useHead(() => ({ title: t("home.siteTitle"), titleTemplate: null }))
 
 const { totalCards, totalReviews, accuracy, streak } = useStats()
 

@@ -146,6 +146,9 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 							/>
 						</UTooltip>
 					</div>
+					<p v-if="!revealed" class="text-sm text-muted">
+						{{ isBackward ? t("lesson.backwardHint") : t("lesson.forwardHint") }}
+					</p>
 
 					<Transition name="fade">
 						<div v-if="revealed" class="space-y-2">
@@ -177,6 +180,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 						</UButton>
 					</div>
 					<div v-else class="space-y-1">
+						<p class="text-sm text-muted text-center pb-1">{{ t("lesson.rateHint") }}</p>
 						<div class="grid grid-cols-4 gap-2 text-center text-xs text-muted">
 							<span>{{ nextCard.intervals.again }}</span>
 							<span>{{ nextCard.intervals.hard }}</span>
