@@ -5,7 +5,7 @@ import { db } from "~/utils/db"
 import { scheduler, computeIntervals, cardToDbFields } from "~/utils/fsrs"
 import { useCards, type CardData } from "~/composables/useCards"
 
-const DAILY_NEW_LIMIT = 50
+const DAILY_NEW_LIMIT = 100
 
 export interface LessonCard {
 	cardKey: string

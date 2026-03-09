@@ -62,6 +62,7 @@
 		"counterReview": "Due for review",
 		"allDone": "All done!",
 		"noMoreCards": "No more cards for now. Check back later!",
+		"dailyLimitInfo": "To avoid overwhelming you, new cards are limited to 100 per day. Review cards and learning cards are always shown.",
 		"rateHint": "How well did you remember?",
 		"forwardHint": "What is this in English?",
 		"backwardHint": "What is this in Spanish?"

@@ -62,6 +62,7 @@
 		"counterReview": "Pendientes de repaso",
 		"allDone": "¡Todo repasado!",
 		"noMoreCards": "No hay más tarjetas por ahora. ¡Vuelve más tarde!",
+		"dailyLimitInfo": "Para no saturarte, las tarjetas nuevas están limitadas a 100 por día. Las tarjetas de repaso y aprendizaje siempre se muestran.",
 		"rateHint": "¿Qué tan bien lo recordaste?",
 		"forwardHint": "¿Cómo se dice esto en español?",
 		"backwardHint": "¿Cómo se dice esto en inglés?"
