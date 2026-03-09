@@ -9,14 +9,21 @@ const { voiceURI, rate } = useAudioSettings()
 useHead(() => ({ title: t("nav.cards") }))
 
 const { data: allLabels } = await useLabels()
-const selectedLabel = ref<string | undefined>(undefined)
+const selectedLabel = ref("__all__")
+const labelFilter = computed(() =>
+	selectedLabel.value === "__all__" ? undefined : selectedLabel.value,
+)
 
-const { data: cards } = useCards(selectedLabel)
+const { data: cards } = useCards(labelFilter)
 
 const labelItems = computed(() => [
-	{ label: t("cards.allLabels"), value: undefined },
+	{ label: t("cards.allLabels"), value: "__all__" },
 	...(allLabels.value ?? []).map((l) => ({ label: l.name, value: l.name })),
 ])
+
+watch(selectedLabel, () => {
+	page.value = 1
+})
 
 function speakCard(text: string) {
 	speak(text, "es-ES", voiceURI.value, rate.value)
@@ -28,6 +35,13 @@ const columns = computed<TableColumn<CardData>[]>(() => [
 	{ accessorKey: "back", header: t("cards.colBack") },
 	{ id: "labels", header: t("cards.colLabels") },
 ])
+
+const page = ref(1)
+const pageSize = 50
+const pagedCards = computed(() => {
+	const start = (page.value - 1) * pageSize
+	return cards.value.slice(start, start + pageSize)
+})
 </script>
 
 <template>
@@ -59,18 +73,17 @@ const columns = computed<TableColumn<CardData>[]>(() => [
 				{{ t("cards.empty") }}
 			</div>
 
-			<UTable v-else :columns="columns" :data="cards">
+			<UTable v-else :columns="columns" :data="pagedCards">
 				<template #speak-cell="{ row }">
-					<UTooltip :text="t('lesson.pronounce')">
-						<UButton
-							icon="i-lucide-volume-2"
-							color="neutral"
-							variant="ghost"
-							size="sm"
-							:aria-label="t('lesson.pronounce')"
-							@click="speakCard(row.original.front)"
-						/>
-					</UTooltip>
+					<UButton
+						icon="i-lucide-volume-2"
+						color="neutral"
+						variant="ghost"
+						size="sm"
+						:aria-label="t('lesson.pronounce')"
+						:title="t('lesson.pronounce')"
+						@click="speakCard(row.original.front)"
+					/>
 				</template>
 				<template #labels-cell="{ row }">
 					<div class="flex gap-1 flex-wrap">
@@ -85,6 +98,9 @@ const columns = computed<TableColumn<CardData>[]>(() => [
 					</div>
 				</template>
 			</UTable>
+			<div class="flex justify-center pt-4">
+				<UPagination v-model:page="page" :items-per-page="pageSize" :total="cards.length" />
+			</div>
 		</UCard>
 	</UContainer>
 </template>
