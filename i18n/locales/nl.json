@@ -62,6 +62,7 @@
 		"counterReview": "Klaar voor herhaling",
 		"allDone": "Alles herhaald!",
 		"noMoreCards": "Geen kaarten meer voor nu. Kom later terug!",
+		"dailyLimitInfo": "Om het overzichtelijk te houden, zijn nieuwe kaarten beperkt tot 100 per dag. Herhaal- en leerkaarten worden altijd getoond.",
 		"rateHint": "Hoe goed wist je het nog?",
 		"forwardHint": "Wat is dit in het Nederlands?",
 		"backwardHint": "Wat is dit in het Spaans?"

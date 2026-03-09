@@ -101,6 +101,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown))
 				<UIcon name="i-lucide-party-popper" class="text-5xl text-success mx-auto" />
 				<p class="text-xl font-bold">{{ t("lesson.allDone") }}</p>
 				<p class="text-muted">{{ t("lesson.noMoreCards") }}</p>
+				<p class="text-sm text-muted">{{ t("lesson.dailyLimitInfo") }}</p>
 				<UButton to="/" :label="t('nav.home')" icon="i-lucide-home" variant="outline" />
 			</div>
 		</UCard>
