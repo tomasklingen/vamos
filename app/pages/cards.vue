@@ -59,7 +59,7 @@ const pagedCards = computed(() => {
 		</div>
 
 		<!-- Label filter -->
-		<USelect v-model="selectedLabel" :items="labelItems" value-key="value" class="w-48" />
+		<USelect v-model="selectedLabel" :items="labelItems" value-key="value" class="w-64" />
 
 		<!-- Cards table -->
 		<UCard>
