@@ -2,1801 +2,1801 @@
 	{
 		"front": "yo abro",
 		"back": "ik open",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú abres",
 		"back": "jij/je opent",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella abre",
 		"back": "zij opent",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros abrimos",
 		"back": "wij/we openen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros abrís",
 		"back": "jullie openen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos abren",
 		"back": "zij openen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo alquilo",
 		"back": "ik huur",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú alquilas",
 		"back": "jij/je huurt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella alquila",
 		"back": "zij huurt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros alquilamos",
 		"back": "wij/we huren",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros alquiláis",
 		"back": "jullie huren",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes alquilan",
 		"back": "jullie huren",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo amo",
 		"back": "ik houd van",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	},
 	{
 		"front": "tú amas",
 		"back": "jij/je houdt van",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	},
 	{
 		"front": "ella ama",
 		"back": "zij houdt van",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	},
 	{
 		"front": "nosotros amamos",
 		"back": "wij/we houden van",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	},
 	{
 		"front": "vosotros amáis",
 		"back": "jullie houden van",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	},
 	{
 		"front": "ellas aman",
 		"back": "zij houden van",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	},
 	{
 		"front": "yo aprendo",
 		"back": "ik leer",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú aprendes",
 		"back": "jij/je leert",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "usted aprende",
 		"back": "u leert",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros aprendemos",
 		"back": "wij/we leren",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros aprendéis",
 		"back": "jullie leren",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes aprenden",
 		"back": "jullie leren",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo arreglo",
 		"back": "ik regel",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú arreglas",
 		"back": "jij/je regelt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "usted arregla",
 		"back": "u regelt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros arreglamos",
 		"back": "wij/we regelen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros arregláis",
 		"back": "jullie regelen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellas arreglan",
 		"back": "zij regelen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo ayudo",
 		"back": "ik help",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú ayudas",
 		"back": "jij/je helpt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella ayuda",
 		"back": "zij helpt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros ayudamos",
 		"back": "wij/we helpen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros ayudáis",
 		"back": "jullie helpen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes ayudan",
 		"back": "jullie helpen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo bailo",
 		"back": "ik dans",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú bailas",
 		"back": "jij/je danst",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella baila",
 		"back": "zij danst",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros bailamos",
 		"back": "wij/we dansen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros bailáis",
 		"back": "jullie dansen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes bailan",
 		"back": "jullie dansen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo bebo",
 		"back": "ik drink",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú bebes",
 		"back": "jij/je drinkt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "él bebe",
 		"back": "hij drinkt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros bebemos",
 		"back": "wij/we drinken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros bebéis",
 		"back": "jullie drinken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes beben",
 		"back": "jullie drinken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo busco",
 		"back": "ik zoek",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú buscas",
 		"back": "jij/je zoekt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella busca",
 		"back": "zij zoekt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros buscamos",
 		"back": "wij/we zoeken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros buscáis",
 		"back": "jullie zoeken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos buscan",
 		"back": "zij zoeken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo cambio",
 		"back": "ik verander/wissel",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú cambias",
 		"back": "jij/je verandert/wisselt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "usted cambia",
 		"back": "u verandert/wisselt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros cambiamos",
 		"back": "wij/we veranderen/wisselen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros cambiáis",
 		"back": "jullie veranderen/wisselen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellas cambian",
 		"back": "zij veranderen/wisselen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo camino",
 		"back": "ik loop",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú caminas",
 		"back": "jij/je loopt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "él camina",
 		"back": "hij loopt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros caminamos",
 		"back": "wij/we lopen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros camináis",
 		"back": "jullie lopen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes caminan",
 		"back": "jullie lopen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo cocino",
 		"back": "ik kook",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú cocinas",
 		"back": "jij/je kookt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella cocina",
 		"back": "zij kookt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros cocinamos",
 		"back": "wij/we koken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros cocináis",
 		"back": "jullie koken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellas cocinan",
 		"back": "zij koken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo como",
 		"back": "ik eet",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	},
 	{
 		"front": "tú comes",
 		"back": "jij/je eet",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	},
 	{
 		"front": "ella come",
 		"back": "zij eet",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	},
 	{
 		"front": "nosotros comemos",
 		"back": "wij/we eten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	},
 	{
 		"front": "vosotros coméis",
 		"back": "jullie eten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	},
 	{
 		"front": "ellos comen",
 		"back": "zij eten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	},
 	{
 		"front": "yo compro",
 		"back": "ik koop",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú compras",
 		"back": "jij/je koopt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "él compra",
 		"back": "hij koopt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros compramos",
 		"back": "wij/we kopen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros compráis",
 		"back": "jullie kopen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos compran",
 		"back": "zij kopen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo comprendo",
 		"back": "ik begrijp",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú comprendes",
 		"back": "jij/je begrijpt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella comprende",
 		"back": "zij begrijpt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros comprendemos",
 		"back": "wij/we begrijpen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros comprendéis",
 		"back": "jullie begrijpen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes comprenden",
 		"back": "jullie begrijpen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo corro",
 		"back": "ik ren/hardloop",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú corres",
 		"back": "jij/je rent/hardloopt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella corre",
 		"back": "zij rent/hardloopt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros corremos",
 		"back": "wij/we rennen/hardlopen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros corréis",
 		"back": "jullie rennen/hardlopen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos corren",
 		"back": "zij rennen/hardlopen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo creo",
 		"back": "ik geloof",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú crees",
 		"back": "jij/je gelooft",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella cree",
 		"back": "zij gelooft",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros creemos",
 		"back": "wij/we geloven",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros creéis",
 		"back": "jullie geloven",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos creen",
 		"back": "zij geloven",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo desayuno",
 		"back": "ik ontbijt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú desayunas",
 		"back": "jij/je ontbijt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "él desayuna",
 		"back": "hij ontbijt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros desayunamos",
 		"back": "wij/we ontbijten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros desayunáis",
 		"back": "jullie ontbijten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos desayunan",
 		"back": "zij ontbijten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo descanso",
 		"back": "ik rust",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú descansas",
 		"back": "jij/je rust",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "usted descansa",
 		"back": "u rust",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros descansamos",
 		"back": "wij/we rusten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros descansáis",
 		"back": "jullie rusten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellas descansan",
 		"back": "zij rusten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo decido",
 		"back": "ik beslis/besluit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú decides",
 		"back": "jij/je beslist/besluit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "usted decide",
 		"back": "u beslist/besluit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros decidimos",
 		"back": "wij/we beslissen/besluiten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros decidís",
 		"back": "jullie beslissen/besluiten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes deciden",
 		"back": "jullie beslissen/besluiten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo disfruto",
 		"back": "ik geniet",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú disfrutas",
 		"back": "jij/je geniet",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "él disfruta",
 		"back": "hij geniet",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros disfrutamos",
 		"back": "wij/we genieten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros disfrutáis",
 		"back": "jullie genieten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos disfrutan",
 		"back": "zij genieten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo enseño",
 		"back": "ik geef les",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú enseñas",
 		"back": "jij/je geeft les",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "él enseña",
 		"back": "hij geeft les",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros enseñamos",
 		"back": "wij/we geven les",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros enseñáis",
 		"back": "jullie geven les",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos enseñan",
 		"back": "zij geven les",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo envío",
 		"back": "ik stuur/(ver)zend",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú envías",
 		"back": "jij/je stuurt/(ver)zendt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella envía",
 		"back": "zij stuurt/(ver)zendt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros enviamos",
 		"back": "wij/we sturen/(ver)zenden",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros enviáis",
 		"back": "jullie sturen/(ver)zenden",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes envían",
 		"back": "jullie sturen/(ver)zenden",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo entro",
 		"back": "ik kom binnen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú entras",
 		"back": "jij/je komt binnen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "él entra",
 		"back": "hij komt binnen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros entramos",
 		"back": "wij/we komen binnen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros entráis",
 		"back": "jullie komen binnen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellas entran",
 		"back": "zij komen binnen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo escribo",
 		"back": "ik schrijf",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú escribes",
 		"back": "jij/je schrijft",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella escribe",
 		"back": "zij schrijft",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros escribimos",
 		"back": "wij/we schrijven",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros escribís",
 		"back": "jullie schrijven",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellas escriben",
 		"back": "zij schrijven",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo espero",
 		"back": "ik wacht/hoop",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú esperas",
 		"back": "jij/je wacht/hoopt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella espera",
 		"back": "zij wacht/hoopt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros esperamos",
 		"back": "wij/we wachten/hopen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros esperáis",
 		"back": "jullie wachten/hopen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellas esperan",
 		"back": "zij wachten/hopen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo escucho",
 		"back": "ik luister",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú escuchas",
 		"back": "jij/je luistert",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella escucha",
 		"back": "zij luistert",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros escuchamos",
 		"back": "wij/we luisteren",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros escucháis",
 		"back": "jullie luisteren",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellas escuchan",
 		"back": "zij luisteren",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo estudio",
 		"back": "ik studeer",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú estudias",
 		"back": "jij/je studeert",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella estudia",
 		"back": "zij studeert",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros estudiamos",
 		"back": "wij/we studeren",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros estudiáis",
 		"back": "jullie studeren",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes estudian",
 		"back": "jullie studeren",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo explico",
 		"back": "ik leg uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú explicas",
 		"back": "jij/je legt uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella explica",
 		"back": "zij legt uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros explicamos",
 		"back": "wij/we leggen uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros explicáis",
 		"back": "jullie leggen uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellas explican",
 		"back": "zij leggen uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo hablo",
 		"back": "ik praat/spreek",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú hablas",
 		"back": "jij/je praat/spreekt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella habla",
 		"back": "zij praat/spreekt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros hablamos",
 		"back": "wij/we praten/spreken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros habláis",
 		"back": "jullie praten/spreken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellas hablan",
 		"back": "zij praten/spreken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo invito",
 		"back": "ik nodig uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú invitas",
 		"back": "jij/je nodigt uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "usted invita",
 		"back": "u nodigt uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros invitamos",
 		"back": "wij/we nodigen uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros invitáis",
 		"back": "jullie nodigen uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes invitan",
 		"back": "jullie nodigen uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo lavo",
 		"back": "ik was",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú lavas",
 		"back": "jij/je wast",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella lava",
 		"back": "zij wast",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros lavamos",
 		"back": "wij/we wassen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros laváis",
 		"back": "jullie wassen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellas lavan",
 		"back": "zij wassen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo leo",
 		"back": "ik lees",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú lees",
 		"back": "jij/je leest",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "él lee",
 		"back": "hij leest",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros leemos",
 		"back": "wij/we lezen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros leéis",
 		"back": "jullie lezen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellas leen",
 		"back": "zij lezen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo limpio",
 		"back": "ik maak schoon",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú limpias",
 		"back": "jij/je maakt schoon",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "usted limpia",
 		"back": "u maakt schoon",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros limpiamos",
 		"back": "wij/we maken schoon",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros limpiáis",
 		"back": "jullie maken schoon",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellas limpian",
 		"back": "zij maken schoon",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo llamo",
 		"back": "ik bel/roep",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú llamas",
 		"back": "jij/je belt/roept",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "usted llama",
 		"back": "u belt/roept",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros llamamos",
 		"back": "wij/we bellen/roepen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros llamáis",
 		"back": "jullie bellen/roepen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos llaman",
 		"back": "zij bellen/roepen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo llego",
 		"back": "ik kom aan",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú llegas",
 		"back": "jij/je komt aan",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "usted llega",
 		"back": "u komt aan",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros llegamos",
 		"back": "wij/we komen aan",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros llegáis",
 		"back": "jullie komen aan",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos llegan",
 		"back": "zij komen aan",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo llevo",
 		"back": "ik neem mee/draag",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú llevas",
 		"back": "jij/je neemt mee/draagt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "usted lleva",
 		"back": "u neemt mee/draagt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros llevamos",
 		"back": "wij/we nemen mee/dragen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros lleváis",
 		"back": "jullie nemen mee/dragen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes llevan",
 		"back": "jullie nemen mee/dragen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo manejo",
 		"back": "ik rijd",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú manejas",
 		"back": "jij/je rijdt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella maneja",
 		"back": "zij rijdt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros manejamos",
 		"back": "wij/we rijden",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros manejáis",
 		"back": "jullie rijden",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellas manejan",
 		"back": "zij rijden",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo miro",
 		"back": "ik kijk",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú miras",
 		"back": "jij/je kijkt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "él mira",
 		"back": "hij kijkt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros miramos",
 		"back": "wij/we kijken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros miráis",
 		"back": "jullie kijken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes miran",
 		"back": "jullie kijken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo nado",
 		"back": "ik zwem",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú nadas",
 		"back": "jij/je zwemt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella nada",
 		"back": "zij zwemt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros nadamos",
 		"back": "wij/we zwemmen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros nadáis",
 		"back": "jullie zwemmen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes nadan",
 		"back": "jullie zwemmen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo necesito",
 		"back": "ik heb nodig",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú necesitas",
 		"back": "jij/je hebt nodig",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "él necesita",
 		"back": "hij heeft nodig",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros necesitamos",
 		"back": "wij/we hebben nodig",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros necesitáis",
 		"back": "jullie hebben nodig",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos necesitan",
 		"back": "zij hebben nodig",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo olvido",
 		"back": "ik vergeet",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú olvidas",
 		"back": "jij/je vergeet",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella olvida",
 		"back": "zij vergeet",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros olvidamos",
 		"back": "wij/we vergeten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros olvidáis",
 		"back": "jullie vergeten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos olvidan",
 		"back": "zij vergeten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo pago",
 		"back": "ik betaal",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú pagas",
 		"back": "jij/je betaalt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "él paga",
 		"back": "hij betaalt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros pagamos",
 		"back": "wij/we betalen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros pagáis",
 		"back": "jullie betalen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes pagan",
 		"back": "jullie betalen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo paro",
 		"back": "ik stop",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú paras",
 		"back": "jij/je stopt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella para",
 		"back": "zij stopt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros paramos",
 		"back": "wij/we stoppen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros paráis",
 		"back": "jullie stoppen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos paran",
 		"back": "zij stoppen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo practico",
 		"back": "ik oefen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú practicas",
 		"back": "jij/je oefent",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella practica",
 		"back": "zij oefent",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros practicamos",
 		"back": "wij/we oefenen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros practicáis",
 		"back": "jullie oefenen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos practican",
 		"back": "zij oefenen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo pregunto",
 		"back": "ik vraag",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú preguntas",
 		"back": "jij/je vraagt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella pregunta",
 		"back": "zij vraagt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros preguntamos",
 		"back": "wij/we vragen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros preguntáis",
 		"back": "jullie vragen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos preguntan",
 		"back": "zij vragen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo preparo",
 		"back": "ik bereid",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú preparas",
 		"back": "jij/je bereidt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "usted prepara",
 		"back": "u bereidt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros preparamos",
 		"back": "wij/we bereiden",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros preparáis",
 		"back": "jullie bereiden",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos preparan",
 		"back": "zij bereiden",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo pronuncio",
 		"back": "ik spreek uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú pronuncias",
 		"back": "jij/je spreekt uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "usted pronuncia",
 		"back": "u spreekt uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros pronunciamos",
 		"back": "wij/we spreken uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros pronunciáis",
 		"back": "jullie spreken uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes pronuncian",
 		"back": "jullie spreken uit",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo recibo",
 		"back": "ik ontvang/krijg",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú recibes",
 		"back": "jij/je ontvangt/krijgt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "usted recibe",
 		"back": "u ontvangt/krijgt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros recibimos",
 		"back": "wij/we ontvangen/krijgen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros recibís",
 		"back": "jullie ontvangen/krijgen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos reciben",
 		"back": "zij ontvangen/krijgen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo regreso",
 		"back": "ik kom terug",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú regresas",
 		"back": "jij/je komt terug",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "él regresa",
 		"back": "hij komt terug",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros regresamos",
 		"back": "wij/we komen terug",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros regresáis",
 		"back": "jullie komen terug",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes regresan",
 		"back": "jullie komen terug",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo rompo",
 		"back": "ik breek",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú rompes",
 		"back": "jij/je breekt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella rompe",
 		"back": "zij breekt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros rompemos",
 		"back": "wij/we breken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros rompéis",
 		"back": "jullie breken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos rompen",
 		"back": "zij breken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo saludo",
 		"back": "ik groet",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú saludas",
 		"back": "jij/je groet",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "usted saluda",
 		"back": "u groet",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros saludamos",
 		"back": "wij/we groeten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros saludáis",
 		"back": "jullie groeten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos saludan",
 		"back": "zij groeten",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo termino",
 		"back": "ik maak af/eindig",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú terminas",
 		"back": "jij/je maakt af/eindigt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "él termina",
 		"back": "hij maakt af/eindigt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros terminamos",
 		"back": "wij/we maken af/eindigen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros termináis",
 		"back": "jullie maken af/eindigen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos terminan",
 		"back": "zij maken af/eindigen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo tomo",
 		"back": "ik neem/drink",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú tomas",
 		"back": "jij/je neemt/drinkt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "usted toma",
 		"back": "u neemt/drinkt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros tomamos",
 		"back": "wij/we nemen/drinken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros tomáis",
 		"back": "jullie nemen/drinken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes toman",
 		"back": "jullie nemen/drinken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo trabajo",
 		"back": "ik werk",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú trabajas",
 		"back": "jij/je werkt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ella trabaja",
 		"back": "zij werkt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros trabajamos",
 		"back": "wij/we werken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros trabajáis",
 		"back": "jullie werken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellas trabajan",
 		"back": "zij werken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo trato de",
 		"back": "ik probeer",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú tratas de",
 		"back": "jij/je probeert",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "él trata de",
 		"back": "hij probeert",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros tratamos de",
 		"back": "wij/we proberen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros tratáis de",
 		"back": "jullie proberen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes tratan de",
 		"back": "jullie proberen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo uso",
 		"back": "ik gebruik",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú usas",
 		"back": "jij/je gebruikt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "usted usa",
 		"back": "u gebruikt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros usamos",
 		"back": "wij/we gebruiken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros usáis",
 		"back": "jullie gebruiken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellos usan",
 		"back": "zij gebruiken",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo vendo",
 		"back": "ik verkoop",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú vendes",
 		"back": "jij/je verkoopt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "él vende",
 		"back": "hij verkoopt",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros vendemos",
 		"back": "wij/we verkopen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros vendéis",
 		"back": "jullie verkopen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ellas venden",
 		"back": "zij verkopen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo viajo",
 		"back": "ik reis",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "tú viajas",
 		"back": "jij/je reist",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "usted viaja",
 		"back": "u reist",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "nosotros viajamos",
 		"back": "wij/we reizen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "vosotros viajáis",
 		"back": "jullie reizen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "ustedes viajan",
 		"back": "jullie reizen",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen"]
 	},
 	{
 		"front": "yo vivo",
 		"back": "ik woon/leef",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	},
 	{
 		"front": "tú vives",
 		"back": "jij/je woont/leeft",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	},
 	{
 		"front": "él vive",
 		"back": "hij woont/leeft",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	},
 	{
 		"front": "nosotros vivimos",
 		"back": "wij/we wonen/leven",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	},
 	{
 		"front": "vosotros vivís",
 		"back": "jullie wonen/leven",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	},
 	{
 		"front": "ellos viven",
 		"back": "zij wonen/leven",
-		"labels": ["vervoegingen", "les 2"]
+		"labels": ["vervoegingen", "vervoegingen basis"]
 	}
 ]

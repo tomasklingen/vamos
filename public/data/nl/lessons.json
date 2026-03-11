@@ -1,0 +1,10 @@
+[
+	{
+		"id": "les 1",
+		"subjects": ["begroeting", "afscheid", "nummer"]
+	},
+	{
+		"id": "les 2",
+		"subjects": ["vervoegingen", "regelmatige werkwoorden", "vervoegingen basis"]
+	}
+]
