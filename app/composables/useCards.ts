@@ -8,6 +8,7 @@ export interface CardData {
 
 export interface LessonData {
 	id: string
+	description?: string
 	subjects: string[]
 }
 

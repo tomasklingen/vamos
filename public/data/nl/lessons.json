@@ -1,10 +1,19 @@
 [
 	{
 		"id": "les 1",
+		"description": "Begroetingen, afscheid en nummers 1–100",
 		"subjects": ["begroeting", "afscheid", "nummer"]
 	},
 	{
 		"id": "les 2",
-		"subjects": ["vervoegingen", "regelmatige werkwoorden", "vervoegingen basis"]
+		"description": "Werkwoorden, zelfstandige naamwoorden, meervoud en geslacht",
+		"subjects": [
+			"vervoegingen",
+			"regelmatige werkwoorden",
+			"vervoegingen basis",
+			"zelfstandig naamwoord",
+			"kleding",
+			"meervoud"
+		]
 	}
 ]
