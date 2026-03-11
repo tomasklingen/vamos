@@ -19,10 +19,12 @@
 		"noCards": "Geen kaarten nu beschikbaar.",
 		"cardsDue": "kaarten beschikbaar",
 		"mix": "Mix",
+		"allSubjects": "Alle onderwerpen",
+		"allSubjectsDesc": "Oefen kaarten uit alle lessen",
 		"progress": "Oefenen",
-		"recognition": "Herkenning",
+		"recognition": "ES → NL",
 		"recognitionDesc": "Spaans - Nederlands",
-		"activeRecall": "Actief herinneren",
+		"activeRecall": "NL → ES",
 		"activeRecallDesc": "Nederlands - Spaans",
 		"production": "Productie",
 		"productionDesc": "Zie vertaling, typ Spaans",
@@ -30,7 +32,8 @@
 		"dictationDesc": "Hoor Spaans, schrijf het op",
 		"comingSoon": "Binnenkort",
 		"cardsDueMode": "{n} kaarten beschikbaar",
-		"practiceMode": "Oefenen"
+		"practiceMode": "Oefenen",
+		"loadLesson": "Alles"
 	},
 	"lesson": {
 		"heading": "Oefenen",
@@ -75,6 +78,8 @@
 		"colBack": "Vertaling",
 		"colLabels": "Labels",
 		"allLabels": "Alle labels",
+		"allLessons": "Alle lessen",
+		"allSubjects": "Alle onderwerpen",
 		"empty": "Geen kaarten gevonden."
 	}
 }

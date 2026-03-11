@@ -19,6 +19,8 @@
 		"noCards": "No hay tarjetas pendientes ahora.",
 		"cardsDue": "tarjetas pendientes",
 		"mix": "Mezcla",
+		"allSubjects": "Todos los temas",
+		"allSubjectsDesc": "Practica tarjetas de todas las lecciones",
 		"progress": "Tu progreso",
 		"recognition": "Reconocimiento",
 		"recognitionDesc": "Ver español, recordar traducción",
@@ -30,7 +32,8 @@
 		"dictationDesc": "Escuchar español, escribirlo",
 		"comingSoon": "Próximamente",
 		"cardsDueMode": "{n} tarjetas pendientes",
-		"practiceMode": "Practicar"
+		"practiceMode": "Practicar",
+		"loadLesson": "Todo"
 	},
 	"lesson": {
 		"heading": "Práctica",
@@ -75,6 +78,8 @@
 		"colBack": "Traducción",
 		"colLabels": "Etiquetas",
 		"allLabels": "Todas las etiquetas",
+		"allLessons": "Todas las lecciones",
+		"allSubjects": "Todos los temas",
 		"empty": "No se encontraron tarjetas."
 	}
 }

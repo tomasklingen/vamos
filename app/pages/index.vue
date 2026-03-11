@@ -7,10 +7,18 @@ useHead(() => ({ title: t("home.siteTitle"), titleTemplate: null }))
 
 const { totalCards, totalReviews, accuracy, streak } = useStats()
 
-const { data: allLabels } = useLabels()
+const { data: lessons } = useLessons()
 const selectedLabel = ref<string | undefined>(undefined)
+const expandedLessons = ref<Set<string>>(new Set())
 
-const { progress } = useModeProgress(selectedLabel)
+const labelFilter = computed<string | string[] | undefined>(() => {
+	if (!selectedLabel.value) return undefined
+	const lesson = lessons.value.find((l) => l.id === selectedLabel.value)
+	if (lesson) return lesson.subjects
+	return selectedLabel.value
+})
+
+const { progress } = useModeProgress(labelFilter)
 
 interface ModeRow {
 	mode: ExerciseMode
@@ -61,6 +69,20 @@ function lessonUrl(mode: ExerciseMode) {
 function selectLabel(name: string | undefined) {
 	selectedLabel.value = selectedLabel.value === name ? undefined : name
 }
+
+function toggleLesson(id: string) {
+	if (expandedLessons.value.has(id)) {
+		expandedLessons.value.delete(id)
+	} else {
+		expandedLessons.value.add(id)
+	}
+	// Trigger reactivity
+	expandedLessons.value = new Set(expandedLessons.value)
+}
+
+function isLessonActive(lesson: { id: string; subjects: string[] }) {
+	return selectedLabel.value === lesson.id || lesson.subjects.includes(selectedLabel.value ?? "")
+}
 </script>
 
 <template>
@@ -93,25 +115,70 @@ function selectLabel(name: string | undefined) {
 		</div>
 
 		<!-- Content Set Selector -->
-		<div class="flex flex-wrap gap-2">
-			<UButton
-				:variant="selectedLabel === undefined ? 'solid' : 'outline'"
-				color="primary"
-				size="sm"
+		<div class="space-y-3">
+			<div
+				class="rounded-lg border p-4 cursor-pointer transition-colors"
+				:class="
+					selectedLabel === undefined
+						? 'border-secondary bg-secondary/10'
+						: 'border-default hover:border-secondary'
+				"
 				@click="selectLabel(undefined)"
 			>
-				{{ t("home.mix") }}
-			</UButton>
-			<UButton
-				v-for="l in allLabels"
-				:key="l.name"
-				:variant="selectedLabel === l.name ? 'solid' : 'outline'"
-				color="primary"
-				size="sm"
-				@click="selectLabel(l.name)"
+				<div class="flex items-center gap-2">
+					<UIcon name="i-lucide-layers" class="text-secondary" />
+					<div>
+						<p class="font-semibold">{{ t("home.allSubjects") }}</p>
+						<p class="text-xs text-muted">{{ t("home.allSubjectsDesc") }}</p>
+					</div>
+				</div>
+			</div>
+
+			<div
+				v-for="lesson in lessons"
+				:key="lesson.id"
+				class="rounded-lg border transition-colors overflow-hidden"
+				:class="isLessonActive(lesson) ? 'border-secondary bg-secondary/10' : 'border-default'"
 			>
-				{{ l.name }}
-			</UButton>
+				<!-- Lesson header — click to collapse/expand -->
+				<div
+					class="flex items-center gap-2 p-4 cursor-pointer select-none"
+					@click="toggleLesson(lesson.id)"
+				>
+					<UIcon name="i-lucide-book-open" class="text-secondary shrink-0" />
+					<p class="font-semibold capitalize flex-1">{{ lesson.id }}</p>
+					<UIcon
+						name="i-lucide-chevron-down"
+						class="text-muted shrink-0 transition-transform duration-200"
+						:class="expandedLessons.has(lesson.id) ? 'rotate-180' : ''"
+					/>
+				</div>
+
+				<!-- Collapsible content -->
+				<div v-if="expandedLessons.has(lesson.id)" class="px-4 pb-4">
+					<div class="flex flex-wrap gap-2">
+						<UButton
+							:variant="selectedLabel === lesson.id ? 'solid' : 'outline'"
+							color="primary"
+							size="xs"
+							icon="i-lucide-layers"
+							@click="selectLabel(lesson.id)"
+						>
+							{{ t("home.loadLesson") }}
+						</UButton>
+						<UButton
+							v-for="subject in lesson.subjects"
+							:key="subject"
+							:variant="selectedLabel === subject ? 'solid' : 'outline'"
+							color="secondary"
+							size="xs"
+							@click="selectLabel(subject)"
+						>
+							{{ subject }}
+						</UButton>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<!-- Skill Rings / Progress -->

@@ -12,7 +12,7 @@ export interface ModeProgress {
 
 const MODES: ExerciseMode[] = ["forward", "backward", "production", "dictation"]
 
-export function useModeProgress(label?: MaybeRef<string | undefined>) {
+export function useModeProgress(label?: MaybeRef<string | string[] | undefined>) {
 	const { data: cards } = useCards(label)
 
 	const progress = ref<Record<ExerciseMode, ModeProgress>>({

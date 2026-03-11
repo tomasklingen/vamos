@@ -19,6 +19,8 @@
 		"noCards": "No cards due right now.",
 		"cardsDue": "cards due",
 		"mix": "Mix",
+		"allSubjects": "All subjects",
+		"allSubjectsDesc": "Practice cards from every lesson",
 		"progress": "Your Progress",
 		"recognition": "Recognition",
 		"recognitionDesc": "See Spanish, recall translation",
@@ -30,7 +32,8 @@
 		"dictationDesc": "Hear Spanish, write it down",
 		"comingSoon": "Coming soon",
 		"cardsDueMode": "{n} cards due",
-		"practiceMode": "Practice"
+		"practiceMode": "Practice",
+		"loadLesson": "All"
 	},
 	"lesson": {
 		"heading": "Practice",
@@ -75,6 +78,8 @@
 		"colBack": "Translation",
 		"colLabels": "Labels",
 		"allLabels": "All labels",
+		"allLessons": "All lessons",
+		"allSubjects": "All subjects",
 		"empty": "No cards found."
 	}
 }

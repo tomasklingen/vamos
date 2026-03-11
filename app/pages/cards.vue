@@ -8,22 +8,43 @@ const { voiceURI, rate } = useAudioSettings()
 
 useHead(() => ({ title: t("nav.cards") }))
 
-const { data: allLabels } = await useLabels()
-const selectedLabel = ref("__all__")
-const labelFilter = computed(() =>
-	selectedLabel.value === "__all__" ? undefined : selectedLabel.value,
-)
+const { data: lessons } = useLessons()
+const { data: allLabels } = useLabels()
 
-const { data: cards } = useCards(labelFilter)
+const selectedLesson = ref("__all__")
+const selectedSubject = ref("__all__")
 
-const labelItems = computed(() => [
-	{ label: t("cards.allLabels"), value: "__all__" },
-	...(allLabels.value ?? []).map((l) => ({ label: l.name, value: l.name })),
+const lessonItems = computed(() => [
+	{ label: t("cards.allLessons"), value: "__all__" },
+	...lessons.value.map((l) => ({ label: l.id, value: l.id })),
 ])
 
-watch(selectedLabel, () => {
+const subjectItems = computed(() => {
+	const lesson = lessons.value.find((l) => l.id === selectedLesson.value)
+	const subjects = lesson ? lesson.subjects : allLabels.value.map((l) => l.name)
+	return [
+		{ label: t("cards.allSubjects"), value: "__all__" },
+		...subjects.map((s) => ({ label: s, value: s })),
+	]
+})
+
+watch(selectedLesson, () => {
+	selectedSubject.value = "__all__"
 	page.value = 1
 })
+
+watch(selectedSubject, () => {
+	page.value = 1
+})
+
+const labelFilter = computed<string | string[] | undefined>(() => {
+	const lesson = lessons.value.find((l) => l.id === selectedLesson.value)
+	if (selectedSubject.value !== "__all__") return selectedSubject.value
+	if (lesson) return lesson.subjects
+	return undefined
+})
+
+const { data: cards } = useCards(labelFilter)
 
 function speakCard(text: string) {
 	speak(text, "es-ES", voiceURI.value, rate.value)
@@ -58,8 +79,11 @@ const pagedCards = computed(() => {
 			/>
 		</div>
 
-		<!-- Label filter -->
-		<USelect v-model="selectedLabel" :items="labelItems" value-key="value" class="w-64" />
+		<!-- Filters -->
+		<div class="flex gap-4">
+			<USelect v-model="selectedLesson" :items="lessonItems" value-key="value" class="w-48" />
+			<USelect v-model="selectedSubject" :items="subjectItems" value-key="value" class="w-64" />
+		</div>
 
 		<!-- Cards table -->
 		<UCard>
