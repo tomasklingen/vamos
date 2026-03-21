@@ -1,0 +1,14 @@
+[
+	{ "front": "blanco", "back": "wit", "labels": ["kleur"] },
+	{ "front": "negro", "back": "zwart", "labels": ["kleur"] },
+	{ "front": "rojo", "back": "rood", "labels": ["kleur"] },
+	{ "front": "azul", "back": "blauw", "labels": ["kleur"] },
+	{ "front": "verde", "back": "groen", "labels": ["kleur"] },
+	{ "front": "amarillo", "back": "geel", "labels": ["kleur"] },
+	{ "front": "naranja", "back": "oranje", "labels": ["kleur"] },
+	{ "front": "marrón / café", "back": "bruin", "labels": ["kleur"] },
+	{ "front": "rosa / rosado", "back": "roze", "labels": ["kleur"] },
+	{ "front": "púrpura / morado", "back": "paars", "labels": ["kleur"] },
+	{ "front": "gris", "back": "grijs", "labels": ["kleur"] },
+	{ "front": "beige", "back": "beige", "labels": ["kleur"] }
+]

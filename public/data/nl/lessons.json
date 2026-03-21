@@ -6,14 +6,31 @@
 	},
 	{
 		"id": "les 2",
-		"description": "Werkwoorden, zelfstandige naamwoorden, meervoud en geslacht",
+		"description": "Werkwoorden, zelfstandige naamwoorden, meervoud en woordenschat",
 		"subjects": [
 			"vervoegingen",
 			"regelmatige werkwoorden",
 			"vervoegingen basis",
 			"zelfstandig naamwoord",
 			"kleding",
-			"meervoud"
+			"meervoud",
+			"woordenschat",
+			"verbindingswoord"
 		]
+	},
+	{
+		"id": "les 3",
+		"description": "Bezittelijke voornaamwoorden",
+		"subjects": ["bezittelijk voornaamwoord"]
+	},
+	{
+		"id": "les 4",
+		"description": "Vraagwoorden",
+		"subjects": ["vraagwoord"]
+	},
+	{
+		"id": "les 8",
+		"description": "Basiswoordenschat: dagen, maanden, kleuren en vervoer",
+		"subjects": ["dag en maand", "kleur", "vervoer"]
 	}
 ]

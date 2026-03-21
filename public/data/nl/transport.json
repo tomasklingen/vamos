@@ -1,0 +1,14 @@
+[
+	{ "front": "el coche / el carro", "back": "de auto", "labels": ["vervoer"] },
+	{ "front": "el autobús / el bus", "back": "de bus", "labels": ["vervoer"] },
+	{ "front": "la bicicleta", "back": "de fiets", "labels": ["vervoer"] },
+	{ "front": "el taxi", "back": "de taxi", "labels": ["vervoer"] },
+	{ "front": "el tren", "back": "de trein", "labels": ["vervoer"] },
+	{ "front": "el tranvía", "back": "de tram", "labels": ["vervoer"] },
+	{ "front": "la moto / la motocicleta", "back": "de brommer / de motor", "labels": ["vervoer"] },
+	{ "front": "el avión", "back": "het vliegtuig", "labels": ["vervoer"] },
+	{ "front": "el barco", "back": "de boot", "labels": ["vervoer"] },
+	{ "front": "el camión", "back": "de vrachtwagen", "labels": ["vervoer"] },
+	{ "front": "el helicóptero", "back": "de helikopter", "labels": ["vervoer"] },
+	{ "front": "el tractor", "back": "de tractor", "labels": ["vervoer"] }
+]

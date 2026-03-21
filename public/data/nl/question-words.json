@@ -1,0 +1,12 @@
+[
+	{ "front": "¿Qué?", "back": "wat?", "labels": ["vraagwoord"] },
+	{ "front": "¿Cuál? / ¿Cuáles?", "back": "welke?", "labels": ["vraagwoord"] },
+	{ "front": "¿Cómo?", "back": "hoe?", "labels": ["vraagwoord"] },
+	{ "front": "¿Quién? / ¿Quiénes?", "back": "wie?", "labels": ["vraagwoord"] },
+	{ "front": "¿Dónde?", "back": "waar?", "labels": ["vraagwoord"] },
+	{ "front": "¿Cuándo?", "back": "wanneer?", "labels": ["vraagwoord"] },
+	{ "front": "¿Cuánto? / ¿Cuánta?", "back": "hoeveel?", "labels": ["vraagwoord"] },
+	{ "front": "¿Por qué?", "back": "waarom?", "labels": ["vraagwoord"] },
+	{ "front": "¿Por cuánto tiempo?", "back": "hoelang?", "labels": ["vraagwoord"] },
+	{ "front": "¿A qué hora?", "back": "hoe laat?", "labels": ["vraagwoord"] }
+]

@@ -1,0 +1,176 @@
+[
+	{ "front": "muy", "back": "heel / erg", "labels": ["woordenschat"] },
+	{
+		"front": "el horario",
+		"back": "het rooster",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "el asiento",
+		"back": "de zitplaats",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "el hospital",
+		"back": "het ziekenhuis",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "la atención",
+		"back": "de aandacht",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{ "front": "la calle", "back": "de straat", "labels": ["woordenschat", "zelfstandig naamwoord"] },
+	{
+		"front": "las vacaciones",
+		"back": "de vakantie",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{ "front": "el pescado", "back": "de vis", "labels": ["woordenschat", "zelfstandig naamwoord"] },
+	{
+		"front": "el bolígrafo",
+		"back": "de pen",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "la dirección",
+		"back": "het adres",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "la fiesta",
+		"back": "het feest",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{ "front": "la lección", "back": "de les", "labels": ["woordenschat", "zelfstandig naamwoord"] },
+	{
+		"front": "la oficina",
+		"back": "het kantoor",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "los huevos",
+		"back": "de eieren",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "la cuenta",
+		"back": "de rekening",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "los deberes",
+		"back": "het huiswerk",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "la guitarra",
+		"back": "de gitaar",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "las semanas",
+		"back": "de weken",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{ "front": "rápido", "back": "snel", "labels": ["woordenschat"] },
+	{ "front": "cerca", "back": "dichtbij", "labels": ["woordenschat"] },
+	{
+		"front": "el restaurante",
+		"back": "het restaurant",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{ "front": "un poco", "back": "een beetje", "labels": ["woordenschat"] },
+	{ "front": "el precio", "back": "de prijs", "labels": ["woordenschat", "zelfstandig naamwoord"] },
+	{
+		"front": "el periódico",
+		"back": "de krant",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "las gafas de sol",
+		"back": "de zonnebril",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{ "front": "la hora", "back": "het uur", "labels": ["woordenschat", "zelfstandig naamwoord"] },
+	{
+		"front": "la playa",
+		"back": "het strand",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "la bicicleta",
+		"back": "de fiets",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{ "front": "el hombre", "back": "de man", "labels": ["woordenschat", "zelfstandig naamwoord"] },
+	{
+		"front": "los platos",
+		"back": "de borden",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{ "front": "la parada", "back": "de halte", "labels": ["woordenschat", "zelfstandig naamwoord"] },
+	{
+		"front": "la novia",
+		"back": "de vriendin",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "las cosas",
+		"back": "de dingen",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{ "front": "la botella", "back": "de fles", "labels": ["woordenschat", "zelfstandig naamwoord"] },
+	{
+		"front": "el avión",
+		"back": "het vliegtuig",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "las lecciones",
+		"back": "de lessen",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{ "front": "el ajo", "back": "de knoflook", "labels": ["woordenschat", "zelfstandig naamwoord"] },
+	{ "front": "la cebolla", "back": "de ui", "labels": ["woordenschat", "zelfstandig naamwoord"] },
+	{
+		"front": "el vendedor",
+		"back": "de verkoper",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "el centro",
+		"back": "het centrum",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "los estudiantes",
+		"back": "de studenten",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{ "front": "todos los días", "back": "elke dag", "labels": ["woordenschat"] },
+	{ "front": "todas las mañanas", "back": "elke ochtend", "labels": ["woordenschat"] },
+	{
+		"front": "el accidente",
+		"back": "het ongeluk",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "la cara",
+		"back": "het gezicht",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{
+		"front": "el vino tinto",
+		"back": "de rode wijn",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{ "front": "el día", "back": "de dag", "labels": ["woordenschat", "zelfstandig naamwoord"] },
+	{
+		"front": "la mañana",
+		"back": "de morgen / de ochtend",
+		"labels": ["woordenschat", "zelfstandig naamwoord"]
+	},
+	{ "front": "mucho", "back": "veel", "labels": ["woordenschat"] },
+	{ "front": "mi hermana", "back": "mijn zus", "labels": ["woordenschat"] }
+]

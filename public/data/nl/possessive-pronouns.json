@@ -1,0 +1,30 @@
+[
+	{ "front": "mi libro", "back": "mijn boek", "labels": ["bezittelijk voornaamwoord"] },
+	{ "front": "mis amigos", "back": "mijn vrienden", "labels": ["bezittelijk voornaamwoord"] },
+	{ "front": "tu casa", "back": "jouw huis", "labels": ["bezittelijk voornaamwoord"] },
+	{ "front": "tus zapatos", "back": "jouw schoenen", "labels": ["bezittelijk voornaamwoord"] },
+	{
+		"front": "su pasaporte",
+		"back": "zijn / haar paspoort",
+		"labels": ["bezittelijk voornaamwoord"]
+	},
+	{
+		"front": "sus llaves",
+		"back": "zijn / haar sleutels",
+		"labels": ["bezittelijk voornaamwoord"]
+	},
+	{ "front": "nuestra familia", "back": "onze familie", "labels": ["bezittelijk voornaamwoord"] },
+	{ "front": "nuestros hermanos", "back": "onze broers", "labels": ["bezittelijk voornaamwoord"] },
+	{ "front": "vuestra comida", "back": "jullie eten", "labels": ["bezittelijk voornaamwoord"] },
+	{
+		"front": "vuestras mochilas",
+		"back": "jullie rugzakken",
+		"labels": ["bezittelijk voornaamwoord"]
+	},
+	{ "front": "su coche (ellos)", "back": "hun auto", "labels": ["bezittelijk voornaamwoord"] },
+	{
+		"front": "sus documentos (ellos)",
+		"back": "hun documenten",
+		"labels": ["bezittelijk voornaamwoord"]
+	}
+]
