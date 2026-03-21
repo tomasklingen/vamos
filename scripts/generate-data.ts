@@ -6,21 +6,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 type Card = [string, string]
 
-const greetingsEn: Card[] = [
-	["Hola", "Hello"],
-	["Buenos días", "Good morning"],
-	["Buenas tardes", "Good afternoon"],
-	["Buenas noches", "Good evening / Good night"],
-	["¿Cómo estás?", "How are you?"],
-	["¿Qué tal?", "What's up? / How's it going?"],
-	["Mucho gusto", "Nice to meet you"],
-	["Bienvenido", "Welcome"],
-	["¿Cómo te llamas?", "What is your name?"],
-	["Me llamo...", "My name is..."],
-	["Encantado", "Pleased to meet you"],
-	["¿De dónde eres?", "Where are you from?"],
-]
-
 const greetingsNl: Card[] = [
 	["Hola", "Hallo"],
 	["Buenos días", "Goedemorgen"],
@@ -34,17 +19,6 @@ const greetingsNl: Card[] = [
 	["Me llamo...", "Mijn naam is..."],
 	["Encantado", "Aangenaam"],
 	["¿De dónde eres?", "Waar kom je vandaan?"],
-]
-
-const goodbyesEn: Card[] = [
-	["Adiós", "Goodbye"],
-	["Hasta luego", "See you later"],
-	["Hasta mañana", "See you tomorrow"],
-	["Nos vemos", "See you"],
-	["Chao", "Bye"],
-	["Hasta pronto", "See you soon"],
-	["Cuídate", "Take care"],
-	["Que te vaya bien", "Have a good one"],
 ]
 
 const goodbyesNl: Card[] = [
@@ -112,32 +86,21 @@ interface CardData {
 	labels: string[]
 }
 
-const locales: Record<string, Record<string, CardData[]>> = {
-	en: {
-		"greetings.json": greetingsEn.map(([front, back]) => ({ front, back, labels: ["greeting"] })),
-		"goodbyes.json": goodbyesEn.map(([front, back]) => ({ front, back, labels: ["goodbye"] })),
-		"numbers.json": numbersCards.map(([front, back]) => ({ front, back, labels: ["number"] })),
-	},
-	nl: {
-		"greetings.json": greetingsNl.map(([front, back]) => ({ front, back, labels: ["greeting"] })),
-		"goodbyes.json": goodbyesNl.map(([front, back]) => ({ front, back, labels: ["goodbye"] })),
-		"numbers.json": numbersCards.map(([front, back]) => ({ front, back, labels: ["number"] })),
-	},
+const datasets: Record<string, CardData[]> = {
+	"greetings.json": greetingsNl.map(([front, back]) => ({ front, back, labels: ["begroeting"] })),
+	"goodbyes.json": goodbyesNl.map(([front, back]) => ({ front, back, labels: ["afscheid"] })),
+	"numbers.json": numbersCards.map(([front, back]) => ({ front, back, labels: ["nummer"] })),
 }
 
-let totalCards = 0
-let totalFiles = 0
+const outDir = resolve(__dirname, "../public/data/nl")
+mkdirSync(outDir, { recursive: true })
 
-for (const [locale, datasets] of Object.entries(locales)) {
-	const outDir = resolve(__dirname, `../public/data/${locale}`)
-	mkdirSync(outDir, { recursive: true })
-	for (const [filename, cards] of Object.entries(datasets)) {
-		writeFileSync(resolve(outDir, filename), JSON.stringify(cards, null, 2))
-		totalCards += cards.length
-		totalFiles++
-	}
+let totalCards = 0
+for (const [filename, cards] of Object.entries(datasets)) {
+	writeFileSync(resolve(outDir, filename), JSON.stringify(cards, null, 2))
+	totalCards += cards.length
 }
 
 console.log(
-	`Generated ${totalCards} cards across ${totalFiles} files in public/data/{${Object.keys(locales).join(",")}}`,
+	`Generated ${totalCards} cards across ${Object.keys(datasets).length} files in public/data/nl`,
 )

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from "@nuxt/ui"
 
-const { t, locale, locales, setLocale } = useI18n()
+const { t } = useI18n()
 
 useHead({ titleTemplate: (title) => (title ? `${title} · Vamos` : "Vamos") })
 const { speak, spanishVoices } = useSpeech()
@@ -12,8 +12,6 @@ const navItems = computed<NavigationMenuItem[]>(() => [
 	{ label: t("nav.lesson"), to: "/lesson", icon: "i-lucide-book-open" },
 	{ label: t("nav.cards"), to: "/cards", icon: "i-lucide-layers" },
 ])
-
-const localeOptions = computed(() => locales.value.map((l) => ({ label: l.name, value: l.code })))
 
 const voiceOptions = computed(() =>
 	spanishVoices.value.map((v) => ({
@@ -40,13 +38,6 @@ function testVoice() {
 			<UNavigationMenu :items="navItems" />
 
 			<template #right>
-				<USelect
-					:model-value="locale"
-					:items="localeOptions"
-					size="sm"
-					class="w-32"
-					@update:model-value="setLocale($event)"
-				/>
 				<UTooltip :text="t('lesson.audioSettings')" class="hidden sm:block">
 					<UButton
 						icon="i-lucide-volume-2"

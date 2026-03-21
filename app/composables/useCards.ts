@@ -54,7 +54,7 @@ export function useCards(label?: MaybeRef<string | string[] | undefined>) {
 export function useLabels() {
 	const { locale } = useI18n()
 	const data = computed(() => {
-		const cards = allCardsByLocale[locale.value] ?? allCardsByLocale["en"] ?? []
+		const cards = allCardsByLocale[locale.value] ?? []
 		return [...new Set(cards.flatMap((c) => c.labels))].map((name) => ({ name }))
 	})
 	return {

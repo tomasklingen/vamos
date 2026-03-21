@@ -1,15 +1,8 @@
 /**
- * Browser E2E tests for the exercise mode homepage + lesson pages.
+ * Browser E2E tests for the homepage + lesson pages.
  *
  * Uses @nuxt/test-utils/e2e to start a real Nuxt dev server and drive
- * headless Chromium via playwright-core. Vitest handles the test runner;
- * expect() is imported from @playwright/test to get the Playwright locator
- * matchers (.toBeVisible, .toHaveCount, .toHaveAttribute, etc.).
- *
- * The app defaults to Spanish. We force English by setting the i18n_locale
- * cookie before the first navigation so assertions use readable English text.
- *
- * Run with: npm run test:e2e
+ * headless Chromium via playwright-core. The app defaults to Dutch (nl).
  */
 import { fileURLToPath } from "node:url"
 import { describe, it } from "vitest"
@@ -26,19 +19,8 @@ await setup({
 	},
 })
 
-/**
- * Create a Playwright page with English locale forced via i18n_locale cookie.
- * The cookie is set before the first navigation using the patched page.goto
- * from @nuxt/test-utils which waits for Nuxt hydration.
- */
-async function createEnPage(path: string): Promise<Page> {
-	// createPage() with no arg patches page.goto but skips initial navigation
+async function createNlPage(path: string): Promise<Page> {
 	const page = await createPage()
-	const { hostname } = new URL(url("/"))
-	await page
-		.context()
-		.addCookies([{ name: "i18n_locale", value: "en", domain: hostname, path: "/" }])
-	// "hydration" is handled by @nuxt/test-utils's patched page.goto
 	await page.goto(url(path), { waitUntil: "hydration" } as Parameters<typeof page.goto>[1])
 	return page
 }
@@ -48,23 +30,33 @@ async function createEnPage(path: string): Promise<Page> {
 // ---------------------------------------------------------------------------
 
 describe("homepage — content set selector", () => {
-	it("shows Mix button and label buttons", async () => {
-		const page = await createEnPage("/")
+	it("shows lesson cards that can be expanded to reveal subject buttons", async () => {
+		const page = await createNlPage("/")
 
-		await expect(page.getByRole("button", { name: "Mix" })).toBeVisible()
-		await expect(page.getByRole("button", { name: "greeting" })).toBeVisible()
+		// "Alle onderwerpen" selector should be visible
+		await expect(page.getByText("Alle onderwerpen")).toBeVisible()
+		// Les 1 should be visible as a lesson card
+		await expect(page.getByText("les 1")).toBeVisible()
+
+		// Expand les 1 to reveal subject buttons
+		await page.getByText("les 1").click()
+		await expect(page.getByRole("button", { name: "begroeting" })).toBeVisible()
 
 		await page.close()
 	})
 
 	it("selecting a label adds it to the lesson link; deselecting removes it", async () => {
-		const page = await createEnPage("/")
+		const page = await createNlPage("/")
 
-		await page.getByRole("button", { name: "greeting" }).click()
-		const link = page.locator("a", { hasText: "Recognition" })
-		await expect(link).toHaveAttribute("href", /label=greeting/)
+		// Expand les 1 first
+		await page.getByText("les 1").click()
+		await page.getByRole("button", { name: "begroeting" }).click()
 
-		await page.getByRole("button", { name: "greeting" }).click()
+		const link = page.locator("a", { hasText: "ES → NL" })
+		await expect(link).toHaveAttribute("href", /label=begroeting/)
+
+		// Deselect
+		await page.getByRole("button", { name: "begroeting" }).click()
 		await expect(link).not.toHaveAttribute("href", /label=/)
 
 		await page.close()
@@ -72,66 +64,67 @@ describe("homepage — content set selector", () => {
 })
 
 // ---------------------------------------------------------------------------
-// Skill rings / progress section
+// Progress section
 // ---------------------------------------------------------------------------
 
-describe("homepage — skill rings", () => {
-	it("renders Your Progress section with all 4 mode rows", async () => {
-		const page = await createEnPage("/")
+describe("homepage — progress", () => {
+	it("renders progress section with all 4 mode rows", async () => {
+		const page = await createNlPage("/")
 
-		await expect(page.getByText("Your Progress")).toBeVisible()
-		await expect(page.getByText("Recognition")).toBeVisible()
-		await expect(page.getByText("Active Recall")).toBeVisible()
-		await expect(page.getByText("Production")).toBeVisible()
-		await expect(page.getByText("Dictation")).toBeVisible()
-
-		await page.close()
-	})
-
-	it("shows exactly 2 Coming soon badges (Production + Dictation)", async () => {
-		const page = await createEnPage("/")
-
-		await expect(page.getByText("Your Progress")).toBeVisible()
-		await expect(page.getByText("Coming soon")).toHaveCount(2)
+		await expect(page.getByText("Oefenen")).toBeVisible()
+		await expect(page.getByText("ES → NL")).toBeVisible()
+		await expect(page.getByText("NL → ES")).toBeVisible()
+		await expect(page.getByText("Productie")).toBeVisible()
+		await expect(page.getByText("Dictee")).toBeVisible()
 
 		await page.close()
 	})
 
-	it("Recognition row is a link to forward mode; Production is not a link", async () => {
-		const page = await createEnPage("/")
+	it("shows exactly 2 Binnenkort badges (Productie + Dictee)", async () => {
+		const page = await createNlPage("/")
 
-		await expect(page.locator("a", { hasText: "Recognition" })).toHaveAttribute(
-			"href",
-			/mode=forward/,
-		)
-		await expect(page.locator("a", { hasText: "Production" })).toHaveCount(0)
+		await expect(page.getByText("Oefenen")).toBeVisible()
+		await expect(page.getByText("Binnenkort")).toHaveCount(2)
 
 		await page.close()
 	})
 
-	it("navigates to /lesson?mode=forward when clicking Recognition", async () => {
-		const page = await createEnPage("/")
-		await page.locator("a", { hasText: "Recognition" }).click()
+	it("ES → NL row is a link to forward mode; Productie is not a link", async () => {
+		const page = await createNlPage("/")
+
+		await expect(page.locator("a", { hasText: "ES → NL" })).toHaveAttribute("href", /mode=forward/)
+		await expect(page.locator("a", { hasText: "Productie" })).toHaveCount(0)
+
+		await page.close()
+	})
+
+	it("navigates to /lesson?mode=forward when clicking ES → NL", async () => {
+		const page = await createNlPage("/")
+		await page.locator("a", { hasText: "ES → NL" }).click()
 		await page.waitForURL(/\/lesson/)
 		expect(page.url()).toContain("mode=forward")
 		await page.close()
 	})
 
-	it("navigates to /lesson?mode=backward when clicking Active Recall", async () => {
-		const page = await createEnPage("/")
-		await page.locator("a", { hasText: "Active Recall" }).click()
+	it("navigates to /lesson?mode=backward when clicking NL → ES", async () => {
+		const page = await createNlPage("/")
+		await page.locator("a", { hasText: "NL → ES" }).click()
 		await page.waitForURL(/\/lesson/)
 		expect(page.url()).toContain("mode=backward")
 		await page.close()
 	})
 
 	it("includes label param when a label is selected before navigating", async () => {
-		const page = await createEnPage("/")
-		await page.getByRole("button", { name: "greeting" }).click()
-		await page.locator("a", { hasText: "Active Recall" }).click()
+		const page = await createNlPage("/")
+
+		// Expand les 1 and select begroeting
+		await page.getByText("les 1").click()
+		await page.getByRole("button", { name: "begroeting" }).click()
+
+		await page.locator("a", { hasText: "NL → ES" }).click()
 		await page.waitForURL(/\/lesson/)
 		expect(page.url()).toContain("mode=backward")
-		expect(page.url()).toContain("label=greeting")
+		expect(page.url()).toContain("label=begroeting")
 		await page.close()
 	})
 })
@@ -141,15 +134,16 @@ describe("homepage — skill rings", () => {
 // ---------------------------------------------------------------------------
 
 describe("lesson — forward mode", () => {
-	it("shows Spanish as question header, Translation after reveal", async () => {
-		const page = await createEnPage("/lesson?mode=forward")
+	it("shows Spaans as question header, Vertaling after reveal", async () => {
+		const page = await createNlPage("/lesson?mode=forward")
 
-		await expect(page.getByText("Spanish")).toBeVisible()
-		await expect(page.getByText("Translation")).not.toBeVisible()
+		// Use exact text match to avoid matching hint text
+		await expect(page.getByText("Spaans", { exact: true })).toBeVisible()
+		await expect(page.getByText("Vertaling", { exact: true })).not.toBeVisible()
 
-		await page.getByRole("button", { name: "Show answer" }).click()
+		await page.getByRole("button", { name: "Toon antwoord" }).click()
 
-		await expect(page.getByText("Translation")).toBeVisible()
+		await expect(page.getByText("Vertaling", { exact: true })).toBeVisible()
 
 		await page.close()
 	})
@@ -160,36 +154,33 @@ describe("lesson — forward mode", () => {
 // ---------------------------------------------------------------------------
 
 describe("lesson — backward mode", () => {
-	it("shows Translation as question header, Spanish after reveal", async () => {
-		const page = await createEnPage("/lesson?mode=backward")
+	it("shows Vertaling as question header, Spaans after reveal", async () => {
+		const page = await createNlPage("/lesson?mode=backward")
 
-		await expect(page.getByText("Translation")).toBeVisible()
-		await expect(page.getByText("Spanish")).not.toBeVisible()
+		await expect(page.getByText("Vertaling", { exact: true })).toBeVisible()
+		await expect(page.getByText("Spaans", { exact: true })).not.toBeVisible()
 
-		await page.getByRole("button", { name: "Show answer" }).click()
+		await page.getByRole("button", { name: "Toon antwoord" }).click()
 
-		await expect(page.getByText("Spanish")).toBeVisible()
+		await expect(page.getByText("Spaans", { exact: true })).toBeVisible()
 
 		await page.close()
 	})
 
 	it("question and answer show distinct non-empty text from the card fields", async () => {
-		const page = await createEnPage("/lesson?mode=backward&label=greeting")
+		const page = await createNlPage("/lesson?mode=backward&label=begroeting")
 
-		const showAnswerBtn = page.getByRole("button", { name: "Show answer" })
+		const showAnswerBtn = page.getByRole("button", { name: "Toon antwoord" })
 		await showAnswerBtn.waitFor({ state: "visible" })
 
-		// Capture whatever text is shown as the question before reveal
 		const questionText = await page.locator(".text-primary").first().innerText()
 		expect(questionText.trim()).not.toBe("")
 
 		await showAnswerBtn.click()
 
-		// After reveal the answer appears in .text-secondary
 		const answerText = await page.locator(".text-secondary").first().innerText()
 		expect(answerText.trim()).not.toBe("")
 
-		// The two fields must be different (question ≠ answer)
 		expect(questionText.trim()).not.toBe(answerText.trim())
 
 		await page.close()
