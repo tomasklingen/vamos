@@ -1,0 +1,242 @@
+[
+	{ "front": "¿Cómo te llamas?", "back": "Hoe heet jij?", "labels": ["prueba de español"] },
+	{ "front": "¿Cuántos años tienes?", "back": "Hoe oud ben jij?", "labels": ["prueba de español"] },
+	{
+		"front": "¿Cuántas veces vas a clase por semana?",
+		"back": "Hoe vaak ga jij naar de les per week?",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "¿A qué hora te acuestas?",
+		"back": "Hoe laat ga je naar bed?",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "¿Cuándo vas a caminar?",
+		"back": "Wanneer ga jij lopen?",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "¿Tienes hermanos?",
+		"back": "Heb jij broers of zussen?",
+		"labels": ["prueba de español"]
+	},
+	{ "front": "¿Cuántos años tienen?", "back": "Hoe oud zijn ze?", "labels": ["prueba de español"] },
+	{ "front": "¿Cuánto ganas?", "back": "Hoeveel verdien jij?", "labels": ["prueba de español"] },
+	{
+		"front": "¿Qué bebes/tomas? Bebo/Tomo vino tinto.",
+		"back": "Wat drink jij? Ik drink rode wijn.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "Quiero comprar un libro.",
+		"back": "Ik wil een boek kopen.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "¿Puedes abrir la puerta?",
+		"back": "Kun jij de deur openen?",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "Ella es enfermera.",
+		"back": "Zij is verpleegkundige.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "Tu café está frío.",
+		"back": "Jouw koffie is koud.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "Yo hago deporte dos días por semana.",
+		"back": "Ik doe twee dagen per week aan sport.",
+		"labels": ["prueba de español"]
+	},
+	{ "front": "¿Estás cansado?", "back": "Ben jij moe?", "labels": ["prueba de español"] },
+	{
+		"front": "¿Usted sabe dónde está el banco?",
+		"back": "Weet u waar de bank is?",
+		"labels": ["prueba de español"]
+	},
+	{ "front": "¿Quieres comer?", "back": "Wil jij eten?", "labels": ["prueba de español"] },
+	{
+		"front": "¿Quién viaja contigo?",
+		"back": "Wie reist er met jou mee?",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "¿Dónde estáis? Estamos perdidos.",
+		"back": "Waar zijn jullie? Wij zijn verdwaald.",
+		"labels": ["prueba de español"]
+	},
+	{ "front": "¿De dónde eres?", "back": "Waar kom jij vandaan?", "labels": ["prueba de español"] },
+	{ "front": "Es mi maleta.", "back": "Het is mijn koffer.", "labels": ["prueba de español"] },
+	{
+		"front": "¿Puedo preguntar algo?",
+		"back": "Mag ik iets vragen?",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "¿Hay una clínica en el centro?",
+		"back": "Is er een kliniek in het centrum?",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "Quiero una taza de café sin azúcar.",
+		"back": "Ik wil een kopje koffie zonder suiker.",
+		"labels": ["prueba de español"]
+	},
+	{ "front": "¿Qué hora es?", "back": "Hoe laat is het?", "labels": ["prueba de español"] },
+	{
+		"front": "Soy holandés/holandesa.",
+		"back": "Ik ben Nederlander/Nederlandse.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "La película está en la tele.",
+		"back": "De film staat op tv.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "Ellos necesitan las llaves.",
+		"back": "Zij hebben de sleutels nodig.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "¿A qué hora regresas?",
+		"back": "Hoe laat kom jij terug?",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "Ellos saben dónde están sus libros.",
+		"back": "Zij weten waar hun boeken zijn.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "Nosotros no podemos ahora.",
+		"back": "Wij kunnen nu niet.",
+		"labels": ["prueba de español"]
+	},
+	{ "front": "¿Qué haces?", "back": "Wat doe jij?", "labels": ["prueba de español"] },
+	{
+		"front": "Son las tres y media.",
+		"back": "Het is half vier.",
+		"labels": ["prueba de español"]
+	},
+	{ "front": "¿Quién es tu hermana?", "back": "Wie is jouw zus?", "labels": ["prueba de español"] },
+	{ "front": "¿Estáis allí?", "back": "Zijn jullie daar?", "labels": ["prueba de español"] },
+	{
+		"front": "¿El baño está ocupado?",
+		"back": "Is de badkamer bezet?",
+		"labels": ["prueba de español"]
+	},
+	{ "front": "¿Necesitas algo?", "back": "Heb jij iets nodig?", "labels": ["prueba de español"] },
+	{
+		"front": "¿Queréis los libros?",
+		"back": "Willen jullie de boeken?",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "¿Cuándo podéis pagar?",
+		"back": "Wanneer kunnen jullie betalen?",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "Escuchamos música.",
+		"back": "Wij luisteren naar muziek.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "Quiero un zumo de manzana, por favor.",
+		"back": "Ik wil een appelsap, alsjeblieft.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "¿Queréis caminar al centro?",
+		"back": "Willen jullie naar het centrum lopen?",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "El pueblo está lejos.",
+		"back": "Het dorp is ver weg.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "La lección es a las siete (en punto).",
+		"back": "De les is om zeven uur (precies).",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "¿Quieres alquilar una bicicleta?",
+		"back": "Wil jij een fiets huren?",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "Todos los días camino a mi trabajo.",
+		"back": "Ik loop elke dag naar mijn werk.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "¿Por qué abres la puerta?",
+		"back": "Waarom open jij de deur?",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "¿Cuánto tiempo necesitas esperar?",
+		"back": "Hoelang moet jij wachten?",
+		"labels": ["prueba de español"]
+	},
+	{ "front": "¿Dónde vives?", "back": "Waar woon jij?", "labels": ["prueba de español"] },
+	{
+		"front": "Tus hijos nadan en la piscina.",
+		"back": "Jouw kinderen zwemmen in het zwembad.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "Trabajo en el centro de la ciudad.",
+		"back": "Ik werk in het stadscentrum.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "Pagamos la cuenta.",
+		"back": "Wij betalen de rekening.",
+		"labels": ["prueba de español"]
+	},
+	{ "front": "¿Con quién hablas?", "back": "Met wie spreek jij?", "labels": ["prueba de español"] },
+	{
+		"front": "Sara desayuna con pan, huevos y jamón.",
+		"back": "Sara ontbijt met brood, eieren en ham.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "¿A qué hora llega el autobús?",
+		"back": "Hoe laat komt de bus aan?",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "Ellas caminan a la estación.",
+		"back": "Zij lopen naar het station.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "Hay solamente dos personas.",
+		"back": "Er zijn slechts twee mensen.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "¿Cuánto tiempo dura el viaje?",
+		"back": "Hoelang duurt de reis?",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "Mi hermano limpia la casa.",
+		"back": "Mijn broer maakt het huis schoon.",
+		"labels": ["prueba de español"]
+	},
+	{
+		"front": "Aprendo español con Spaans Leren Vamos.",
+		"back": "Ik leer Spaans met Spaans Leren Vamos.",
+		"labels": ["prueba de español"]
+	}
+]

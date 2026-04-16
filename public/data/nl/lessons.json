@@ -29,6 +29,11 @@
 		"subjects": ["vraagwoord"]
 	},
 	{
+		"id": "les 6",
+		"description": "Spaanse zinnen – prueba de español",
+		"subjects": ["prueba de español"]
+	},
+	{
 		"id": "les 8",
 		"description": "Basiswoordenschat: dagen, maanden, kleuren en vervoer",
 		"subjects": ["dag en maand", "kleur", "vervoer"]
